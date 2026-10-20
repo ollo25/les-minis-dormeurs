@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1eiirmtvlc"]
+
+[ext_resource type="Script" uid="uid://csdy3mhhcdt4m" path="res://Scènes/Demo_Prof/fin_de_partie.gd" id="1_findep"]
+
+[node name="FinDePartie" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_findep")
+
+[node name="Fond" type="ColorRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Panneau" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="TitreLabel" type="Label" parent="Panneau"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Partie terminée"
+horizontal_alignment = 1
+
+[node name="TempsLabel" type="Label" parent="Panneau"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Temps : 0,0 s"
+horizontal_alignment = 1
+
+[node name="Boutons" type="HBoxContainer" parent="Panneau"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="RejouerButton" type="Button" parent="Panneau/Boutons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " Rejouer "
+
+[node name="QuitterButton" type="Button" parent="Panneau/Boutons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " Quitter "

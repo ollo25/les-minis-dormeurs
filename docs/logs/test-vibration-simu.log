@@ -1,0 +1,18 @@
+Initialize godot-rust (API v4.5.stable.official, runtime v4.7.2.stable.official, safeguards balanced)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[LOG] system_create                            : Header version = 2.03.06. Current version = 2.03.06.
+FMOD Sound System: Successfully initialized
+FMOD Sound System: Live update enabled!
+WARNING: [Arduino] Non pairé, commandes ignorées (première : vibe:0)
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] _send (res://Scènes/Integration_Arduino/arduino_manager.gd:255)
+         [1] send_vibe (res://Scènes/Integration_Arduino/arduino_manager.gd:244)
+         [2] _mettre_a_jour_vibration (res://Scènes/Demo_Prof/JoueurDemo.gd:143)
+         [3] _physics_process (res://Scènes/Demo_Prof/JoueurDemo.gd:205)
+[Pairing]   → CONNECTÉ sur tcp://127.0.0.1:5557
+[VIBE] appairé à l'image 37
+[VIBE] appairé=true mode Arduino=true seuil=5.0 état envoyé=0
+[VIBE] FIN appairé=true état envoyé=0 (attendu 0) ; compter les lignes « <- vibe: » du simulateur : attendu 3
+FMOD Sound System: System released

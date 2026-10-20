@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4c1mwldf3ia2"
+path="res://.godot/imported/OBJET_LOOP_3.wav-5f1ccbad3aa5f573468086b0da3d97de.sample"
+
+[deps]
+
+source_file="res://Ne pas toucher/Sons/SFX_BOUCLES/OBJET_LOOP_3.wav"
+dest_files=["res://.godot/imported/OBJET_LOOP_3.wav-5f1ccbad3aa5f573468086b0da3d97de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

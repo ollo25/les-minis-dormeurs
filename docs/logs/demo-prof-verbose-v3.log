@@ -1,0 +1,1185 @@
+WorkerThreadPool: 12 threads, 3 max low-priority.
+Initialize godot-rust (API v4.5.stable.official, runtime v4.7.2.stable.official, safeguards balanced)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+[LOG] system_create                            : Header version = 2.03.06. Current version = 2.03.06.
+FMOD Sound System: Successfully set DSP buffer size
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.cbSize                   = 104
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.defaultDecodeBufferSize  = 400
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.distanceFilterCenterFreq = 1500.000000
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.DSPBufferPoolSize        = 8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.resamplerMethod          = 2
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.randomSeed               = 1792335184
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::setAdvancedSettings(): mAdvancedSettings.maxConvolutionThreads    = 3
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_runtime_manager.cpp in Manager::init(): maxchannels = 1024 studioflags = 00000001 flags 00000004 extradriverdata 0x0.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::init(): Initialize version=20306 (149358), maxchannels=1024, flags=0x00030004
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_driver.cpp in SystemI::setOutputInternal(): Setting output to 'FMOD Core Audio Output'
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/platforms/mac/src/fmod_output_coreaudio.mm in OutputCoreAudio::init(): Output running 2 channels at 44100Hz sample rate.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/platforms/mac/src/fmod_output_coreaudio.mm in OutputCoreAudio::init(): Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::init(): Output requires a sample rate of 44100Hz, resampling will occur.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_dsp.cpp in SystemI::DSPCodecPoolRegister(): register codec pool for pool type 0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_asyncmanager.cpp in AsyncManager::init(): manager 0x8922f4e08 isAsync 1 updatePeriod 0.02
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD Studio update thread. Affinity: 0x4000000000000002, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_asyncmanager.cpp in AsyncManager::init(): done
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_playback_system.cpp in PlaybackSystem::init(): 
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_playback_system.cpp in PlaybackSystem::init(): done
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_liveupdate.cpp in LiveUpdate::init(): 
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_runtime_manager.cpp in Manager::init(): done.
+
+FMOD Sound System: Successfully initialized
+FMOD Sound System: Live update enabled!
+Custom File System enabled.
+FMOD Sound System: Successfully set global 3D settings
+Loading resource: res://default_bus_layout.tres remapped: res://default_bus_layout.tres
+Completed load for: 'res://default_bus_layout.tres' remapped 'res://default_bus_layout.tres' at thread -1
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_profile.cpp in Profile::update(): Profiler listening on port: 9264
+
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://Ne pas toucher/Scripts/g_vars.gd remapped: res://Ne pas toucher/Scripts/g_vars.gd
+Completed load for: 'res://Ne pas toucher/Scripts/g_vars.gd' remapped 'res://Ne pas toucher/Scripts/g_vars.gd' at thread -1
+Loading resource: res://Scènes/Integration_Arduino/arduino_manager.gd remapped: res://Scènes/Integration_Arduino/arduino_manager.gd
+Completed load for: 'res://Scènes/Integration_Arduino/arduino_manager.gd' remapped 'res://Scènes/Integration_Arduino/arduino_manager.gd' at thread -1
+Loading resource: res://addons/fmod/FmodManager.gd remapped: res://addons/fmod/FmodManager.gd
+Completed load for: 'res://addons/fmod/FmodManager.gd' remapped 'res://addons/fmod/FmodManager.gd' at thread -1
+Loaded system CA certificates
+Loading resource: res://Scènes/Demo_Prof/Demo_Prof.tscn remapped: res://Scènes/Demo_Prof/Demo_Prof.tscn
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_A.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_A.gltf
+Loading resource: res://.godot/imported/building_A.gltf-6f97f079d96afbc7e85321748e26b75a.scn remapped: res://.godot/imported/building_A.gltf-6f97f079d96afbc7e85321748e26b75a.scn
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/citybits_texture.png remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/citybits_texture.png
+Loading resource: res://.godot/imported/citybits_texture.png-9be06ac35021757a3a6d35c1c7e69fa7.s3tc.ctex remapped: res://.godot/imported/citybits_texture.png-9be06ac35021757a3a6d35c1c7e69fa7.s3tc.ctex
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/citybits_texture.png' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/citybits_texture.png' at thread -1
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_A.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_A.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_B.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_B.gltf
+Loading resource: res://.godot/imported/building_B.gltf-edd2c403061ea53c318f6b6740292a4f.scn remapped: res://.godot/imported/building_B.gltf-edd2c403061ea53c318f6b6740292a4f.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_B.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_B.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_C.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_C.gltf
+Loading resource: res://.godot/imported/building_C.gltf-fea2a848064eb0bd1a6a617f5301a9a6.scn remapped: res://.godot/imported/building_C.gltf-fea2a848064eb0bd1a6a617f5301a9a6.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_C.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_C.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_D.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_D.gltf
+Loading resource: res://.godot/imported/building_D.gltf-e60d373a2d9150afabcf461791aa185a.scn remapped: res://.godot/imported/building_D.gltf-e60d373a2d9150afabcf461791aa185a.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_D.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_D.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_E.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_E.gltf
+Loading resource: res://.godot/imported/building_E.gltf-7a72ab689cb4205f2055064b07de2fcb.scn remapped: res://.godot/imported/building_E.gltf-7a72ab689cb4205f2055064b07de2fcb.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_E.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_E.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_G.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_G.gltf
+Loading resource: res://.godot/imported/building_G.gltf-d442790bd1e2d9bf81ce01b0cdabe77b.scn remapped: res://.godot/imported/building_G.gltf-d442790bd1e2d9bf81ce01b0cdabe77b.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_G.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_G.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_H.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_H.gltf
+Loading resource: res://.godot/imported/building_H.gltf-f8f7d5b1a10b119835bca909462518e9.scn remapped: res://.godot/imported/building_H.gltf-f8f7d5b1a10b119835bca909462518e9.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_H.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/building_H.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_corner.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_corner.gltf
+Loading resource: res://.godot/imported/road_corner.gltf-0ca7ac352bac3f50cf515d28838accb3.scn remapped: res://.godot/imported/road_corner.gltf-0ca7ac352bac3f50cf515d28838accb3.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_corner.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_corner.gltf' at thread -1
+Loading resource: res://Ne pas toucher/Sons/Monster9_Death10.wav remapped: res://Ne pas toucher/Sons/Monster9_Death10.wav
+Loading resource: res://.godot/imported/Monster9_Death10.wav-3c32c05df4ab5bfc87058a00b5597903.sample remapped: res://.godot/imported/Monster9_Death10.wav-3c32c05df4ab5bfc87058a00b5597903.sample
+Completed load for: 'res://Ne pas toucher/Sons/Monster9_Death10.wav' remapped 'res://Ne pas toucher/Sons/Monster9_Death10.wav' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_straight.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_straight.gltf
+Loading resource: res://.godot/imported/road_straight.gltf-02a66721ce1e1cba123233ff804f7221.scn remapped: res://.godot/imported/road_straight.gltf-02a66721ce1e1cba123233ff804f7221.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_straight.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_straight.gltf' at thread -1
+Loading resource: res://Ne pas toucher/General_Manager.gd remapped: res://Ne pas toucher/General_Manager.gd
+Completed load for: 'res://Ne pas toucher/General_Manager.gd' remapped 'res://Ne pas toucher/General_Manager.gd' at thread -1
+Loading resource: res://Graphismes/Materiaux/Grass/grass_2.png remapped: res://Graphismes/Materiaux/Grass/grass_2.png
+Loading resource: res://.godot/imported/grass_2.png-1e1724c6c07237b1f703645004560672.s3tc.ctex remapped: res://.godot/imported/grass_2.png-1e1724c6c07237b1f703645004560672.s3tc.ctex
+Completed load for: 'res://Graphismes/Materiaux/Grass/grass_2.png' remapped 'res://Graphismes/Materiaux/Grass/grass_2.png' at thread -1
+Loading resource: res://Nodes/Soundtrack.gd remapped: res://Nodes/Soundtrack.gd
+Completed load for: 'res://Nodes/Soundtrack.gd' remapped 'res://Nodes/Soundtrack.gd' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_tsplit.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_tsplit.gltf
+Loading resource: res://.godot/imported/road_tsplit.gltf-1d8f18011006dd47cae3f287ba078438.scn remapped: res://.godot/imported/road_tsplit.gltf-1d8f18011006dd47cae3f287ba078438.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_tsplit.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/road_tsplit.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/watertower.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/watertower.gltf
+Loading resource: res://.godot/imported/watertower.gltf-972bc3759c24de0a97bf5bbcd1c832a3.scn remapped: res://.godot/imported/watertower.gltf-972bc3759c24de0a97bf5bbcd1c832a3.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/watertower.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/watertower.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/bush.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/bush.gltf
+Loading resource: res://.godot/imported/bush.gltf-48606fac5ac24d30c8e8d2439eb99f7c.scn remapped: res://.godot/imported/bush.gltf-48606fac5ac24d30c8e8d2439eb99f7c.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/bush.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/bush.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeA.gltf.glb remapped: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeA.gltf.glb
+Loading resource: res://.godot/imported/detail_treeA.gltf.glb-f025a01bdae34983dcadce07b5446fed.scn remapped: res://.godot/imported/detail_treeA.gltf.glb-f025a01bdae34983dcadce07b5446fed.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeA.gltf.glb' remapped 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeA.gltf.glb' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeB.gltf.glb remapped: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeB.gltf.glb
+Loading resource: res://.godot/imported/detail_treeB.gltf.glb-a8f7865fd01ee3d53f5f761d1a4645c0.scn remapped: res://.godot/imported/detail_treeB.gltf.glb-a8f7865fd01ee3d53f5f761d1a4645c0.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeB.gltf.glb' remapped 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeB.gltf.glb' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeC.gltf.glb remapped: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeC.gltf.glb
+Loading resource: res://.godot/imported/detail_treeC.gltf.glb-493a92c97e86ffc016a879ccfb5a536a.scn remapped: res://.godot/imported/detail_treeC.gltf.glb-493a92c97e86ffc016a879ccfb5a536a.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeC.gltf.glb' remapped 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/detail_treeC.gltf.glb' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_large.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_large.gltf
+Loading resource: res://.godot/imported/tree_pine_orange_large.gltf-44870f0040fcfd045332eb5925f21484.scn remapped: res://.godot/imported/tree_pine_orange_large.gltf-44870f0040fcfd045332eb5925f21484.scn
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/halloweenbits_texture.png remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/halloweenbits_texture.png
+Loading resource: res://.godot/imported/halloweenbits_texture.png-9f8a5798b5f7867285fe711bde819ef9.s3tc.ctex remapped: res://.godot/imported/halloweenbits_texture.png-9f8a5798b5f7867285fe711bde819ef9.s3tc.ctex
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/halloweenbits_texture.png' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/halloweenbits_texture.png' at thread -1
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_large.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_large.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_medium.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_medium.gltf
+Loading resource: res://.godot/imported/tree_pine_orange_medium.gltf-7e7e8dfbe1fcc13d2de855d714b84234.scn remapped: res://.godot/imported/tree_pine_orange_medium.gltf-7e7e8dfbe1fcc13d2de855d714b84234.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_medium.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_medium.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_small.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_small.gltf
+Loading resource: res://.godot/imported/tree_pine_orange_small.gltf-a066297b64e67df9074686d50cdde394.scn remapped: res://.godot/imported/tree_pine_orange_small.gltf-a066297b64e67df9074686d50cdde394.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_small.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_orange_small.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_large.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_large.gltf
+Loading resource: res://.godot/imported/tree_pine_yellow_large.gltf-b9f8a1ebb696cd1fda0398473ab6573d.scn remapped: res://.godot/imported/tree_pine_yellow_large.gltf-b9f8a1ebb696cd1fda0398473ab6573d.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_large.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_large.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_medium.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_medium.gltf
+Loading resource: res://.godot/imported/tree_pine_yellow_medium.gltf-96dbbc29337d2a7a3442ccc58904b8d5.scn remapped: res://.godot/imported/tree_pine_yellow_medium.gltf-96dbbc29337d2a7a3442ccc58904b8d5.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_medium.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_medium.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_small.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_small.gltf
+Loading resource: res://.godot/imported/tree_pine_yellow_small.gltf-2800fefc13209cf3ba9eb7d2b6ac9ca1.scn remapped: res://.godot/imported/tree_pine_yellow_small.gltf-2800fefc13209cf3ba9eb7d2b6ac9ca1.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_small.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/tree_pine_yellow_small.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/house.gltf.glb remapped: res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/house.gltf.glb
+Loading resource: res://.godot/imported/house.gltf.glb-9cd35c6b17bf2effd521125eaa111523.scn remapped: res://.godot/imported/house.gltf.glb-9cd35c6b17bf2effd521125eaa111523.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/house.gltf.glb' remapped 'res://Graphismes/Objets 3D/Environment Sets/Medieval Builder Pack 1.0/objects/house.gltf.glb' at thread -1
+Loading resource: res://Ne pas toucher/Sons/AMBIANCE/AMBIANCE_LOOP_WINDY.wav remapped: res://Ne pas toucher/Sons/AMBIANCE/AMBIANCE_LOOP_WINDY.wav
+Loading resource: res://.godot/imported/AMBIANCE_LOOP_WINDY.wav-2a1daf3135f6b502a91c93324efc628b.sample remapped: res://.godot/imported/AMBIANCE_LOOP_WINDY.wav-2a1daf3135f6b502a91c93324efc628b.sample
+Completed load for: 'res://Ne pas toucher/Sons/AMBIANCE/AMBIANCE_LOOP_WINDY.wav' remapped 'res://Ne pas toucher/Sons/AMBIANCE/AMBIANCE_LOOP_WINDY.wav' at thread -1
+Loading resource: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_1.wav remapped: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_1.wav
+Loading resource: res://.godot/imported/OBJET_CATCH_1.wav-780b718a0a99faeefe0ebb7c9f58db7c.sample remapped: res://.godot/imported/OBJET_CATCH_1.wav-780b718a0a99faeefe0ebb7c9f58db7c.sample
+Completed load for: 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_1.wav' remapped 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_1.wav' at thread -1
+Loading resource: res://Scènes/Demo_Prof/JoueurDemo.gd remapped: res://Scènes/Demo_Prof/JoueurDemo.gd
+Completed load for: 'res://Scènes/Demo_Prof/JoueurDemo.gd' remapped 'res://Scènes/Demo_Prof/JoueurDemo.gd' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/streetlight.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/streetlight.gltf
+Loading resource: res://.godot/imported/streetlight.gltf-3799ca36a79a8832b076c9f56a41f73f.scn remapped: res://.godot/imported/streetlight.gltf-3799ca36a79a8832b076c9f56a41f73f.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/streetlight.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/City_Builder_Bits/streetlight.gltf' at thread -1
+Loading resource: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_2.wav remapped: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_2.wav
+Loading resource: res://.godot/imported/OBJET_CATCH_2.wav-522074ece5f5461f03d5a16598217e1a.sample remapped: res://.godot/imported/OBJET_CATCH_2.wav-522074ece5f5461f03d5a16598217e1a.sample
+Completed load for: 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_2.wav' remapped 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_2.wav' at thread -1
+Loading resource: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_3.wav remapped: res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_3.wav
+Loading resource: res://.godot/imported/OBJET_CATCH_3.wav-4ce9639b9afa37bade04069f7d8feb41.sample remapped: res://.godot/imported/OBJET_CATCH_3.wav-4ce9639b9afa37bade04069f7d8feb41.sample
+Completed load for: 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_3.wav' remapped 'res://Ne pas toucher/Sons/SFX_OneShot/OBJET_CATCH_3.wav' at thread -1
+Loading resource: res://Scènes/Demo_Prof/object_to_catch_1.tscn remapped: res://Scènes/Demo_Prof/object_to_catch_1.tscn
+Loading resource: res://Scènes/Demo_Prof/Object_To_Catch_1.gd remapped: res://Scènes/Demo_Prof/Object_To_Catch_1.gd
+Completed load for: 'res://Scènes/Demo_Prof/Object_To_Catch_1.gd' remapped 'res://Scènes/Demo_Prof/Object_To_Catch_1.gd' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_triple.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_triple.gltf
+Loading resource: res://.godot/imported/candle_triple.gltf-36379c917893d7c60da7c2222184cb9b.scn remapped: res://.godot/imported/candle_triple.gltf-36379c917893d7c60da7c2222184cb9b.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_triple.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_triple.gltf' at thread -1
+Completed load for: 'res://Scènes/Demo_Prof/object_to_catch_1.tscn' remapped 'res://Scènes/Demo_Prof/object_to_catch_1.tscn' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle.gltf
+Loading resource: res://.godot/imported/candle.gltf-3a87157b14d61d160e9080a20456ed3c.scn remapped: res://.godot/imported/candle.gltf-3a87157b14d61d160e9080a20456ed3c.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_melted.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_melted.gltf
+Loading resource: res://.godot/imported/candle_melted.gltf-f5546f08cff1214051ce81600820b66b.scn remapped: res://.godot/imported/candle_melted.gltf-f5546f08cff1214051ce81600820b66b.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_melted.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_melted.gltf' at thread -1
+Loading resource: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/gravestone.gltf remapped: res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/gravestone.gltf
+Loading resource: res://.godot/imported/gravestone.gltf-d5e78014fdf019910d5d1160bd4567d6.scn remapped: res://.godot/imported/gravestone.gltf-d5e78014fdf019910d5d1160bd4567d6.scn
+Completed load for: 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/gravestone.gltf' remapped 'res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/gravestone.gltf' at thread -1
+Loading resource: res://Scènes/Demo_Prof/ground_collectible.tscn remapped: res://Scènes/Demo_Prof/ground_collectible.tscn
+Loading resource: res://Scènes/Demo_Prof/Ground_Collectible.gd remapped: res://Scènes/Demo_Prof/Ground_Collectible.gd
+Completed load for: 'res://Scènes/Demo_Prof/Ground_Collectible.gd' remapped 'res://Scènes/Demo_Prof/Ground_Collectible.gd' at thread -1
+Completed load for: 'res://Scènes/Demo_Prof/ground_collectible.tscn' remapped 'res://Scènes/Demo_Prof/ground_collectible.tscn' at thread -1
+Completed load for: 'res://Scènes/Demo_Prof/Demo_Prof.tscn' remapped 'res://Scènes/Demo_Prof/Demo_Prof.tscn' at thread -1
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_bank_loader.cpp in BankLoader::serializeBank(): fileversion = 142, compatVersion = 140 (oldest = 44, newest = 146)
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_playback_system.cpp in PlaybackSystem::acquireMasterBus(): Setting master channel group format to 6
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+FMOD Sound System: LOADING BANK res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD][TRACE] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_studio_impl.cpp in trace(): FMOD_RESULT = 74 -- The requested event, parameter, bus or vca could not be found.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/studio_api/src/fmod_bank_loader.cpp in BankLoader::serializeBank(): fileversion = 142, compatVersion = 140 (oldest = 44, newest = 146)
+
+FMOD Sound System: LOADING BANK res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.strings.bank
+ERROR: Failed to open port /dev/cu.inexistant: No such file or directory
+   at: gdserial::GdSerial::open (src/lib.rs:778)
+   GDScript backtrace (most recent call first):
+       [0] _scan_ports (res://Scènes/Integration_Arduino/arduino_manager.gd:118)
+       [1] start_pairing (res://Scènes/Integration_Arduino/arduino_manager.gd:106)
+       [2] _ready (res://Scènes/Integration_Arduino/arduino_manager.gd:67)
+Loading resource: res://Ne pas toucher/Sons/SFX_BOUCLES/OBJET_LOOP_4.wav remapped: res://Ne pas toucher/Sons/SFX_BOUCLES/OBJET_LOOP_4.wav
+Loading resource: res://.godot/imported/OBJET_LOOP_4.wav-27c3eb9934e60ff9413196548ad29b65.sample remapped: res://.godot/imported/OBJET_LOOP_4.wav-27c3eb9934e60ff9413196548ad29b65.sample
+Completed load for: 'res://Ne pas toucher/Sons/SFX_BOUCLES/OBJET_LOOP_4.wav' remapped 'res://Ne pas toucher/Sons/SFX_BOUCLES/OBJET_LOOP_4.wav' at thread -1
+WARNING: [Arduino] Non pairé, commandes ignorées (première : vibe:0)
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] _send (res://Scènes/Integration_Arduino/arduino_manager.gd:255)
+         [1] send_vibe (res://Scènes/Integration_Arduino/arduino_manager.gd:244)
+         [2] _physics_process (res://Scènes/Demo_Prof/JoueurDemo.gd:185)
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound(): filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound(): FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread(): Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add(): add sound to async queue : soundi = 0x893bd8c48, queue head = 0x893a8a858, queue count = 0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd8c48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound(): filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd88c8, queue head = 0x893a8a858, queue count = 0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8a6c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekposition = 9595
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd8e08, queue head = 0x893a8a858, queue count = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd8fc8, queue head = 0x893a8a858, queue count = 2
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9188, queue head = 0x893a8a858, queue count = 3
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9348, queue head = 0x893a8a858, queue count = 4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9508, queue head = 0x893a8a858, queue count = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd96c8, queue head = 0x893a8a858, queue count = 6
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9888, queue head = 0x893a8a858, queue count = 7
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9a48, queue head = 0x893a8a858, queue count = 8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='AMBIANCE_LOOP_WINDY', format=5, channels=2, frequency=48000, lengthbytes=1175392, lengthpcm=4455849, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.062568.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9dc8, queue head = 0x893a8a858, queue count = 9
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bd9f88, queue head = 0x893a8a858, queue count = 10
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bda148, queue head = 0x893a8a858, queue count = 11
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bda308, queue head = 0x893a8a858, queue count = 12
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bda4c8, queue head = 0x893a8a858, queue count = 13
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bda688, queue head = 0x893a8a858, queue count = 14
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bda848, queue head = 0x893a8a858, queue count = 15
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_thread.cpp in Thread::initThread():     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdabc8, queue head = 0x893a8a858, queue count = 16
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd8c48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd88c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8ab48
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdad88, queue head = 0x893a8a858, queue count = 16
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekposition = 500
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdaf48, queue head = 0x893a8a858, queue count = 17
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdb648, queue head = 0x893a8a858, queue count = 18
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdb488, queue head = 0x893a8a858, queue count = 19
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='WalkSound', format=5, channels=2, frequency=48000, lengthbytes=110656, lengthpcm=504000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.497650.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdb9c8, queue head = 0x893a8a858, queue count = 20
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdbb88, queue head = 0x893a8a858, queue count = 21
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x893bdbd48, queue head = 0x893a8a858, queue count = 22
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound():     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add():     add sound to async queue : soundi = 0x894c82bc8, queue head = 0x893a8a858, queue count = 23
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='', mode=0x02000202
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x16e2ae7d4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->useropen           = 0x11849d30c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userclose          = 0x11849d3e0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userread           = 0x11849d41c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userseek           = 0x11849d4ec
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileuserdata       = 0x89516cf08
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_dsp.cpp in SystemI::DSPCodecPoolRegister():     register codec pool for pool type 4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Sample 0/1: name='OBJET_CATCH_3', format=5, channels=2, frequency=48000, lengthbytes=57408, lengthpcm=332100, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.339014.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='', mode=0x02000202
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x16e2ae7d4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->useropen           = 0x11849d30c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userclose          = 0x11849d3e0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userread           = 0x11849d41c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userseek           = 0x11849d4ec
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd88c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal(): exinfo->fileuserdata       = 0x89516cf08
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd8e08
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal(): exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_dsp.cpp in SystemI::DSPCodecPoolRegister():     register codec pool for pool type 4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Sample 0/1: name='OBJET_CATCH_2', format=5, channels=2, frequency=48000, lengthbytes=56704, lengthpcm=332100, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.309722.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8a9c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='', mode=0x02000202
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x16e2ae7d4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->useropen           = 0x11849d30c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userclose          = 0x11849d3e0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userread           = 0x11849d41c
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->userseek           = 0x11849d4ec
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileuserdata       = 0x89516cf08
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_dsp.cpp in SystemI::DSPCodecPoolRegister():     register codec pool for pool type 4
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Sample 0/1: name='OBJET_CATCH_1', format=5, channels=2, frequency=48000, lengthbytes=58944, lengthpcm=339623, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.310814.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd8e08
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd8fc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8acc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd8fc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9188
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8afc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9188
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9348
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8b148
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9348
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9508
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8b2c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9508
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd96c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8b448
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd96c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9888
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8b5c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9888
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9a48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8b748
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9a48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9dc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8bbc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9dc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bd9f88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8ba48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bd9f88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bda148
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x893a8bd48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bda148
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bda308
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x8950923c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bda308
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bda4c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895092848
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bda4c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bda688
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895091348
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bda688
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bda848
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895091c48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bda848
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdabc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895090d48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdabc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdad88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x8950914c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdad88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdaf48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895093ec8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdaf48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdb648
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895093bc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdb648
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdb488
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x8950905c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdb488
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdb9c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895091ac8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP4', format=5, channels=2, frequency=48000, lengthbytes=440832, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057546.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdb9c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdbb88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x8950920c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP3', format=5, channels=2, frequency=48000, lengthbytes=370368, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.057998.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdbb88
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x893bdbd48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895091048
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP2', format=5, channels=2, frequency=48000, lengthbytes=352800, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.055046.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x893bdbd48
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x894c82bc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x895090bc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='ContVibrojectLOOP1', format=5, channels=2, frequency=48000, lengthbytes=332128, lengthpcm=1738868, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.036281.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x894c82bc8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound(): filename = res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank : mode 02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi.cpp in SystemI::createSound(): FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+
+[FMOD INFO] ../../src/fmod_async.h in AsyncThread::add(): add sound to async queue : soundi = 0x8951d79c8, queue head = 0x893a8a858, queue count = 0
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Starting Asynchronous operation on sound 0x8951d79c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Create name='res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank', mode=0x02010082
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->cbsize             = 224
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->length             = 5463168
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->fileoffset         = 27520
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->numsubsounds       = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlist      = 0x8952045c8
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->inclusionlistnum   = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->suggestedsoundtype = 5
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     exinfo->initialseekpostype = 1
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_systemi_sound.cpp in SystemI::createSoundInternal():     Stream 0/1: name='AMBIANCE_LOOP_WINDY', format=5, channels=2, frequency=48000, lengthbytes=1175392, lengthpcm=4455849, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.062568.
+
+[FMOD INFO] /opt/teamcity-agent/work/c1c3f17eb167c494/core_api/src/fmod_async.cpp in AsyncThread::threadFunc(): Finished Asynchronous operation on sound 0x8951d79c8
+
+ERROR: Failed to open port /dev/cu.inexistant: No such file or directory
+   at: gdserial::GdSerial::open (src/lib.rs:778)
+   GDScript backtrace (most recent call first):
+       [0] _scan_ports (res://Scènes/Integration_Arduino/arduino_manager.gd:118)
+       [1] start_pairing (res://Scènes/Integration_Arduino/arduino_manager.gd:106)
+       [2] _process (res://Scènes/Integration_Arduino/arduino_manager.gd:189)
+ERROR: Failed to open port /dev/cu.inexistant: No such file or directory
+   at: gdserial::GdSerial::open (src/lib.rs:778)
+   GDScript backtrace (most recent call first):
+       [0] _scan_ports (res://Scènes/Integration_Arduino/arduino_manager.gd:118)
+       [1] start_pairing (res://Scènes/Integration_Arduino/arduino_manager.gd:106)
+       [2] _process (res://Scènes/Integration_Arduino/arduino_manager.gd:189)
+XR: Clearing primary interface
+FMOD Sound System: System released
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1s2yvlsf8ofu"]
+
+[ext_resource type="Script" uid="uid://dladqs3gaqljs" path="res://Scènes/Demo_Prof/Ground_Collectible.gd" id="1_xgtnl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywnuv"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fcsp"]
+emission_enabled = true
+emission = Color(0, 0.8, 0.5, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5tklj"]
+material = SubResource("StandardMaterial3D_4fcsp")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.2
+
+[node name="GroundCollectible" type="Area3D" unique_id=1428171864]
+script = ExtResource("1_xgtnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=804778655]
+shape = SubResource("BoxShape3D_ywnuv")
+
+[node name="VisualNode" type="Node3D" parent="." unique_id=1560427895]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VisualNode" unique_id=1692587922]
+mesh = SubResource("CylinderMesh_5tklj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1347012117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_color = Color(0, 0.8, 0.5, 1)
+light_energy = 2.0
+omni_range = 3.0
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="." unique_id=1940861482]
+event_name = "event:/VibrObj"
+event_guid = "{2b21cc40-f8a8-4c14-bf78-80ba263c54df}"
+volume = 4.0

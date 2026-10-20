@@ -1,0 +1,9 @@
+18:22:47 [SIM] profil=prof  PORT=tcp://127.0.0.1:5557
+18:22:47 [SIM] Dans un autre terminal :  ARDUINO_PORT=tcp://127.0.0.1:5557 <godot> --headless --path <projet>
+18:22:49 [SIM] client TCP connecté ('127.0.0.1', 61173) (= ouverture du port, reset)
+18:22:49 [SIM] <- DISCOVER
+18:22:49 [SIM] <- vibe:0
+18:22:52 [SIM] <- vibe:1
+18:22:53 [SIM] <- vibe:0
+18:22:54 [SIM] client TCP déconnecté (= fermeture du port)
+18:22:54 [SIM] arrêt. trames envoyées : 168

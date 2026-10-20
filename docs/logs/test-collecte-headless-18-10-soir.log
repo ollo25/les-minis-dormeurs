@@ -1,0 +1,72 @@
+Initialize godot-rust (API v4.5.stable.official, runtime v4.7.2.stable.official, safeguards balanced)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[LOG] system_create                            : Header version = 2.03.06. Current version = 2.03.06.
+FMOD Sound System: Successfully initialized
+FMOD Sound System: Live update enabled!
+ERROR: Failed to open port /dev/cu.inexistant: No such file or directory
+   at: gdserial::GdSerial::open (src/lib.rs:778)
+   GDScript backtrace (most recent call first):
+       [0] _scan_ports (res://Scènes/Integration_Arduino/arduino_manager.gd:118)
+       [1] start_pairing (res://Scènes/Integration_Arduino/arduino_manager.gd:106)
+       [2] _ready (res://Scènes/Integration_Arduino/arduino_manager.gd:67)
+[COLLECTE] ObjectCatch 3D=true min/max distance=[1.0, 20.0] ; émetteur reward à (0.0, 0.0, 0.0) du joueur
+[COLLECTE] émetteur ObjectCatch sur le joueur (plus à 5 m sous lui) : ok
+[COLLECTE] bougie 1 visible et détectable, bougie 3 invisible et non détectable : ok
+[COLLECTE] instances VibrObj = 7 dont en lecture = 6
+[COLLECTE] 6 boucles VibrObj en lecture au départ : ok
+Ground collectible collected!
+[COLLECTE] ObjectCatch : signal started reçu (1)
+[COLLECTE] palet 1 collecté (is_collected), encore présent pendant l'effet : ok
+[COLLECTE] palet 1 : détection coupée (monitoring et monitorable à faux) : ok
+[COLLECTE] palet 1 : émetteur VibrObj retiré du palet : ok
+[COLLECTE] après capture : instances VibrObj = 6 en lecture = 5 en arrêt (fondu) = 0
+[COLLECTE] palet 1 : boucle VibrObj coupée (5 en lecture) : ok
+[COLLECTE] palet 1 : arrêt immédiat, aucune instance en fondu (STOPPING) : ok
+[COLLECTE] palet 1 : instance FMOD libérée (6 instances : 5 palets + émetteur préchargé du joueur) : ok
+[COLLECTE] palet 1 : ObjectCatch joué : ok
+[COLLECTE] palet 1 supprimé de la scène (queue_free après l'effet) : ok
+[COLLECTE] palet 1 : toujours 5 boucles VibrObj en lecture, rien de relancé : ok
+[COLLECTE] bougie 3 invisible traversée : toujours là : ok
+[COLLECTE] bougie 3 invisible traversée : pas de son, compteur à 0 : ok
+WARNING: [Arduino] Non pairé, commandes ignorées (première : led:1)
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] _send (res://Scènes/Integration_Arduino/arduino_manager.gd:255)
+         [1] send_led (res://Scènes/Integration_Arduino/arduino_manager.gd:238)
+         [2] _on_body_entered (res://Scènes/Demo_Prof/Object_To_Catch_1.gd:48)
+sent led
+[COLLECTE] ObjectCatch : signal restarted reçu (2)
+[COLLECTE] bougie 1 disparue (freed) : ok
+[COLLECTE] bougie 2 activée, visible et détectable : ok
+[COLLECTE] compteur du joueur = 1 : ok
+[COLLECTE] ObjectCatch joué pour la bougie 1 : ok
+[COLLECTE] vibration : loin d'un palet → état 0 envoyé une fois : ok
+[COLLECTE] vibration : sous le seuil → état 1 envoyé une seule fois : ok
+Ground collectible collected!
+[COLLECTE] ObjectCatch : signal restarted reçu (3)
+[COLLECTE] vibration : palet passé → état 0, 3 changements en tout (pas d'envoi par image) : ok
+sent led
+[COLLECTE] ObjectCatch : signal restarted reçu (4)
+[COLLECTE] bougie 2 disparue, bougie 5 (finale) activée et détectable : ok
+[COLLECTE] ObjectCatch joué pour la bougie 2 (4 captures) : ok
+sent led
+[COLLECTE] ObjectCatch : signal restarted reçu (5)
+[COLLECTE] écran de fin présent et affiché : ok
+[COLLECTE] temps final > 0 : ok
+[COLLECTE] temps affiché : « Temps : 4,4 s » (formatage 83,4 s → 1 min 23,4 s)
+[COLLECTE] formatage du temps : ok
+[COLLECTE] pas coupés (CharacterFly) et boucles VibrObj des palets restants arrêtées : ok
+[COLLECTE] fin de partie : instances VibrObj = 1 en arrêt (fondu) = 0
+[COLLECTE] fin de partie : aucune boucle VibrObj en fondu, seule reste l'instance préchargée (jamais jouée) du joueur : ok
+[COLLECTE] fin de partie : plus aucun émetteur VibrObj sous les palets restants : ok
+[COLLECTE] souris visible pour cliquer (contrôle faible : en headless le mode souris ne change jamais) : ok
+[COLLECTE] joueur arrêté (partie_terminee) et vibration coupée : ok
+[COLLECTE] ObjectCatch joué pour la dernière bougie (5 captures) : ok
+[COLLECTE] instances MusiqueNiv1 avant libération = 1
+[COLLECTE] après libération : MusiqueNiv1=-1 VibrObj=-1 Footsteps=-1
+[COLLECTE] scène libérée : plus rien en lecture (banque déchargée ou instances libérées) : ok
+[COLLECTE] après ré-instanciation : MusiqueNiv1=1 VibrObj=7 en lecture=6
+[COLLECTE] scène ré-instanciée (Rejouer) : une seule musique, 6 boucles VibrObj en lecture : ok
+[COLLECTE] BILAN ok=true
+FMOD Sound System: System released

@@ -1,0 +1,217 @@
+Initialize godot-rust (API v4.5.stable.official, runtime v4.7.2.stable.official, safeguards balanced)
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[LOG] system_create                            : Header version = 2.03.06. Current version = 2.03.06.
+FMOD Sound System: Successfully initialized
+FMOD Sound System: Live update enabled!
+[Pairing] Démarrage du scan des ports...
+[Pairing] Port forcé : tcp://127.0.0.1:5555
+[Pairing] Test de : tcp://127.0.0.1:5555
+[TEST] démarrage ; ARDUINO_PORT='tcp://127.0.0.1:5555'
+[Pairing]   tentative 1 → 'GDSERIAL_ACK:arduino_uno
+ultrason:27.7
+potentiometre:905
+ultrason:27.9
+potentiometre:915'
+[Pairing]   → CONNECTÉ sur tcp://127.0.0.1:5555
+[TEST] pairing_success sur tcp://127.0.0.1:5555 après 0.63 s
+[TEST] message ultrason:27.7
+[TEST] message potentiometre:905
+[TEST] message ultrason:27.9
+[TEST] message potentiometre:915
+[TEST] message ultrason:28.1
+[TEST] message potentiometre:924
+[TEST] message ultrason:28.2
+[TEST] message potentiometre:933
+[TEST] button_changed true
+[TEST] message ultrason:28.4
+[TEST] message potentiometre:942
+[TEST] message ultrason:28.6
+[TEST] message potentiometre:950
+[TEST] message ultrason:28.7
+[TEST] message potentiometre:958
+[TEST] message ultrason:28.9
+[TEST] message potentiometre:965
+[TEST] message ultrason:29.0
+[TEST] message potentiometre:972
+[TEST] message ultrason:29.1
+[TEST] message potentiometre:978
+[TEST] message ultrason:29.2
+[TEST] message potentiometre:983
+[TEST] message pong:1368
+[Arduino] Latence mesurée : 14 ms
+[TEST] message ack:led:1
+[Arduino] Ack : led:1
+[TEST] message ack:blink:2
+[Arduino] Ack : blink:2
+[TEST] message ultrason:29.3
+[TEST] message potentiometre:989
+[TEST] message ultrason:29.5
+[TEST] message potentiometre:994
+[TEST] message ultrason:29.5
+[TEST] message potentiometre:999
+[TEST] message ultrason:29.6
+[TEST] message potentiometre:1004
+[TEST] message ultrason:29.7
+[TEST] message potentiometre:1007
+[TEST] message ultrason:29.8
+[TEST] message potentiometre:1011
+[TEST] message ultrason:29.8
+[TEST] message potentiometre:1014
+[TEST] message ultrason:29.9
+[TEST] message potentiometre:1016
+[TEST] message ultrason:29.9
+[TEST] message potentiometre:1018
+[TEST] message ultrason:29.9
+[TEST] message potentiometre:1020
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1021
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1022
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1022
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1022
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1022
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1021
+[TEST] message ultrason:30.0
+[TEST] message potentiometre:1020
+[TEST] message ultrason:29.9
+[TEST] message potentiometre:1019
+[TEST] message ultrason:29.9
+[TEST] message potentiometre:1016
+[TEST] message ultrason:29.8
+[TEST] message potentiometre:1014
+[TEST] message ultrason:29.8
+[TEST] message potentiometre:1011
+[TEST] message ultrason:29.7
+[TEST] message potentiometre:1007
+[TEST] message ultrason:29.6
+[TEST] message potentiometre:1003
+[TEST] message ultrason:29.5
+[TEST] message potentiometre:999
+[TEST] message ultrason:29.4
+[TEST] message potentiometre:994
+[TEST] message ultrason:29.3
+[TEST] message potentiometre:988
+[TEST] message ultrason:29.2
+[TEST] message potentiometre:983
+[TEST] message ultrason:29.1
+[TEST] message potentiometre:977
+[TEST] button_changed false
+[TEST] message ultrason:29.0
+[TEST] message potentiometre:970
+[TEST] message ultrason:28.8
+[TEST] message potentiometre:963
+[TEST] message ultrason:28.7
+[TEST] message potentiometre:955
+[TEST] message ultrason:28.5
+[TEST] message potentiometre:948
+[TEST] message ultrason:28.4
+[TEST] message potentiometre:939
+[TEST] message ultrason:28.2
+[TEST] message potentiometre:931
+[TEST] message ultrason:28.0
+[TEST] message potentiometre:922
+[TEST] message ultrason:27.9
+[TEST] message potentiometre:913
+[TEST] message ultrason:27.7
+[TEST] message potentiometre:903
+[TEST] message ultrason:27.5
+[TEST] message potentiometre:894
+[TEST] message ultrason:27.3
+[TEST] message potentiometre:884
+[TEST] message ultrason:27.1
+[TEST] message potentiometre:873
+[TEST] message ultrason:26.9
+[TEST] message potentiometre:862
+[TEST] message ultrason:26.7
+[TEST] message potentiometre:853
+[TEST] message ultrason:26.5
+[TEST] message potentiometre:843
+[TEST] message ultrason:26.3
+[TEST] message potentiometre:831
+[TEST] message ultrason:26.0
+[TEST] message potentiometre:819
+[TEST] message ultrason:25.8
+[TEST] message potentiometre:807
+[TEST] message ultrason:25.6
+[TEST] message potentiometre:795
+[TEST] message ultrason:25.3
+[TEST] message potentiometre:784
+[TEST] message ultrason:25.1
+[TEST] message potentiometre:774
+[TEST] message ultrason:24.9
+[TEST] message potentiometre:762
+[TEST] message ultrason:24.6
+[TEST] message potentiometre:749
+[TEST] message ultrason:24.4
+[TEST] message potentiometre:735
+[TEST] message ultrason:24.1
+[TEST] message potentiometre:721
+[TEST] message ultrason:23.8
+[TEST] message potentiometre:707
+[TEST] message ultrason:23.5
+[TEST] message potentiometre:693
+[TEST] message ultrason:23.3
+[TEST] message potentiometre:678
+[TEST] message ultrason:23.0
+[TEST] message potentiometre:663
+[TEST] message ultrason:22.7
+[TEST] message potentiometre:649
+[TEST] message ultrason:22.4
+[TEST] message potentiometre:635
+[TEST] message ultrason:22.1
+[TEST] message potentiometre:619
+[TEST] message ultrason:21.8
+[TEST] message potentiometre:604
+[TEST] message ultrason:21.6
+[TEST] message potentiometre:590
+[TEST] button_changed true
+[TEST] message ultrason:21.3
+[TEST] message potentiometre:575
+[TEST] message ultrason:21.0
+[TEST] message potentiometre:560
+[TEST] message ultrason:20.7
+[TEST] message potentiometre:545
+[TEST] message ultrason:20.4
+[TEST] message potentiometre:532
+[TEST] message ultrason:20.2
+[TEST] message potentiometre:519
+[TEST] message ultrason:19.9
+[TEST] message potentiometre:504
+[TEST] message ultrason:19.5
+[TEST] message potentiometre:488
+[TEST] message ultrason:19.2
+[TEST] message potentiometre:472
+[TEST] message ultrason:18.9
+[TEST] message potentiometre:457
+[TEST] message ultrason:18.6
+[TEST] message potentiometre:441
+[TEST] message ultrason:18.3
+[TEST] message potentiometre:426
+[TEST] message ultrason:18.1
+[TEST] message potentiometre:413
+[TEST] message ultrason:17.8
+[TEST] message potentiometre:398
+[TEST] message ultrason:17.5
+[TEST] message potentiometre:383
+[TEST] message ultrason:17.3
+[TEST] message potentiometre:371
+[TEST] message ultrason:17.0
+[TEST] message potentiometre:356
+[TEST] message ultrason:16.7
+[TEST] message potentiometre:342
+[TEST] message ultrason:16.4
+[TEST] message potentiometre:328
+[TEST] message ultrason:16.2
+[TEST] message potentiometre:314
+[TEST] message ultrason:15.9
+[TEST] message potentiometre:300
+[TEST] message ultrason:15.6
+[TEST] message potentiometre:288
+[TEST] message ultrason:15.4
+[TEST] BILAN apparie=true port=tcp://127.0.0.1:5555 sensor=0 button=3 enc=0 autres=192 derniere_valeur_sensor=0 position_enc=0
+FMOD Sound System: System released

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://3rk8hxjrpn83"]
+
+[ext_resource type="Script" uid="uid://6ieuh84safft" path="res://Scènes/Demo_Prof/Object_To_Catch_1.gd" id="1_g8lwa"]
+[ext_resource type="PackedScene" uid="uid://c7ylh3a5tkxnn" path="res://Graphismes/Objets 3D/Environment Sets/HalloweenBits/candle_triple.gltf" id="2_ldn4m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00yjl"]
+size = Vector3(2.21851, 3.08179, 2.52832)
+
+[node name="Object_To_Catch_1" type="Area3D" unique_id=1802254655]
+script = ExtResource("1_g8lwa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=462674161]
+shape = SubResource("BoxShape3D_00yjl")
+
+[node name="candle_triple" parent="." unique_id=1524452560 instance=ExtResource("2_ldn4m")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=375978606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08888, 0)
+light_color = Color(1, 0.772549, 0.156863, 1)
+light_energy = 3.939
+omni_range = 2.14
+omni_attenuation = 0.366022
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2025515808]
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
