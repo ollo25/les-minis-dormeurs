@@ -1,13 +1,15 @@
 extends Node3D
-## Commode : un tiroir s'ouvre tout seul quand la main du joueur s'en approche,
-## puis se referme quand elle s'éloigne (avec les objets rangés dedans).
+## Commode : un tiroir s'ouvre tout seul quand la main du joueur est devant lui,
+## puis se referme quand elle s'en va (avec les objets rangés dedans).
 
 const OUVERTURE := 0.35        # le tiroir sort de 35 cm
-const DISTANCE_MAIN := 0.45    # distance main ↔ façade pour ouvrir
-const VITESSE := 3.0           # vitesse d'ouverture / fermeture
+const VITESSE := 1.5           # vitesse d'ouverture / fermeture (m/s)
+const PORTEE := 0.6            # la main doit être à moins de 60 cm devant la façade
+const MARGE := 0.05            # une fois ouvert, on garde le tiroir ouvert un peu plus loin (évite le clignotement)
 
 @onready var tiroirs: Array[Node3D] = [$Tiroir_Haut, $Tiroir_Milieu, $Tiroir_Bas]
 var position_fermee := {}
+var tiroir_ouvert: Node3D = null
 
 
 func _ready() -> void:
@@ -17,17 +19,27 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var main := Partie.position_main()
-	# On n'ouvre que le tiroir le plus proche de la main (s'il est assez proche)
-	var plus_proche: Node3D = null
-	var meilleure := DISTANCE_MAIN
-	for t in tiroirs:
-		var facade: Vector3 = t.get_node("Facade").global_position
-		var d := main.distance_to(facade)
-		if d < meilleure:
-			meilleure = d
-			plus_proche = t
+	# Si le tiroir déjà ouvert a toujours la main devant lui, on le garde ouvert.
+	# Sinon on cherche un autre tiroir avec la main devant.
+	if tiroir_ouvert == null or not _main_devant(tiroir_ouvert, main, MARGE):
+		tiroir_ouvert = null
+		for t in tiroirs:
+			if _main_devant(t, main, 0.0):
+				tiroir_ouvert = t
+				break
 	for t in tiroirs:
 		var cible: Vector3 = position_fermee[t]
-		if t == plus_proche:
+		if t == tiroir_ouvert:
 			cible.x -= OUVERTURE      # la façade est du côté -X de la commode
 		t.position = t.position.move_toward(cible, VITESSE * delta)
+
+
+## La main est-elle "devant" ce tiroir ? On regarde depuis la position FERMÉE du tiroir,
+## pour que le fait qu'il bouge ne change pas la réponse (sinon il s'ouvre/ferme en boucle).
+func _main_devant(t: Node3D, main: Vector3, marge: float) -> bool:
+	var repere := global_transform * Transform3D(Basis(), position_fermee[t])
+	var p := repere.affine_inverse() * main     # position de la main vue depuis le tiroir fermé
+	var dans_la_largeur := absf(p.z) < 0.48 + marge          # la façade fait 90 cm de large
+	var a_la_hauteur := absf(p.y) < 0.135 + marge            # chaque tiroir fait 24 cm de haut
+	var devant := p.x > -PORTEE - marge and p.x < 0.1         # devant la façade (côté -X)
+	return dans_la_largeur and a_la_hauteur and devant

@@ -2,6 +2,7 @@ extends Node3D
 ## Scène de jeu : la chambre du bébé.
 ## - Mode normal : active la VR (OpenXR) si le casque est détecté.
 ##   Joystick de la manette droite = se déplacer (dans la direction où on regarde).
+##   Bouton B = recaler le sol (manette posée par terre).
 ## - Mode debug (ou pas de casque) : on se déplace au clavier/souris.
 ##   ZQSD / flèches = se déplacer, souris = regarder, Échap = libérer la souris,
 ##   clic gauche maintenu = attraper l'objet visé, C = s'accroupir, F1 = retour à l'écran d'accueil.
@@ -145,7 +146,7 @@ func _deplacement_vr() -> void:
 	var joystick: Vector2 = main_droite.get_vector2("primary")   # x = gauche/droite, y = avant/arrière
 	# Le corps se place sous la tête du joueur (il peut aussi marcher en vrai dans sa pièce)
 	var tete := camera.global_position
-	corps_vr.global_position = Vector3(tete.x, origine.global_position.y, tete.z)
+	corps_vr.global_position = Vector3(tete.x, 0, tete.z)   # toujours posé sur le sol du jeu
 	if joystick.length() < ZONE_MORTE:
 		return
 	# Directions "devant" et "à droite" selon le regard, à plat (sans monter ni descendre)
@@ -159,7 +160,8 @@ func _deplacement_vr() -> void:
 	var avant := corps_vr.global_position
 	corps_vr.move_and_slide()   # s'arrête contre les meubles
 	# On décale tout le "monde du joueur" du trajet réellement fait par le corps
-	origine.global_position += corps_vr.global_position - avant
+	var trajet := corps_vr.global_position - avant
+	origine.global_position += Vector3(trajet.x, 0, trajet.z)   # jamais en hauteur
 
 
 func _physics_process(_delta: float) -> void:

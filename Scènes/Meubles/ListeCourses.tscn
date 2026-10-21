@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/liste_courses.gd" id="script_liste"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Papier"]
+resource_name = "Papier"
+albedo_color = Color(0.96, 0.94, 0.88, 1)
+roughness = 1.0
+emission_enabled = true
+emission = Color(0.96, 0.94, 0.88, 1)
+emission_energy_multiplier = 0.25
+
+[sub_resource type="StandardMaterial3D" id="mat_Scotch"]
+resource_name = "Scotch"
+albedo_color = Color(1, 0.561, 0.694, 1)
+roughness = 0.9
+
+[node name="ListeCourses" type="Node3D"]
+script = ExtResource("script_liste")
+
+[node name="Feuille" type="CSGBox3D" parent="."]
+size = Vector3(0.21, 0.297, 0.002)
+material = SubResource("mat_Papier")
+
+[node name="Scotch" type="CSGBox3D" parent="."]
+transform = Transform3D(0.985, 0.174, 0, -0.174, 0.985, 0, 0, 0, 1, 0, 0.145, 0.002)
+size = Vector3(0.07, 0.022, 0.001)
+material = SubResource("mat_Scotch")
+
+[node name="Titre" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0.115, 0.003)
+pixel_size = 0.0007
+modulate = Color(0.15, 0.18, 0.45, 1)
+outline_size = 0
+font_size = 34
+horizontal_alignment = 0
+text = "À ranger :"

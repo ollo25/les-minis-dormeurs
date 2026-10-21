@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" path="res://Scènes/Objets/Plaid.tscn" id="o_Plaid"]
 [ext_resource type="PackedScene" path="res://Scènes/Objets/Cube.tscn" id="o_Cube"]
 [ext_resource type="Script" path="res://Scripts/main_droite.gd" id="script_main"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/ListeCourses.tscn" id="m_ListeCourses"]
 [sub_resource type="Environment" id="env"]
 background_mode = 1
 background_color = Color(0.01, 0.012, 0.03, 1)
@@ -197,6 +198,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 2.2)
 [node name="PoubelleACouches" parent="Meubles" unique_id=630281141 instance=ExtResource("m_PoubelleACouches")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.7)
 
+
+[node name="ListeCourses" parent="Meubles" instance=ExtResource("m_ListeCourses")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.985, 1.45, 0.12)
 
 [node name="Objets" type="Node3D" parent="."]
 
