@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_TissuGris"]
+resource_name = "TissuGris"
+albedo_color = Color(0.55, 0.53, 0.50, 1)
+roughness = 1.0
+
+[node name="Fauteuil" type="Node3D"]
+
+[node name="Forme" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Assise" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
+size = Vector3(0.75, 0.44, 0.7)
+material = SubResource("mat_TissuGris")
+
+[node name="Dossier" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0.28)
+size = Vector3(0.75, 0.55, 0.14)
+material = SubResource("mat_TissuGris")
+
+[node name="AccoudoirG" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34, 0.55, 0)
+size = Vector3(0.1, 0.22, 0.7)
+material = SubResource("mat_TissuGris")
+
+[node name="AccoudoirD" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0.55, 0)
+size = Vector3(0.1, 0.22, 0.7)
+material = SubResource("mat_TissuGris")

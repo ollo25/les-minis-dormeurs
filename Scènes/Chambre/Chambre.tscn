@@ -1,33 +1,37 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://Scènes/Chambre/chambre.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Berceau.tscn" id="m_Berceau"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableDeNuit.tscn" id="m_TableDeNuit"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Commode.tscn" id="m_Commode"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/BacAJouets.tscn" id="m_BacAJouets"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Fauteuil.tscn" id="m_Fauteuil"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Etagere.tscn" id="m_Etagere"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Tapis.tscn" id="m_Tapis"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Porte.tscn" id="m_Porte"]
 
 [sub_resource type="StandardMaterial3D" id="mat_Mur"]
 resource_name = "Mur"
-albedo_color = Color(0.13, 0.16, 0.32, 1)
+albedo_color = Color(0.86, 0.83, 0.78, 1)
+roughness = 0.95
 
 [sub_resource type="StandardMaterial3D" id="mat_Sol"]
-resource_name = "Sol"
-albedo_color = Color(0.22, 0.24, 0.33, 1)
+resource_name = "Parquet"
+albedo_color = Color(0.45, 0.32, 0.22, 1)
+roughness = 0.8
 
 [sub_resource type="StandardMaterial3D" id="mat_Plafond"]
 resource_name = "Plafond"
-albedo_color = Color(0.10, 0.12, 0.25, 1)
-
-[sub_resource type="StandardMaterial3D" id="mat_Matelas"]
-resource_name = "Matelas"
-albedo_color = Color(0.85, 0.90, 1, 1)
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 1.0
 
 [sub_resource type="Environment" id="env"]
 background_mode = 1
-background_color = Color(0.02, 0.03, 0.08, 1)
+background_color = Color(0.01, 0.012, 0.02, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.25, 0.3, 0.6, 1)
-ambient_light_energy = 0.35
+ambient_light_color = Color(0.55, 0.6, 0.75, 1)
+ambient_light_energy = 0.2
 tonemap_mode = 3
-glow_enabled = true
-glow_intensity = 0.9
-glow_bloom = 0.1
 
 [node name="Chambre" type="Node3D"]
 script = ExtResource("1_script")
@@ -40,75 +44,84 @@ use_collision = true
 
 [node name="Sol" type="CSGBox3D" parent="Piece"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
-size = Vector3(4.2, 0.1, 3.7)
+size = Vector3(5.2, 0.1, 4.2)
 material = SubResource("mat_Sol")
 
 [node name="Plafond" type="CSGBox3D" parent="Piece"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, 0)
-size = Vector3(4.2, 0.1, 3.7)
+size = Vector3(5.2, 0.1, 4.2)
 material = SubResource("mat_Plafond")
 
 [node name="MurFond" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.8)
-size = Vector3(4.2, 2.5, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -2.05)
+size = Vector3(5.2, 2.5, 0.1)
 material = SubResource("mat_Mur")
 
 [node name="MurAvant" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 1.8)
-size = Vector3(4.2, 2.5, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 2.05)
+size = Vector3(5.2, 2.5, 0.1)
 material = SubResource("mat_Mur")
 
 [node name="MurGauche" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05, 1.25, 0)
-size = Vector3(0.1, 2.5, 3.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55, 1.25, 0)
+size = Vector3(0.1, 2.5, 4.2)
 material = SubResource("mat_Mur")
 
 [node name="MurDroite" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05, 1.25, 0)
-size = Vector3(0.1, 2.5, 3.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.25, 0)
+size = Vector3(0.1, 2.5, 4.2)
 material = SubResource("mat_Mur")
 
 [node name="TrouFenetre" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, -1.8)
-size = Vector3(1.0, 0.8, 0.4)
-material = SubResource("mat_Mur")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -2.05)
 operation = 2
+size = Vector3(1.2, 1.1, 0.4)
+material = SubResource("mat_Mur")
+
+[node name="Meubles" type="Node3D" parent="."]
+
+[node name="Berceau" parent="Meubles" instance=ExtResource("m_Berceau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, -1.65)
+
+[node name="TableDeNuit" parent="Meubles" instance=ExtResource("m_TableDeNuit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0, -1.75)
+
+[node name="Commode" parent="Meubles" instance=ExtResource("m_Commode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, -0.9)
+
+[node name="BacAJouets" parent="Meubles" instance=ExtResource("m_BacAJouets")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0, 0, 1.55)
+
+[node name="Fauteuil" parent="Meubles" instance=ExtResource("m_Fauteuil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, 1.45)
+
+[node name="Etagere" parent="Meubles" instance=ExtResource("m_Etagere")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38, 1.4, 0.1)
+
+[node name="Tapis" parent="Meubles" instance=ExtResource("m_Tapis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0.2)
+
+[node name="Porte" parent="Meubles" instance=ExtResource("m_Porte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48, 0, 1.0)
 
 [node name="Lumieres" type="Node3D" parent="."]
 
-[node name="ClairDeLune" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.4)
-light_color = Color(0.45, 0.55, 1, 1)
-light_energy = 0.8
-omni_range = 2.5
-
-[node name="EtoileRose" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 2.35, 0.6)
-light_color = Color(1, 0.4, 0.7, 1)
-light_energy = 0.5
-omni_range = 2.2
-
-[node name="EtoileCyan" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 2.35, 0.2)
-light_color = Color(0.3, 0.9, 1, 1)
-light_energy = 0.5
-omni_range = 2.2
-
-[node name="EtoileViolette" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35, -0.7)
-light_color = Color(0.65, 0.4, 1, 1)
-light_energy = 0.5
-omni_range = 2.2
-
-[node name="LumiereVeilleuse" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0.8, -1.4)
-light_color = Color(1, 0.65, 0.35, 1)
-light_energy = 1.5
-omni_range = 3.0
+[node name="ClairDeLune" type="SpotLight3D" parent="Lumieres"]
+transform = Transform3D(-0.98328197, -0.1363057, 0.12073634, 0, 0.6630612, 0.74856526, -0.18208927, 0.7360507, -0.65197617, 0.3, 3.1, -3.3)
+light_color = Color(0.7, 0.78, 1, 1)
+light_energy = 6.0
 shadow_enabled = true
+spot_range = 8.0
+spot_angle = 22.0
+
+[node name="LueurFenetre" type="OmniLight3D" parent="Lumieres"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -1.7)
+light_color = Color(0.6, 0.68, 0.9, 1)
+light_energy = 0.4
+omni_range = 3.0
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
@@ -122,7 +135,6 @@ pose = &"grip"
 radius = 0.04
 radial_segments = 12
 rings = 6
-material = SubResource("mat_Matelas")
 
 [node name="MainDroite" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.1, -0.3)
@@ -133,4 +145,3 @@ pose = &"grip"
 radius = 0.04
 radial_segments = 12
 rings = 6
-material = SubResource("mat_Matelas")

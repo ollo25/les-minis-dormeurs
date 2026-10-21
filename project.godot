@@ -19,7 +19,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Godot_Blocks"
-run/main_scene="res://Scènes/Chambre/Chambre.tscn"
+run/main_scene="res://Scènes/Accueil/Accueil.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 run/max_fps=60
 boot_splash/image="res://Ne pas toucher/Godot Blocks screen.png"
@@ -30,6 +30,7 @@ config/icon="res://Ne pas toucher/Godot Blocks logo.png"
 g_vars="*res://Ne pas toucher/Scripts/g_vars.gd"
 ArduinoManager="*uid://cd8gwrj6qyt62"
 FmodManager="*uid://cds10pm7hwn3p"
+Partie="*res://Scripts/partie.gd"
 
 [display]
 

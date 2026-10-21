@@ -48,11 +48,11 @@ Le code de la branche, tel qu'il est dans la copie :
 
 ```gdscript
 "enc":
-    var new_position := value.to_int()
-    var delta := new_position - encoder_position
-    encoder_position = new_position
-    if delta != 0:
-        emit_signal("encoder_changed", encoder_position, delta)
+	var new_position := value.to_int()
+	var delta := new_position - encoder_position
+	encoder_position = new_position
+	if delta != 0:
+		emit_signal("encoder_changed", encoder_position, delta)
 ```
 
 ## 4. Exemple d'utilisation dans un jeu

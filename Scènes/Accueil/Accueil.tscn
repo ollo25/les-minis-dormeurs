@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scènes/Accueil/accueil.gd" id="1_accueil"]
+
+[node name="Accueil" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_accueil")
+
+[node name="Fond" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.09, 0.16, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -330.0
+offset_right = 350.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Titre" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Don't Wake Up
+The Baby"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 15
+
+[node name="StatusDot" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(1, 0, 0, 1)
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Arduino pas connecté"
+
+[node name="BoutonJouer" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+disabled = true
+text = "Jouer"
+
+[node name="BoutonDebug" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Jouer sans Arduino (debug clavier)"
+
+[node name="BoutonQuitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Quitter"
+
+[connection signal="pressed" from="VBoxContainer/BoutonJouer" to="." method="_on_bouton_jouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoutonDebug" to="." method="_on_bouton_debug_pressed"]
+[connection signal="pressed" from="VBoxContainer/BoutonQuitter" to="." method="_on_bouton_quitter_pressed"]

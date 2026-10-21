@@ -15,9 +15,9 @@ Extrait (17/10/2026) des notes techniques du projet écrites en avril 2026 avec 
   - `set_parameter(name, value)` takes the parameter name as the first arg. Passing the event name (`"MusiqueNiv1"`) silently fails with `Cannot set parameter MusiqueNiv1 to value 0.000000` — the plugin coerces the label string to float `0.0`. Always verify in the "Fmod banks explorer" window inside Godot.
 - **Local vs global parameters — critical distinction** (different API for each, and the banks explorer is misleading):
   - **Local parameter**: declared inside a single event, drives that event only. Set it on the emitter:
-    ```gdscript
-    $FmodEventEmitter2D_music.set_parameter("MusiqueEtat", "Etat1")
-    ```
+	```gdscript
+	$FmodEventEmitter2D_music.set_parameter("MusiqueEtat", "Etat1")
+	```
   - **Global parameter**: declared at Studio-project level, shared by any event that references it. Set it on the Studio system via the plugin's global API:
 	```gdscript
 	FmodServer.set_global_parameter_by_name("Hauteur", value_float)
@@ -317,4 +317,3 @@ If all five check out, wire the script into the FMOD Studio post-build hook and 
 - We have not verified that the plugin also poisons non-scene resources (e.g. `.tres`). The grep for `fmod_parameters/` in the current repo only hits `.tscn`, so the scope is probably limited to scenes, but worth confirming if new resource types are added.
 - We have not verified Tom's Windows workflow experiences this same crash. If he does, the `.dll` has the same null-deref bug and Steps 1/2/3 would also need to run in his environment.
 - We have not checked whether the plugin exposes a public "resolve all cached IDs" method that could be called at startup to re-hydrate caches without touching scene files. Worth grepping `strings libGodotFmod.macos.editor` for something like `refresh_parameter_ids` before committing to the strip approach — if it exists, a one-line `FmodServer.refresh_caches()` in an autoload could replace the whole plan.
-

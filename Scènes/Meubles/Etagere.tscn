@@ -1,0 +1,46 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_BoisFonce"]
+resource_name = "BoisFonce"
+albedo_color = Color(0.42, 0.30, 0.20, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
+resource_name = "Bleu"
+albedo_color = Color(0.45, 0.60, 0.85, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(0.90, 0.50, 0.60, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_Vert"]
+resource_name = "Vert"
+albedo_color = Color(0.45, 0.70, 0.50, 1)
+roughness = 0.85
+
+[node name="Etagere" type="Node3D"]
+
+[node name="Planche" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.25, 0.03, 1.0)
+material = SubResource("mat_BoisFonce")
+use_collision = true
+
+[node name="Livres" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.3)
+size = Vector3(0.15, 0.18, 0.2)
+material = SubResource("mat_Bleu")
+
+[node name="Boule" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.1)
+radius = 0.06
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Rose")
+
+[node name="Boite" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0.35)
+size = Vector3(0.14, 0.11, 0.14)
+material = SubResource("mat_Vert")
