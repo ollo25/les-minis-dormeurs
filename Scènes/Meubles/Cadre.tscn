@@ -1,0 +1,23 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_Cadre"]
+resource_name = "Cadre"
+albedo_color = Color(0.35, 0.25, 0.18, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_Image1"]
+resource_name = "Image1"
+albedo_color = Color(0.85, 0.75, 0.55, 1)
+roughness = 1.0
+
+[node name="Cadre" type="Node3D"]
+
+[node name="Bord" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.4, 0.5, 0.03)
+material = SubResource("mat_Cadre")
+
+[node name="Image" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.017)
+size = Vector3(0.32, 0.42, 0.005)
+material = SubResource("mat_Image1")

@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_Poignee"]
+resource_name = "Poignee"
+albedo_color = Color(0.75, 0.72, 0.65, 1)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="mat_Rideau"]
+resource_name = "Rideau"
+albedo_color = Color(0.55, 0.62, 0.75, 1)
+roughness = 1.0
+
+[node name="Rideaux" type="Node3D"]
+
+[node name="Tringle" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+size = Vector3(1.9, 0.025, 0.025)
+material = SubResource("mat_Poignee")
+
+[node name="RideauGauche" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78, 1.3, 0.02)
+size = Vector3(0.32, 1.6, 0.04)
+material = SubResource("mat_Rideau")
+
+[node name="RideauDroit" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78, 1.3, 0.02)
+size = Vector3(0.32, 1.6, 0.04)
+material = SubResource("mat_Rideau")

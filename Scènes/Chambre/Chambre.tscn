@@ -9,6 +9,14 @@
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Etagere.tscn" id="m_Etagere"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Tapis.tscn" id="m_Tapis"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Porte.tscn" id="m_Porte"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Armoire.tscn" id="m_Armoire"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableALanger.tscn" id="m_TableALanger"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Rideaux.tscn" id="m_Rideaux"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Cadre.tscn" id="m_Cadre"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Plafonnier.tscn" id="m_Plafonnier"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/PanierALinge.tscn" id="m_PanierALinge"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Pouf.tscn" id="m_Pouf"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/CielDeNuit.tscn" id="m_CielDeNuit"]
 
 [sub_resource type="StandardMaterial3D" id="mat_Mur"]
 resource_name = "Mur"
@@ -30,7 +38,7 @@ background_mode = 1
 background_color = Color(0.01, 0.012, 0.02, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.55, 0.6, 0.75, 1)
-ambient_light_energy = 0.2
+ambient_light_energy = 0.12
 tonemap_mode = 3
 
 [node name="Chambre" type="Node3D"]
@@ -96,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0, 0, 1.55)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, 1.45)
 
 [node name="Etagere" parent="Meubles" instance=ExtResource("m_Etagere")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38, 1.4, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38, 1.55, -0.9)
 
 [node name="Tapis" parent="Meubles" instance=ExtResource("m_Tapis")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0.2)
@@ -104,21 +112,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0.2)
 [node name="Porte" parent="Meubles" instance=ExtResource("m_Porte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.48, 0, 1.0)
 
+[node name="Armoire" parent="Meubles" instance=ExtResource("m_Armoire")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 1.72)
+
+[node name="TableALanger" parent="Meubles" instance=ExtResource("m_TableALanger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 0, -0.0)
+
+[node name="Rideaux" parent="Meubles" instance=ExtResource("m_Rideaux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97)
+
+[node name="CadreMurDroit" parent="Meubles" instance=ExtResource("m_Cadre")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.48, 1.65, -0.9)
+
+[node name="CadreMurAvant" parent="Meubles" instance=ExtResource("m_Cadre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.6, 1.98)
+
+[node name="CadreMurAvant2" parent="Meubles" instance=ExtResource("m_Cadre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 1.75, 1.98)
+
+[node name="Plafonnier" parent="Meubles" instance=ExtResource("m_Plafonnier")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="PanierALinge" parent="Meubles" instance=ExtResource("m_PanierALinge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 0, 0.05)
+
+[node name="Pouf" parent="Meubles" instance=ExtResource("m_Pouf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0, 0.75)
+
+[node name="Dehors" type="Node3D" parent="."]
+
+[node name="CielDeNuit" parent="Dehors" instance=ExtResource("m_CielDeNuit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.2, -6.5)
+
 [node name="Lumieres" type="Node3D" parent="."]
 
-[node name="ClairDeLune" type="SpotLight3D" parent="Lumieres"]
-transform = Transform3D(-0.98328197, -0.1363057, 0.12073634, 0, 0.6630612, 0.74856526, -0.18208927, 0.7360507, -0.65197617, 0.3, 3.1, -3.3)
-light_color = Color(0.7, 0.78, 1, 1)
-light_energy = 6.0
+[node name="ClairDeLune" type="DirectionalLight3D" parent="Lumieres"]
+transform = Transform3D(-0.9767444, 0.11749593, -0.17934656, 0, 0.83647615, 0.54800344, 0.2144073, 0.5352593, -0.8170233, -0.57390904, 3.203611, -4.6644745)
+light_color = Color(0.72, 0.8, 1, 1)
+light_energy = 1.6
 shadow_enabled = true
-spot_range = 8.0
-spot_angle = 22.0
+directional_shadow_mode = 0
+directional_shadow_max_distance = 12.0
 
-[node name="LueurFenetre" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -1.7)
+[node name="RefletFenetre" type="OmniLight3D" parent="Lumieres"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, -1.2)
 light_color = Color(0.6, 0.68, 0.9, 1)
-light_energy = 0.4
-omni_range = 3.0
+light_energy = 0.35
+omni_range = 3.5
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)

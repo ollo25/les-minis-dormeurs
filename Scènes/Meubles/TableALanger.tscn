@@ -1,0 +1,86 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="mat_MatelasLanger"]
+resource_name = "MatelasLanger"
+albedo_color = Color(0.75, 0.85, 0.80, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Drap"]
+resource_name = "Drap"
+albedo_color = Color(0.80, 0.85, 0.92, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_Osier"]
+resource_name = "Osier"
+albedo_color = Color(0.70, 0.58, 0.40, 1)
+roughness = 1.0
+
+[node name="TableALanger" type="Node3D"]
+
+[node name="Structure" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Pied1" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.45, -0.42)
+size = Vector3(0.05, 0.9, 0.05)
+material = SubResource("mat_BlancLaque")
+
+[node name="Pied2" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.45, -0.42)
+size = Vector3(0.05, 0.9, 0.05)
+material = SubResource("mat_BlancLaque")
+
+[node name="Pied3" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.45, 0.42)
+size = Vector3(0.05, 0.9, 0.05)
+material = SubResource("mat_BlancLaque")
+
+[node name="Pied4" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.45, 0.42)
+size = Vector3(0.05, 0.9, 0.05)
+material = SubResource("mat_BlancLaque")
+
+[node name="Plateau" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
+size = Vector3(0.55, 0.04, 0.9)
+material = SubResource("mat_BlancLaque")
+
+[node name="EtageBas" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+size = Vector3(0.55, 0.03, 0.9)
+material = SubResource("mat_BlancLaque")
+
+[node name="BordArriere" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.98, 0)
+size = Vector3(0.04, 0.16, 0.9)
+material = SubResource("mat_BlancLaque")
+
+[node name="BordG" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, -0.43)
+size = Vector3(0.55, 0.16, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="BordD" type="CSGBox3D" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, 0.43)
+size = Vector3(0.55, 0.16, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="MatelasALanger" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.93, 0)
+size = Vector3(0.45, 0.06, 0.8)
+material = SubResource("mat_MatelasLanger")
+
+[node name="PileDeLinge" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, -0.2)
+size = Vector3(0.35, 0.12, 0.3)
+material = SubResource("mat_Drap")
+
+[node name="Panier" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.22)
+size = Vector3(0.35, 0.16, 0.3)
+material = SubResource("mat_Osier")

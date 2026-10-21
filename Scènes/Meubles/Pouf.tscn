@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_Pouf"]
+resource_name = "Pouf"
+albedo_color = Color(0.70, 0.45, 0.50, 1)
+roughness = 1.0
+
+[node name="Pouf" type="Node3D"]
+
+[node name="Forme" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+radius = 0.25
+height = 0.4
+sides = 16
+use_collision = true
+material = SubResource("mat_Pouf")
