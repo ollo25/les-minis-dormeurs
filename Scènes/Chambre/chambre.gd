@@ -8,8 +8,8 @@ extends Node3D
 const VITESSE := 1.6            # m/s, vitesse de marche
 const SENSIBILITE := 0.0025     # rotation souris
 const HAUTEUR_YEUX := 1.6       # hauteur de la caméra en mode debug
-const LIMITE_X := 2.3           # on reste dans la pièce (5 x 4 m, moins une marge)
-const LIMITE_Z := 1.8
+const LIMITE_X := 2.8           # on reste dans la pièce (6 x 5 m, moins une marge)
+const LIMITE_Z := 2.3
 
 @onready var origine: XROrigin3D = $XROrigin3D
 @onready var camera: XRCamera3D = $XROrigin3D/XRCamera3D
