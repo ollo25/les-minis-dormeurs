@@ -1,0 +1,123 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/objet_rangeable.gd" id="script_objet"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Lilas"]
+resource_name = "Lilas"
+albedo_color = Color(0.949, 0.659, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Peau"]
+resource_name = "Peau"
+albedo_color = Color(1.0, 0.86, 0.76, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Cheveux"]
+resource_name = "Cheveux"
+albedo_color = Color(0.45, 0.30, 0.20, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Noir"]
+resource_name = "Noir"
+albedo_color = Color(0.12, 0.10, 0.14, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="BoxShape3D" id="forme"]
+size = Vector3(0.15, 0.25, 0.17)
+
+[node name="Poupee" type="RigidBody3D"]
+script = ExtResource("script_objet")
+nom_affiche = "Poupée"
+destination = "BacAJouets"
+bruyant = true
+
+[node name="Robe" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0)
+radius = 0.07
+height = 0.14
+sides = 12
+cone = true
+material = SubResource("mat_Lilas")
+
+[node name="Jupe" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.03)
+size = Vector3(0.14, 0.04, 0.12)
+material = SubResource("mat_Lilas")
+
+[node name="Tete" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
+radius = 0.05
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peau")
+
+[node name="Cheveux" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.012)
+radius = 0.052
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Cheveux")
+
+[node name="OeilG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018, 0.185, 0.046)
+radius = 0.006
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Noir")
+
+[node name="OeilD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018, 0.185, 0.046)
+radius = 0.006
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Noir")
+
+[node name="BrasG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0.1, 0.02)
+radius = 0.018
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peau")
+
+[node name="BrasD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0.1, 0.02)
+radius = 0.018
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peau")
+
+[node name="PiedG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.015, 0.1)
+radius = 0.02
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peau")
+
+[node name="PiedD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.015, 0.1)
+radius = 0.02
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peau")
+
+[node name="Noeud" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.03, 0.235, 0.0)
+inner_radius = 0.008
+outer_radius = 0.02
+sides = 10
+ring_sides = 6
+material = SubResource("mat_Rose")
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.02)
+shape = SubResource("forme")

@@ -1,0 +1,39 @@
+extends XRController3D
+## Main droite en VR : gâchette appuyée = attraper, gâchette relâchée = lâcher.
+## (La main gauche n'existe pas : le joueur tient le bébé.)
+
+@onready var zone_saisie: Area3D = $ZoneSaisie
+
+var objet_tenu: ObjetRangeable = null
+
+
+func _ready() -> void:
+	button_pressed.connect(_on_bouton_appuye)
+	button_released.connect(_on_bouton_relache)
+
+
+func _on_bouton_appuye(nom: String) -> void:
+	if nom == "trigger_click":
+		prendre()
+
+
+func _on_bouton_relache(nom: String) -> void:
+	if nom == "trigger_click":
+		lacher()
+
+
+func prendre() -> void:
+	if objet_tenu != null:
+		return
+	# On prend le premier objet rangeable qui touche la sphère de la main
+	for corps in zone_saisie.get_overlapping_bodies():
+		if corps is ObjetRangeable and not corps.est_range:
+			objet_tenu = corps
+			objet_tenu.etre_pris(self)
+			return
+
+
+func lacher() -> void:
+	if objet_tenu != null:
+		objet_tenu.etre_lache()
+		objet_tenu = null

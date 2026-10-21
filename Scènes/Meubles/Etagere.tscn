@@ -1,46 +1,85 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_BoisFonce"]
-resource_name = "BoisFonce"
-albedo_color = Color(0.42, 0.30, 0.20, 1)
-roughness = 0.85
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
 
-[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
-resource_name = "Bleu"
-albedo_color = Color(0.45, 0.60, 0.85, 1)
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
 roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_Rose"]
-resource_name = "Rose"
-albedo_color = Color(0.90, 0.50, 0.60, 1)
-roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_Vert"]
-resource_name = "Vert"
-albedo_color = Color(0.45, 0.70, 0.50, 1)
-roughness = 0.85
-
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
 [node name="Etagere" type="Node3D"]
 
 [node name="Planche" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(0.25, 0.03, 1.0)
-material = SubResource("mat_BoisFonce")
+material = SubResource("mat_BoisClair")
 use_collision = true
 
-[node name="Livres" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.3)
-size = Vector3(0.15, 0.18, 0.2)
-material = SubResource("mat_Bleu")
+[node name="Livre1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, -0.4)
+size = Vector3(0.16, 0.22, 0.035)
+material = SubResource("mat_Corail")
 
-[node name="Boule" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.1)
-radius = 0.06
-radial_segments = 12
-rings = 6
-material = SubResource("mat_Rose")
+[node name="Livre2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, -0.36)
+size = Vector3(0.16, 0.19, 0.035)
+material = SubResource("mat_Turquoise")
 
-[node name="Boite" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0.35)
-size = Vector3(0.14, 0.11, 0.14)
-material = SubResource("mat_Vert")
+[node name="Livre3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, -0.32)
+size = Vector3(0.16, 0.24, 0.035)
+material = SubResource("mat_JauneSoleil")
+
+[node name="Livre4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115, -0.28)
+size = Vector3(0.16, 0.2, 0.035)
+material = SubResource("mat_Violet")
+
+[node name="SerreLivre" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, -0.24)
+size = Vector3(0.12, 0.12, 0.03)
+material = SubResource("mat_BoisClair")
+
+[node name="Lune" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0.14, 0.1)
+
+[node name="Disque" type="CSGCylinder3D" parent="Lune"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+radius = 0.09
+height = 0.03
+sides = 24
+material = SubResource("mat_JauneSoleil")
+
+[node name="Creux" type="CSGCylinder3D" parent="Lune"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.041, 0.022, 0)
+operation = 2
+radius = 0.076
+height = 0.09
+sides = 24
+material = SubResource("mat_JauneSoleil")
+
+[node name="Etoile" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0.12, 0.35)
+polygon = PackedVector2Array(0.0, 0.08, -0.0212, 0.0291, -0.0761, 0.0247, -0.0342, -0.0111, -0.047, -0.0647, -0.0, -0.036, 0.047, -0.0647, 0.0342, -0.0111, 0.0761, 0.0247, 0.0212, 0.0291)
+depth = 0.03
+material = SubResource("mat_Corail")

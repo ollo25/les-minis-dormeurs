@@ -1,0 +1,51 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Pot"]
+resource_name = "Pot"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Feuille"]
+resource_name = "Feuille"
+albedo_color = Color(0.45, 0.78, 0.40, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
+[node name="Plante" type="Node3D"]
+
+[node name="Pot" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+radius = 0.16
+height = 0.3
+sides = 12
+use_collision = true
+material = SubResource("mat_Pot")
+
+[node name="Feuillage1" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+radius = 0.22
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Feuille")
+
+[node name="Feuillage2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.75, 0.05)
+radius = 0.16
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Feuille")
+
+[node name="Feuillage3" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.7, -0.05)
+radius = 0.17
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Feuille")
+
+[node name="Feuillage4" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.9, -0.02)
+radius = 0.12
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Feuille")

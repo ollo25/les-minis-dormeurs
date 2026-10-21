@@ -1,16 +1,50 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_Pouf"]
-resource_name = "Pouf"
-albedo_color = Color(0.70, 0.45, 0.50, 1)
-roughness = 1.0
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
 
+[sub_resource type="StandardMaterial3D" id="mat_Moutarde"]
+resource_name = "Moutarde"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.93, 0.89, 0.80, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_BleuNuit"]
+resource_name = "BleuNuit"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
 [node name="Pouf" type="Node3D"]
 
 [node name="Forme" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
 radius = 0.25
-height = 0.4
-sides = 16
+height = 0.36
+sides = 20
 use_collision = true
-material = SubResource("mat_Pouf")
+material = SubResource("mat_Moutarde")
+
+[node name="Dessus" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38, 0)
+radius = 0.24
+height = 0.04
+sides = 20
+material = SubResource("mat_Creme")
+
+[node name="Passepoil" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
+inner_radius = 0.235
+outer_radius = 0.26
+sides = 20
+ring_sides = 6
+material = SubResource("mat_BleuNuit")
+
+[node name="Bouton" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.405, 0)
+radius = 0.03
+height = 0.01
+sides = 12
+material = SubResource("mat_BleuNuit")

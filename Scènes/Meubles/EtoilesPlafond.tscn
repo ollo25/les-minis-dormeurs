@@ -1,0 +1,858 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="mat_BleuNuit"]
+resource_name = "BleuNuit"
+albedo_color = Color(0.05, 0.07, 0.20, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Or"]
+resource_name = "Or"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.85
+emission_enabled = true
+emission = Color(1.000, 0.894, 0.478, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="StandardMaterial3D" id="mat_EtoileBlanche"]
+resource_name = "EtoileBlanche"
+albedo_color = Color(1, 0.97, 0.88, 1)
+roughness = 0.85
+emission_enabled = true
+emission = Color(1, 0.95, 0.85, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="StandardMaterial3D" id="mat_Lune"]
+resource_name = "Lune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.85
+emission_enabled = true
+emission = Color(1.000, 0.894, 0.478, 1)
+emission_energy_multiplier = 2.5
+
+[node name="EtoilesPlafond" type="Node3D"]
+
+[node name="Peinture" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(6.0, 0.005, 5.0)
+material = SubResource("mat_BleuNuit")
+
+[node name="Etoile1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.83, -0.004, -2.25)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.36, -0.004, -2.23)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile3" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.82, -0.004, -2.23)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile4" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.35, -0.004, -2.4)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile5" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.86, -0.004, -2.32)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile6" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.56, -0.004, -2.34)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile7" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.05, -0.004, -2.19)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile8" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.55, -0.004, -2.39)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile9" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.94, -0.004, -2.34)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile10" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.43, -0.004, -2.31)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile11" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.78, -0.004, -2.26)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile12" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.21, -0.004, -2.29)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile13" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.7, -0.004, -2.2)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile14" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.55, -0.004, -1.85)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile15" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.06, -0.004, -1.9)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile16" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.55, -0.004, -1.72)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile17" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.13, -0.004, -1.78)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile18" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.72, -0.004, -1.72)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile19" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.3, -0.004, -1.88)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile20" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.26, -0.004, -1.89)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile21" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.8, -0.004, -1.92)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile22" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.2, -0.004, -1.8)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile23" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.74, -0.004, -1.73)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile24" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.04, -0.004, -1.84)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile25" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.48, -0.004, -1.83)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile26" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.67, -0.004, -1.49)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile27" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.4, -0.004, -1.44)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile28" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.87, -0.004, -1.28)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile29" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.38, -0.004, -1.44)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile30" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.92, -0.004, -1.27)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile31" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.36, -0.004, -1.36)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile32" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.11, -0.004, -1.39)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile33" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.42, -0.004, -1.32)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile34" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.84, -0.004, -1.33)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile35" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.42, -0.004, -1.3)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile36" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.89, -0.004, -1.32)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile37" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.21, -0.004, -1.48)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile38" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.84, -0.004, -1.48)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile39" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.61, -0.004, -0.91)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile40" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.97, -0.004, -0.89)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile41" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.63, -0.004, -0.87)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile42" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.12, -0.004, -0.92)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile43" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.8, -0.004, -0.93)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile44" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.2, -0.004, -0.83)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile45" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.29, -0.004, -0.96)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile46" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.62, -0.004, -0.87)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile47" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.23, -0.004, -0.92)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile48" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.64, -0.004, -0.92)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile49" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.03, -0.004, -0.87)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile50" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.47, -0.004, -0.89)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile51" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.63, -0.004, -0.55)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile52" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.26, -0.004, -0.39)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile53" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.72, -0.004, -0.42)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile54" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.37, -0.004, -0.37)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile55" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.02, -0.004, -0.48)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile56" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.43, -0.004, -0.48)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile57" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.05, -0.004, -0.49)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile58" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.57, -0.004, -0.42)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile59" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.93, -0.004, -0.41)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile60" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.42, -0.004, -0.4)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile61" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.89, -0.004, -0.52)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile62" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.34, -0.004, -0.38)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile63" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.7, -0.004, -0.37)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile64" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.6, -0.004, 0.01)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile65" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.0, -0.004, -0.01)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile66" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.68, -0.004, -0.02)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile67" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.12, -0.004, -0.07)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile68" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.72, -0.004, -0.06)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile69" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.62, -0.004, -0.03)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile70" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.19, -0.004, -0.05)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile71" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.65, -0.004, -0.1)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile72" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.15, -0.004, 0.1)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile73" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.54, -0.004, -0.11)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile74" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.64, -0.004, 0.38)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile75" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.32, -0.004, 0.34)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile76" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.76, -0.004, 0.54)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile77" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.42, -0.004, 0.44)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile78" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.89, -0.004, 0.54)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile79" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.36, -0.004, 0.34)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile80" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.01, -0.004, 0.54)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile81" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.47, -0.004, 0.47)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile82" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.92, -0.004, 0.53)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile83" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.31, -0.004, 0.41)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile84" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.75, -0.004, 0.36)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile85" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.39, -0.004, 0.43)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile86" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.66, -0.004, 0.46)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile87" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.62, -0.004, 1.02)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile88" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.13, -0.004, 0.85)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile89" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.65, -0.004, 0.95)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile90" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.25, -0.004, 0.91)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile91" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.34, -0.004, 0.96)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile92" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.74, -0.004, 0.95)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile93" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.27, -0.004, 0.89)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile94" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.69, -0.004, 0.8)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile95" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.02, -0.004, 0.81)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile96" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.46, -0.004, 1.02)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile97" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.75, -0.004, 1.33)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile98" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.2, -0.004, 1.35)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile99" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.81, -0.004, 1.34)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile100" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.25, -0.004, 1.48)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile101" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.79, -0.004, 1.44)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile102" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.44, -0.004, 1.35)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile103" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.07, -0.004, 1.42)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile104" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.54, -0.004, 1.44)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile105" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.91, -0.004, 1.35)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile106" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.28, -0.004, 1.47)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile107" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.93, -0.004, 1.4)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile108" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.37, -0.004, 1.5)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile109" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.66, -0.004, 1.45)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile110" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.44, -0.004, 1.83)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile111" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.0, -0.004, 1.91)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile112" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.71, -0.004, 1.94)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile113" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.15, -0.004, 1.81)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile114" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.63, -0.004, 1.93)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile115" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.28, -0.004, 1.91)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile116" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.17, -0.004, 1.92)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile117" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.64, -0.004, 1.75)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile118" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.19, -0.004, 1.88)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile119" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.62, -0.004, 1.89)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile120" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.18, -0.004, 1.94)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile121" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.47, -0.004, 1.75)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile122" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.69, -0.004, 2.32)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile123" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -2.24, -0.004, 2.32)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile124" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.82, -0.004, 2.31)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile125" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.34, -0.004, 2.27)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile126" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.92, -0.004, 2.34)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile127" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.46, -0.004, 2.24)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile128" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.08, -0.004, 2.4)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile129" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.39, -0.004, 2.18)
+polygon = PackedVector2Array(0.0, 0.04, -0.0106, 0.0146, -0.038, 0.0124, -0.0171, -0.0056, -0.0235, -0.0324, -0.0, -0.018, 0.0235, -0.0324, 0.0171, -0.0056, 0.038, 0.0124, 0.0106, 0.0146)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile130" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.89, -0.004, 2.23)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile131" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.32, -0.004, 2.18)
+polygon = PackedVector2Array(0.0, 0.03, -0.0079, 0.0109, -0.0285, 0.0093, -0.0128, -0.0042, -0.0176, -0.0243, -0.0, -0.0135, 0.0176, -0.0243, 0.0128, -0.0042, 0.0285, 0.0093, 0.0079, 0.0109)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile132" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 1.78, -0.004, 2.21)
+polygon = PackedVector2Array(0.0, 0.07, -0.0185, 0.0255, -0.0666, 0.0216, -0.03, -0.0097, -0.0411, -0.0566, -0.0, -0.0315, 0.0411, -0.0566, 0.03, -0.0097, 0.0666, 0.0216, 0.0185, 0.0255)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Etoile133" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.34, -0.004, 2.21)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_Or")
+
+[node name="Etoile134" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.82, -0.004, 2.31)
+polygon = PackedVector2Array(0.0, 0.025, -0.0066, 0.0091, -0.0238, 0.0077, -0.0107, -0.0035, -0.0147, -0.0202, -0.0, -0.0113, 0.0147, -0.0202, 0.0107, -0.0035, 0.0238, 0.0077, 0.0066, 0.0091)
+depth = 0.002
+material = SubResource("mat_EtoileBlanche")
+
+[node name="Lune" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, -0.006, 0.9)
+
+[node name="Disque" type="CSGCylinder3D" parent="Lune"]
+radius = 0.3
+height = 0.004
+sides = 32
+material = SubResource("mat_Lune")
+
+[node name="Creux" type="CSGCylinder3D" parent="Lune"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0, -0.08)
+operation = 2
+radius = 0.26
+height = 0.02
+sides = 32
+material = SubResource("mat_Lune")

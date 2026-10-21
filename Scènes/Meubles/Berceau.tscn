@@ -1,35 +1,37 @@
 [gd_scene format=3]
 
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
-
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
 [sub_resource type="StandardMaterial3D" id="mat_Drap"]
 resource_name = "Drap"
-albedo_color = Color(0.80, 0.85, 0.92, 1)
+albedo_color = Color(0.88, 0.93, 1, 1)
 roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_Rose"]
-resource_name = "Rose"
-albedo_color = Color(0.90, 0.50, 0.60, 1)
-roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_Vert"]
-resource_name = "Vert"
-albedo_color = Color(0.45, 0.70, 0.50, 1)
-roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
-resource_name = "Bleu"
-albedo_color = Color(0.45, 0.60, 0.85, 1)
-roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_JauneJouets"]
-resource_name = "JauneJouets"
-albedo_color = Color(0.95, 0.72, 0.20, 1)
-roughness = 0.85
-
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
 [node name="Berceau" type="Node3D"]
 
 [node name="Structure" type="CSGCombiner3D" parent="."]
@@ -210,10 +212,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575, 0.63, 0.18)
 size = Vector3(0.02, 0.46, 0.02)
 material = SubResource("mat_BlancLaque")
 
+[node name="Boule1" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575, 0.92, -0.3)
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
+
+[node name="Boule2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575, 0.92, -0.3)
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
+
+[node name="Boule3" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575, 0.92, 0.3)
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
+
+[node name="Boule4" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.575, 0.92, 0.3)
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
+
 [node name="Matelas" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0)
 size = Vector3(1.1, 0.12, 0.55)
 material = SubResource("mat_Drap")
+
+[node name="TourDeLitArriere" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.27)
+size = Vector3(1.08, 0.2, 0.04)
+material = SubResource("mat_Turquoise")
+
+[node name="TourDeLitGauche" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54, 0.6, 0)
+size = Vector3(0.04, 0.2, 0.5)
+material = SubResource("mat_Turquoise")
+
+[node name="TourDeLitDroit" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54, 0.6, 0)
+size = Vector3(0.04, 0.2, 0.5)
+material = SubResource("mat_Turquoise")
 
 [node name="Mobile" type="Node3D" parent="."]
 
@@ -227,30 +272,63 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1.42, -0.14)
 size = Vector3(0.42, 0.02, 0.02)
 material = SubResource("mat_BlancLaque")
 
-[node name="Breloque1" type="CSGSphere3D" parent="Mobile"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.25, -0.14)
-radius = 0.035
-radial_segments = 12
-rings = 6
-material = SubResource("mat_Rose")
+[node name="Croix" type="CSGBox3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.41, -0.14)
+size = Vector3(0.02, 0.02, 0.3)
+material = SubResource("mat_BlancLaque")
 
-[node name="Breloque2" type="CSGSphere3D" parent="Mobile"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 1.25, 0.0)
-radius = 0.035
-radial_segments = 12
-rings = 6
-material = SubResource("mat_Vert")
+[node name="Fil1" type="CSGBox3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 1.33, -0.14)
+size = Vector3(0.004, 0.14, 0.004)
+material = SubResource("mat_BlancLaque")
 
-[node name="Breloque3" type="CSGSphere3D" parent="Mobile"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 1.25, -0.28)
-radius = 0.035
-radial_segments = 12
-rings = 6
-material = SubResource("mat_Bleu")
+[node name="Breloque1" type="CSGPolygon3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 1.23, -0.14)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.02
+material = SubResource("mat_JauneSoleil")
 
-[node name="Breloque4" type="CSGSphere3D" parent="Mobile"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42, 1.25, -0.14)
-radius = 0.035
-radial_segments = 12
-rings = 6
-material = SubResource("mat_JauneJouets")
+[node name="Fil2" type="CSGBox3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 1.33, -0.14)
+size = Vector3(0.004, 0.14, 0.004)
+material = SubResource("mat_BlancLaque")
+
+[node name="Breloque2" type="CSGPolygon3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 1.23, -0.14)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.02
+material = SubResource("mat_Corail")
+
+[node name="Fil3" type="CSGBox3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.33, -0.0)
+size = Vector3(0.004, 0.14, 0.004)
+material = SubResource("mat_BlancLaque")
+
+[node name="Breloque3" type="CSGCombiner3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.23, -0.0)
+
+[node name="Disque" type="CSGCylinder3D" parent="Mobile/Breloque3"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+radius = 0.05
+height = 0.02
+sides = 24
+material = SubResource("mat_Turquoise")
+
+[node name="Creux" type="CSGCylinder3D" parent="Mobile/Breloque3"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.023, 0.013, 0)
+operation = 2
+radius = 0.043
+height = 0.06
+sides = 24
+material = SubResource("mat_Turquoise")
+
+[node name="Fil4" type="CSGBox3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.33, -0.28)
+size = Vector3(0.004, 0.14, 0.004)
+material = SubResource("mat_BlancLaque")
+
+[node name="Breloque4" type="CSGPolygon3D" parent="Mobile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.23, -0.28)
+polygon = PackedVector2Array(0.0, 0.05, -0.0132, 0.0182, -0.0476, 0.0155, -0.0214, -0.007, -0.0294, -0.0405, -0.0, -0.0225, 0.0294, -0.0405, 0.0214, -0.007, 0.0476, 0.0155, 0.0132, 0.0182)
+depth = 0.02
+material = SubResource("mat_Violet")

@@ -1,31 +1,90 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_TissuGris"]
-resource_name = "TissuGris"
-albedo_color = Color(0.55, 0.53, 0.50, 1)
-roughness = 1.0
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
 
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
+roughness = 0.85
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Moutarde"]
+resource_name = "Moutarde"
+albedo_color = Color(0.92, 0.66, 0.15, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.93, 0.89, 0.80, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
 [node name="Fauteuil" type="Node3D"]
 
 [node name="Forme" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="Assise" type="CSGBox3D" parent="Forme"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0)
-size = Vector3(0.75, 0.44, 0.7)
-material = SubResource("mat_TissuGris")
+[node name="Pied1" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.07, -0.27)
+size = Vector3(0.05, 0.14, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied2" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.07, -0.27)
+size = Vector3(0.05, 0.14, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied3" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.07, 0.27)
+size = Vector3(0.05, 0.14, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied4" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.07, 0.27)
+size = Vector3(0.05, 0.14, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Base" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+size = Vector3(0.72, 0.14, 0.66)
+material = SubResource("mat_Moutarde")
+
+[node name="Coussin" type="CSGBox3D" parent="Forme"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, -0.03)
+size = Vector3(0.6, 0.12, 0.58)
+material = SubResource("mat_Moutarde")
 
 [node name="Dossier" type="CSGBox3D" parent="Forme"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0.28)
-size = Vector3(0.75, 0.55, 0.14)
-material = SubResource("mat_TissuGris")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.27)
+size = Vector3(0.72, 0.6, 0.14)
+material = SubResource("mat_Moutarde")
+
+[node name="HautDossier" type="CSGCylinder3D" parent="Forme"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.95, 0.27)
+radius = 0.07
+height = 0.72
+sides = 12
+material = SubResource("mat_Moutarde")
 
 [node name="AccoudoirG" type="CSGBox3D" parent="Forme"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34, 0.55, 0)
-size = Vector3(0.1, 0.22, 0.7)
-material = SubResource("mat_TissuGris")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33, 0.45, 0)
+size = Vector3(0.08, 0.12, 0.6)
+material = SubResource("mat_Moutarde")
 
 [node name="AccoudoirD" type="CSGBox3D" parent="Forme"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34, 0.55, 0)
-size = Vector3(0.1, 0.22, 0.7)
-material = SubResource("mat_TissuGris")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33, 0.45, 0)
+size = Vector3(0.08, 0.12, 0.6)
+material = SubResource("mat_Moutarde")
+
+[node name="ManchetteG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33, 0.515, 0)
+size = Vector3(0.09, 0.02, 0.6)
+material = SubResource("mat_BoisClair")
+
+[node name="ManchetteD" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33, 0.515, 0)
+size = Vector3(0.09, 0.02, 0.6)
+material = SubResource("mat_BoisClair")
+
+[node name="Couture" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.392, -0.03)
+size = Vector3(0.61, 0.005, 0.02)
+material = SubResource("mat_Creme")

@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
+roughness = 0.85
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Miroir"]
+resource_name = "Miroir"
+albedo_color = Color(0.70, 0.75, 0.80, 1)
+roughness = 0.1
+
+[node name="Miroir" type="Node3D"]
+
+[node name="Cadre" type="CSGCylinder3D" parent="."]
+radius = 0.25
+height = 0.03
+sides = 24
+material = SubResource("mat_BoisClair")
+
+[node name="Glace" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, 0)
+radius = 0.21
+height = 0.005
+sides = 24
+material = SubResource("mat_Miroir")

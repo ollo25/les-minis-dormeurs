@@ -1,24 +1,51 @@
 [gd_scene format=3]
 
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
-
+next_pass = ExtResource("contour")
 [sub_resource type="StandardMaterial3D" id="mat_Poignee"]
 resource_name = "Poignee"
 albedo_color = Color(0.75, 0.72, 0.65, 1)
 roughness = 0.3
 
+[sub_resource type="StandardMaterial3D" id="mat_PorteMenthe"]
+resource_name = "PorteMenthe"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.6
+next_pass = ExtResource("contour")
 [node name="Porte" type="Node3D"]
 
 [node name="Battant" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
 size = Vector3(0.04, 2.0, 0.85)
-material = SubResource("mat_BlancLaque")
+material = SubResource("mat_PorteMenthe")
 use_collision = true
 
 [node name="Poignee" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 1.0, -0.33)
 size = Vector3(0.04, 0.04, 0.12)
 material = SubResource("mat_Poignee")
+
+[node name="Moulure1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 1.45, 0)
+size = Vector3(0.006, 0.75, 0.6)
+material = SubResource("mat_BlancLaque")
+
+[node name="Panneau1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024, 1.45, 0)
+size = Vector3(0.006, 0.69, 0.54)
+material = SubResource("mat_PorteMenthe")
+
+[node name="Moulure2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.55, 0)
+size = Vector3(0.006, 0.75, 0.6)
+material = SubResource("mat_BlancLaque")
+
+[node name="Panneau2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024, 0.55, 0)
+size = Vector3(0.006, 0.69, 0.54)
+material = SubResource("mat_PorteMenthe")

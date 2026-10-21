@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[node name="Coussin" type="Node3D"]
+
+[node name="Forme" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.4, 0.35, 0.12)
+material = SubResource("mat_Corail")
+
+[node name="PassepoilH" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175, 0)
+size = Vector3(0.41, 0.015, 0.125)
+material = SubResource("mat_JauneSoleil")
+
+[node name="PassepoilB" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
+size = Vector3(0.41, 0.015, 0.125)
+material = SubResource("mat_JauneSoleil")

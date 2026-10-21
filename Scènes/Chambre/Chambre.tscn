@@ -1,27 +1,57 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://nkis20psfp08"]
 
-[ext_resource type="Script" path="res://Scènes/Chambre/chambre.gd" id="1_script"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Berceau.tscn" id="m_Berceau"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableDeNuit.tscn" id="m_TableDeNuit"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Commode.tscn" id="m_Commode"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/BacAJouets.tscn" id="m_BacAJouets"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Fauteuil.tscn" id="m_Fauteuil"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Etagere.tscn" id="m_Etagere"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Tapis.tscn" id="m_Tapis"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Porte.tscn" id="m_Porte"]
+[ext_resource type="Script" uid="uid://bsybgctvv3odb" path="res://Scènes/Chambre/chambre.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Armoire.tscn" id="m_Armoire"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableALanger.tscn" id="m_TableALanger"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Rideaux.tscn" id="m_Rideaux"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Cadre.tscn" id="m_Cadre"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Plafonnier.tscn" id="m_Plafonnier"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/PanierALinge.tscn" id="m_PanierALinge"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/Pouf.tscn" id="m_Pouf"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/BacAJouets.tscn" id="m_BacAJouets"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Berceau.tscn" id="m_Berceau"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/BibliothequeBasse.tscn" id="m_BibliothequeBasse"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/CadreEtoile.tscn" id="m_CadreEtoile"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/CadreLune.tscn" id="m_CadreLune"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/CadreSoleil.tscn" id="m_CadreSoleil"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/CielDeNuit.tscn" id="m_CielDeNuit"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Commode.tscn" id="m_Commode"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Coussin.tscn" id="m_Coussin"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/DecoMurale.tscn" id="m_DecoMurale"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Etagere.tscn" id="m_Etagere"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/EtoilesPlafond.tscn" id="m_EtoilesPlafond"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Fauteuil.tscn" id="m_Fauteuil"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Finitions.tscn" id="m_Finitions"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Miroir.tscn" id="m_Miroir"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/PanierALinge.tscn" id="m_PanierALinge"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Plafonnier.tscn" id="m_Plafonnier"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Plante.tscn" id="m_Plante"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Porte.tscn" id="m_Porte"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/PoubelleACouches.tscn" id="m_PoubelleACouches"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Pouf.tscn" id="m_Pouf"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Rideaux.tscn" id="m_Rideaux"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableALanger.tscn" id="m_TableALanger"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableDAppoint.tscn" id="m_TableDAppoint"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TableDeNuit.tscn" id="m_TableDeNuit"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Tapis.tscn" id="m_Tapis"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/TapisDEveil.tscn" id="m_TapisDEveil"]
 
-[sub_resource type="StandardMaterial3D" id="mat_Mur"]
-resource_name = "Mur"
-albedo_color = Color(0.86, 0.83, 0.78, 1)
-roughness = 0.95
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Ours.tscn" id="o_Ours"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Biberon.tscn" id="o_Biberon"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Livre.tscn" id="o_Livre"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Chaussette.tscn" id="o_Chaussette"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Hochet.tscn" id="o_Hochet"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Poupee.tscn" id="o_Poupee"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/BoiteAMusique.tscn" id="o_BoiteAMusique"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Train.tscn" id="o_Train"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Plaid.tscn" id="o_Plaid"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Cube.tscn" id="o_Cube"]
+[ext_resource type="Script" path="res://Scripts/main_droite.gd" id="script_main"]
+[sub_resource type="Environment" id="env"]
+background_mode = 1
+background_color = Color(0.01, 0.012, 0.03, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.78, 0.76, 0.84, 1)
+ambient_light_energy = 0.32
+tonemap_exposure = 1.15
+glow_enabled = true
+glow_intensity = 0.6
+glow_bloom = 0.05
+adjustment_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="mat_Sol"]
 resource_name = "Parquet"
@@ -31,122 +61,183 @@ roughness = 0.8
 [sub_resource type="StandardMaterial3D" id="mat_Plafond"]
 resource_name = "Plafond"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
-roughness = 1.0
 
-[sub_resource type="Environment" id="env"]
-background_mode = 1
-background_color = Color(0.01, 0.012, 0.02, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.55, 0.6, 0.75, 1)
-ambient_light_energy = 0.12
-tonemap_mode = 3
+[sub_resource type="StandardMaterial3D" id="mat_Mur"]
+resource_name = "Mur"
+albedo_color = Color(0.9, 0.86, 0.98, 1)
+roughness = 0.95
 
-[node name="Chambre" type="Node3D"]
+[sub_resource type="SphereShape3D" id="zone_main"]
+radius = 0.1
+
+[node name="Chambre" type="Node3D" unique_id=1203298745]
 script = ExtResource("1_script")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1002692651]
 environment = SubResource("env")
 
-[node name="Piece" type="CSGCombiner3D" parent="."]
+[node name="Piece" type="CSGCombiner3D" parent="." unique_id=421216716]
 use_collision = true
 
-[node name="Sol" type="CSGBox3D" parent="Piece"]
+[node name="Sol" type="CSGBox3D" parent="Piece" unique_id=911480287]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 size = Vector3(6.2, 0.1, 5.2)
 material = SubResource("mat_Sol")
 
-[node name="Plafond" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0)
+[node name="Plafond" type="CSGBox3D" parent="Piece" unique_id=147684130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, 0)
 size = Vector3(6.2, 0.1, 5.2)
 material = SubResource("mat_Plafond")
 
-[node name="MurFond" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, -2.55)
-size = Vector3(6.2, 2.7, 0.1)
+[node name="MurFond" type="CSGBox3D" parent="Piece" unique_id=268126028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -2.55)
+size = Vector3(6.2, 2.5, 0.1)
 material = SubResource("mat_Mur")
 
-[node name="MurAvant" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 2.55)
-size = Vector3(6.2, 2.7, 0.1)
+[node name="MurAvant" type="CSGBox3D" parent="Piece" unique_id=708465351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 2.55)
+size = Vector3(6.2, 2.5, 0.1)
 material = SubResource("mat_Mur")
 
-[node name="MurGauche" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05, 1.35, 0)
-size = Vector3(0.1, 2.7, 5.2)
+[node name="MurGauche" type="CSGBox3D" parent="Piece" unique_id=1311555345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05, 1.25, 0)
+size = Vector3(0.1, 2.5, 5.2)
 material = SubResource("mat_Mur")
 
-[node name="MurDroite" type="CSGBox3D" parent="Piece"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05, 1.35, 0)
-size = Vector3(0.1, 2.7, 5.2)
+[node name="MurDroite" type="CSGBox3D" parent="Piece" unique_id=1062915445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05, 1.25, 0)
+size = Vector3(0.1, 2.5, 5.2)
 material = SubResource("mat_Mur")
 
-[node name="TrouFenetre" type="CSGBox3D" parent="Piece"]
+[node name="TrouFenetre" type="CSGBox3D" parent="Piece" unique_id=1188630808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -2.55)
 operation = 2
 size = Vector3(1.2, 1.1, 0.4)
 material = SubResource("mat_Mur")
 
-[node name="Meubles" type="Node3D" parent="."]
+[node name="Finitions" parent="." unique_id=20327896 instance=ExtResource("m_Finitions")]
 
-[node name="Berceau" parent="Meubles" instance=ExtResource("m_Berceau")]
+[node name="DecoMurale" parent="." unique_id=2048813547 instance=ExtResource("m_DecoMurale")]
+
+[node name="EtoilesPlafond" parent="." unique_id=1501497412 instance=ExtResource("m_EtoilesPlafond")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.497, 0)
+
+[node name="Meubles" type="Node3D" parent="." unique_id=700144373]
+
+[node name="Berceau" parent="Meubles" unique_id=618954521 instance=ExtResource("m_Berceau")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0, -2.15)
 
-[node name="TableDeNuit" parent="Meubles" instance=ExtResource("m_TableDeNuit")]
+[node name="TableDeNuit" parent="Meubles" unique_id=488500149 instance=ExtResource("m_TableDeNuit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -2.25)
 
-[node name="Commode" parent="Meubles" instance=ExtResource("m_Commode")]
+[node name="Commode" parent="Meubles" unique_id=920777257 instance=ExtResource("m_Commode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, -1.1)
 
-[node name="BacAJouets" parent="Meubles" instance=ExtResource("m_BacAJouets")]
+[node name="BacAJouets" parent="Meubles" unique_id=1307334868 instance=ExtResource("m_BacAJouets")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0, 2.2)
 
-[node name="Fauteuil" parent="Meubles" instance=ExtResource("m_Fauteuil")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0, 2.05)
+[node name="Fauteuil" parent="Meubles" unique_id=1270796248 instance=ExtResource("m_Fauteuil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0, 2.05)
 
-[node name="Etagere" parent="Meubles" instance=ExtResource("m_Etagere")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88, 1.55, 0.0)
+[node name="Etagere" parent="Meubles" unique_id=494118420 instance=ExtResource("m_Etagere")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88, 1.55, 0)
 
-[node name="Tapis" parent="Meubles" instance=ExtResource("m_Tapis")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0.2)
+[node name="Tapis" parent="Meubles" unique_id=976116336 instance=ExtResource("m_Tapis")]
+transform = Transform3D(-0.023561053, 0, -1.499815, 0, 1.5, 0, 1.499815, 0, -0.023561053, -0.36722994, 0.005, 0.044333637)
 
-[node name="Porte" parent="Meubles" instance=ExtResource("m_Porte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98, 0, 1.0)
+[node name="Porte" parent="Meubles" unique_id=637788799 instance=ExtResource("m_Porte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98, 0, 1)
 
-[node name="Armoire" parent="Meubles" instance=ExtResource("m_Armoire")]
+[node name="Armoire" parent="Meubles" unique_id=602635191 instance=ExtResource("m_Armoire")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 2.22)
 
-[node name="TableALanger" parent="Meubles" instance=ExtResource("m_TableALanger")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0.0)
+[node name="TableALanger" parent="Meubles" unique_id=1397942781 instance=ExtResource("m_TableALanger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, 0)
 
-[node name="Rideaux" parent="Meubles" instance=ExtResource("m_Rideaux")]
+[node name="Rideaux" parent="Meubles" unique_id=1348256036 instance=ExtResource("m_Rideaux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.47)
+visible = false
 
-[node name="CadreMurDroit" parent="Meubles" instance=ExtResource("m_Cadre")]
+[node name="CadreMurDroit" parent="Meubles" unique_id=555999153 instance=ExtResource("m_CadreSoleil")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.98, 1.65, -1.1)
 
-[node name="CadreMurAvant" parent="Meubles" instance=ExtResource("m_Cadre")]
+[node name="CadreMurAvant" parent="Meubles" unique_id=1178680757 instance=ExtResource("m_CadreEtoile")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.6, 2.48)
 
-[node name="CadreMurAvant2" parent="Meubles" instance=ExtResource("m_Cadre")]
+[node name="CadreMurAvant2" parent="Meubles" unique_id=127786873 instance=ExtResource("m_CadreLune")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 1.75, 2.48)
 
-[node name="Plafonnier" parent="Meubles" instance=ExtResource("m_Plafonnier")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+[node name="Plafonnier" parent="Meubles" unique_id=1239717497 instance=ExtResource("m_Plafonnier")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 
-[node name="PanierALinge" parent="Meubles" instance=ExtResource("m_PanierALinge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, 0.0)
+[node name="PanierALinge" parent="Meubles" unique_id=2035501237 instance=ExtResource("m_PanierALinge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, -0.25)
 
-[node name="Pouf" parent="Meubles" instance=ExtResource("m_Pouf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 0.9)
+[node name="Pouf" parent="Meubles" unique_id=902390150 instance=ExtResource("m_Pouf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 1.3)
 
-[node name="Dehors" type="Node3D" parent="."]
+[node name="Plante" parent="Meubles" unique_id=1039147166 instance=ExtResource("m_Plante")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 0, -1.3)
 
-[node name="CielDeNuit" parent="Dehors" instance=ExtResource("m_CielDeNuit")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.2, -7.0)
+[node name="Miroir" parent="Meubles" unique_id=2141707967 instance=ExtResource("m_Miroir")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -2.98, 1.45, 1.15)
 
-[node name="Lumieres" type="Node3D" parent="."]
+[node name="Coussin" parent="Meubles" unique_id=746240620 instance=ExtResource("m_Coussin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0.62, 2.2)
 
-[node name="ClairDeLune" type="DirectionalLight3D" parent="Lumieres"]
+[node name="TapisDEveil" parent="Meubles" unique_id=779517087 instance=ExtResource("m_TapisDEveil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, -1.6)
+
+[node name="BibliothequeBasse" parent="Meubles" unique_id=263688185 instance=ExtResource("m_BibliothequeBasse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84, 0, 1.2)
+
+[node name="TableDAppoint" parent="Meubles" unique_id=973538331 instance=ExtResource("m_TableDAppoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 2.2)
+
+[node name="PoubelleACouches" parent="Meubles" unique_id=630281141 instance=ExtResource("m_PoubelleACouches")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.7)
+
+
+[node name="Objets" type="Node3D" parent="."]
+
+[node name="Ours" parent="Objets" instance=ExtResource("o_Ours")]
+transform = Transform3D(0.9659, 0, -0.2588, 0, 1, 0, 0.2588, 0, 0.9659, -2.2, 0.5, -2.18)
+
+[node name="Biberon" parent="Objets" instance=ExtResource("o_Biberon")]
+transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, -1.55, 0.5, -2.05)
+
+[node name="Plaid" parent="Objets" instance=ExtResource("o_Plaid")]
+transform = Transform3D(1.0, 0, -0.0, 0, 1, 0, 0.0, 0, 1.0, -1.7, 0.9, -1.85)
+
+[node name="Poupee" parent="Objets" instance=ExtResource("o_Poupee")]
+transform = Transform3D(-1.0, 0, -0.0, 0, 1, 0, 0.0, 0, -1.0, 1.55, 0.38, 1.98)
+
+[node name="Livre" parent="Objets" instance=ExtResource("o_Livre")]
+transform = Transform3D(0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, 0.9397, 0.15, 0.025, -0.55)
+
+[node name="Chaussette" parent="Objets" instance=ExtResource("o_Chaussette")]
+transform = Transform3D(0.8192, 0, 0.5736, 0, 1, 0, -0.5736, 0, 0.8192, 1.25, 0, -0.45)
+
+[node name="Hochet" parent="Objets" instance=ExtResource("o_Hochet")]
+transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -2.3, 0, -2.25)
+
+[node name="BoiteAMusique" parent="Objets" instance=ExtResource("o_BoiteAMusique")]
+transform = Transform3D(-0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, -0.9397, 0.15, 0, 1.75)
+
+[node name="Train" parent="Objets" instance=ExtResource("o_Train")]
+transform = Transform3D(0.9063, 0, 0.4226, 0, 1, 0, -0.4226, 0, 0.9063, -0.9, 0.025, 0.95)
+
+[node name="Cube" parent="Objets" instance=ExtResource("o_Cube")]
+transform = Transform3D(0.766, 0, -0.6428, 0, 1, 0, 0.6428, 0, 0.766, 0.35, 0.025, 0.45)
+
+[node name="Dehors" type="Node3D" parent="." unique_id=887627265]
+
+[node name="CielDeNuit" parent="Dehors" unique_id=454280268 instance=ExtResource("m_CielDeNuit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.2, -7)
+
+[node name="Lumieres" type="Node3D" parent="." unique_id=422077235]
+
+[node name="ClairDeLune" type="DirectionalLight3D" parent="Lumieres" unique_id=141133426]
 transform = Transform3D(-0.9767444, 0.11749593, -0.17934656, 0, 0.83647615, 0.54800344, 0.2144073, 0.5352593, -0.8170233, -0.57390904, 3.203611, -4.6644745)
 light_color = Color(0.72, 0.8, 1, 1)
 light_energy = 1.6
@@ -154,34 +245,36 @@ shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_max_distance = 12.0
 
-[node name="RefletFenetre" type="OmniLight3D" parent="Lumieres"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, -1.7)
+[node name="RefletFenetre" type="OmniLight3D" parent="Lumieres" unique_id=668588959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.7)
 light_color = Color(0.6, 0.68, 0.9, 1)
 light_energy = 0.35
 omni_range = 3.5
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
+[node name="LueurVeilleuse" type="OmniLight3D" parent="Lumieres" unique_id=1589847561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77, 0.85, -2.2)
+light_color = Color(1, 0.65, 0.3, 1)
+light_energy = 0.7
+omni_range = 2.6
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=10416314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1654729852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
-[node name="MainGauche" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.1, -0.3)
-tracker = &"left_hand"
-pose = &"grip"
-
-[node name="Visuel" type="CSGSphere3D" parent="XROrigin3D/MainGauche"]
-radius = 0.04
-radial_segments = 12
-rings = 6
-
-[node name="MainDroite" type="XRController3D" parent="XROrigin3D"]
+[node name="MainDroite" type="XRController3D" parent="XROrigin3D" unique_id=130729505]
+script = ExtResource("script_main")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.1, -0.3)
 tracker = &"right_hand"
 pose = &"grip"
 
-[node name="Visuel" type="CSGSphere3D" parent="XROrigin3D/MainDroite"]
+[node name="Visuel" type="CSGSphere3D" parent="XROrigin3D/MainDroite" unique_id=617564317]
 radius = 0.04
-radial_segments = 12
-rings = 6
+
+[node name="ZoneSaisie" type="Area3D" parent="XROrigin3D/MainDroite"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Forme" type="CollisionShape3D" parent="XROrigin3D/MainDroite/ZoneSaisie"]
+shape = SubResource("zone_main")

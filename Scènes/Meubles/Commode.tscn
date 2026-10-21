@@ -1,73 +1,206 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
-resource_name = "BoisClair"
-albedo_color = Color(0.72, 0.56, 0.40, 1)
-roughness = 0.85
-
-[sub_resource type="StandardMaterial3D" id="mat_BoisFonce"]
-resource_name = "BoisFonce"
-albedo_color = Color(0.42, 0.30, 0.20, 1)
-roughness = 0.85
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/zone_rangement.gd" id="script_zone"]
+[ext_resource type="Script" path="res://Scripts/commode.gd" id="script_commode"]
 
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
+roughness = 0.85
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="BoxShape3D" id="forme_zone"]
+size = Vector3(0.36, 0.16, 0.8)
 
-[sub_resource type="StandardMaterial3D" id="mat_Poignee"]
-resource_name = "Poignee"
-albedo_color = Color(0.75, 0.72, 0.65, 1)
-roughness = 0.3
 
 [node name="Commode" type="Node3D"]
+script = ExtResource("script_commode")
 
 [node name="Corps" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
-size = Vector3(0.5, 0.9, 1.0)
-material = SubResource("mat_BoisClair")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0)
+size = Vector3(0.5, 0.86, 1.0)
+material = SubResource("mat_BlancLaque")
 use_collision = true
 
 [node name="Plateau" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0.915, 0)
 size = Vector3(0.54, 0.03, 1.04)
-material = SubResource("mat_BoisFonce")
+material = SubResource("mat_BoisClair")
+
+[node name="Pied1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.02, -0.45)
+size = Vector3(0.05, 0.04, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.02, -0.45)
+size = Vector3(0.05, 0.04, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.02, 0.45)
+size = Vector3(0.05, 0.04, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.02, 0.45)
+size = Vector3(0.05, 0.04, 0.05)
+material = SubResource("mat_BoisClair")
 
 [node name="Tiroir_Haut" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.77, 0)
 
 [node name="Facade" type="CSGBox3D" parent="Tiroir_Haut"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-size = Vector3(0.03, 0.25, 0.9)
+size = Vector3(0.03, 0.24, 0.9)
 material = SubResource("mat_BlancLaque")
 
-[node name="Poignee" type="CSGBox3D" parent="Tiroir_Haut"]
+[node name="Bouton" type="CSGSphere3D" parent="Tiroir_Haut"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 0)
-size = Vector3(0.03, 0.03, 0.18)
-material = SubResource("mat_Poignee")
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
 
 [node name="Tiroir_Milieu" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.47, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.5, 0)
 
 [node name="Facade" type="CSGBox3D" parent="Tiroir_Milieu"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-size = Vector3(0.03, 0.25, 0.9)
+size = Vector3(0.03, 0.24, 0.9)
 material = SubResource("mat_BlancLaque")
 
-[node name="Poignee" type="CSGBox3D" parent="Tiroir_Milieu"]
+[node name="Bouton" type="CSGSphere3D" parent="Tiroir_Milieu"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 0)
-size = Vector3(0.03, 0.03, 0.18)
-material = SubResource("mat_Poignee")
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Turquoise")
 
 [node name="Tiroir_Bas" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.19, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265, 0.23, 0)
 
 [node name="Facade" type="CSGBox3D" parent="Tiroir_Bas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-size = Vector3(0.03, 0.25, 0.9)
+size = Vector3(0.03, 0.24, 0.9)
 material = SubResource("mat_BlancLaque")
 
-[node name="Poignee" type="CSGBox3D" parent="Tiroir_Bas"]
+[node name="Bouton" type="CSGSphere3D" parent="Tiroir_Bas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0, 0)
-size = Vector3(0.03, 0.03, 0.18)
-material = SubResource("mat_Poignee")
+radius = 0.03
+radial_segments = 12
+rings = 6
+material = SubResource("mat_Corail")
+
+[node name="Bac" type="CSGCombiner3D" parent="Tiroir_Haut"]
+use_collision = true
+
+[node name="Fond" type="CSGBox3D" parent="Tiroir_Haut/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.1, 0)
+size = Vector3(0.38, 0.02, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteG" type="CSGBox3D" parent="Tiroir_Haut/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, -0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteD" type="CSGBox3D" parent="Tiroir_Haut/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, 0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="Arriere" type="CSGBox3D" parent="Tiroir_Haut/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, -0.02, 0)
+size = Vector3(0.02, 0.16, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="Zone_Tiroir_Haut" type="Area3D" parent="Tiroir_Haut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.01, 0)
+script = ExtResource("script_zone")
+destination = "Tiroir_Haut"
+
+[node name="Forme" type="CollisionShape3D" parent="Tiroir_Haut/Zone_Tiroir_Haut"]
+shape = SubResource("forme_zone")
+
+[node name="Bac" type="CSGCombiner3D" parent="Tiroir_Milieu"]
+use_collision = true
+
+[node name="Fond" type="CSGBox3D" parent="Tiroir_Milieu/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.1, 0)
+size = Vector3(0.38, 0.02, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteG" type="CSGBox3D" parent="Tiroir_Milieu/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, -0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteD" type="CSGBox3D" parent="Tiroir_Milieu/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, 0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="Arriere" type="CSGBox3D" parent="Tiroir_Milieu/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, -0.02, 0)
+size = Vector3(0.02, 0.16, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="Zone_Tiroir_Milieu" type="Area3D" parent="Tiroir_Milieu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.01, 0)
+script = ExtResource("script_zone")
+destination = "Tiroir_Milieu"
+
+[node name="Forme" type="CollisionShape3D" parent="Tiroir_Milieu/Zone_Tiroir_Milieu"]
+shape = SubResource("forme_zone")
+
+[node name="Bac" type="CSGCombiner3D" parent="Tiroir_Bas"]
+use_collision = true
+
+[node name="Fond" type="CSGBox3D" parent="Tiroir_Bas/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.1, 0)
+size = Vector3(0.38, 0.02, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteG" type="CSGBox3D" parent="Tiroir_Bas/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, -0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="CoteD" type="CSGBox3D" parent="Tiroir_Bas/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.02, 0.42)
+size = Vector3(0.38, 0.16, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="Arriere" type="CSGBox3D" parent="Tiroir_Bas/Bac"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, -0.02, 0)
+size = Vector3(0.02, 0.16, 0.84)
+material = SubResource("mat_BlancLaque")
+
+[node name="Zone_Tiroir_Bas" type="Area3D" parent="Tiroir_Bas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21, -0.01, 0)
+script = ExtResource("script_zone")
+destination = "Tiroir_Bas"
+
+[node name="Forme" type="CollisionShape3D" parent="Tiroir_Bas/Zone_Tiroir_Bas"]
+shape = SubResource("forme_zone")

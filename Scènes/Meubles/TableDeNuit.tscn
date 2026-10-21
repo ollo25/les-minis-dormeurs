@@ -1,39 +1,112 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
-resource_name = "BoisClair"
-albedo_color = Color(0.72, 0.56, 0.40, 1)
-roughness = 0.85
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/zone_rangement.gd" id="script_zone"]
 
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="mat_Veilleuse"]
-resource_name = "Veilleuse"
-albedo_color = Color(1, 0.8, 0.55, 1)
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
+roughness = 0.85
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Lune"]
+resource_name = "Lune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
 roughness = 0.85
 emission_enabled = true
-emission = Color(1, 0.65, 0.35, 1)
-emission_energy_multiplier = 0.6
+emission = Color(1.000, 0.894, 0.478, 1)
+emission_energy_multiplier = 2.5
+
+[sub_resource type="BoxShape3D" id="forme_zone"]
+size = Vector3(0.33, 0.2, 0.36)
+
 
 [node name="TableDeNuit" type="Node3D"]
 
 [node name="Corps" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
-size = Vector3(0.45, 0.55, 0.4)
-material = SubResource("mat_BoisClair")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0)
+size = Vector3(0.45, 0.52, 0.4)
+material = SubResource("mat_BlancLaque")
 use_collision = true
+
+[node name="Plateau" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565, 0)
+size = Vector3(0.47, 0.03, 0.42)
+material = SubResource("mat_BoisClair")
 
 [node name="Tiroir" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.205)
 size = Vector3(0.38, 0.15, 0.02)
-material = SubResource("mat_BlancLaque")
+material = SubResource("mat_Violet")
 
-[node name="Veilleuse" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.6, -0.05)
-radius = 0.05
+[node name="Bouton" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.22)
+radius = 0.018
 radial_segments = 12
 rings = 6
-material = SubResource("mat_Veilleuse")
+material = SubResource("mat_JauneSoleil")
+
+[node name="Pied1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 0.015, -0.16)
+size = Vector3(0.04, 0.03, 0.04)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 0.015, -0.16)
+size = Vector3(0.04, 0.03, 0.04)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 0.015, 0.16)
+size = Vector3(0.04, 0.03, 0.04)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 0.015, 0.16)
+size = Vector3(0.04, 0.03, 0.04)
+material = SubResource("mat_BoisClair")
+
+[node name="SocleVeilleuse" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.59, -0.05)
+size = Vector3(0.12, 0.02, 0.06)
+material = SubResource("mat_BoisClair")
+
+[node name="Veilleuse" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.69, -0.05)
+
+[node name="Disque" type="CSGCylinder3D" parent="Veilleuse"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+radius = 0.08
+height = 0.04
+sides = 24
+material = SubResource("mat_Lune")
+
+[node name="Creux" type="CSGCylinder3D" parent="Veilleuse"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.036, 0.02, 0)
+operation = 2
+radius = 0.068
+height = 0.12
+sides = 24
+material = SubResource("mat_Lune")
+
+[node name="Zone_TableDeNuit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.68, 0.02)
+script = ExtResource("script_zone")
+destination = "TableDeNuit"
+
+[node name="Forme" type="CollisionShape3D" parent="./Zone_TableDeNuit"]
+shape = SubResource("forme_zone")

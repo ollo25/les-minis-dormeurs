@@ -1,0 +1,153 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/objet_rangeable.gd" id="script_objet"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
+resource_name = "Bleu"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Lavande"]
+resource_name = "Lavande"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Jaune"]
+resource_name = "Jaune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Peche"]
+resource_name = "Peche"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Noir"]
+resource_name = "Noir"
+albedo_color = Color(0.12, 0.10, 0.14, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_Vert"]
+resource_name = "Vert"
+albedo_color = Color(0.655, 0.941, 0.537, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="BoxShape3D" id="forme"]
+size = Vector3(0.36, 0.13, 0.1)
+
+[node name="Train" type="RigidBody3D"]
+script = ExtResource("script_objet")
+nom_affiche = "Petit train"
+destination = "BacAJouets"
+bruyant = true
+
+[node name="Chassis" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
+size = Vector3(0.16, 0.03, 0.08)
+material = SubResource("mat_Bleu")
+
+[node name="Cabine" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, 0.085, 0)
+size = Vector3(0.07, 0.07, 0.08)
+material = SubResource("mat_Rose")
+
+[node name="Toit" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, 0.125, 0)
+size = Vector3(0.085, 0.012, 0.09)
+material = SubResource("mat_Lavande")
+
+[node name="Chaudiere" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0.035, 0.07, 0)
+radius = 0.03
+height = 0.09
+sides = 16
+material = SubResource("mat_Jaune")
+
+[node name="Cheminee" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.11, 0)
+radius = 0.012
+height = 0.04
+sides = 10
+material = SubResource("mat_Peche")
+
+[node name="Roue1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.05, 0.022, 0.042)
+radius = 0.022
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="Roue2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.05, 0.022, 0.042)
+radius = 0.022
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="Roue3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.05, 0.022, -0.042)
+radius = 0.022
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="Roue4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.05, 0.022, -0.042)
+radius = 0.022
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="Wagon" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17, 0.045, 0)
+size = Vector3(0.12, 0.05, 0.075)
+material = SubResource("mat_Vert")
+
+[node name="Attache" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.03, 0)
+size = Vector3(0.03, 0.008, 0.01)
+material = SubResource("mat_Noir")
+
+[node name="RoueW1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.205, 0.02, 0.04)
+radius = 0.02
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="RoueW2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.135, 0.02, 0.04)
+radius = 0.02
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="RoueW3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.205, 0.02, -0.04)
+radius = 0.02
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="RoueW4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.135, 0.02, -0.04)
+radius = 0.02
+height = 0.012
+sides = 12
+material = SubResource("mat_Noir")
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.065, 0)
+shape = SubResource("forme")

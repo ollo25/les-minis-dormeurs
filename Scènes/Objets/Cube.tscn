@@ -1,0 +1,77 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/objet_rangeable.gd" id="script_objet"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
+resource_name = "Bleu"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Jaune"]
+resource_name = "Jaune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Vert"]
+resource_name = "Vert"
+albedo_color = Color(0.655, 0.941, 0.537, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="BoxShape3D" id="forme"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Cube" type="RigidBody3D"]
+script = ExtResource("script_objet")
+nom_affiche = "Cube de construction"
+destination = "BacAJouets"
+bruyant = true
+
+[node name="Bloc" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = Vector3(0.1, 0.1, 0.1)
+material = SubResource("mat_Bleu")
+
+[node name="FaceAvant" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.0505)
+size = Vector3(0.075, 0.075, 0.002)
+material = SubResource("mat_Jaune")
+
+[node name="FaceDessus" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1005, 0)
+size = Vector3(0.075, 0.002, 0.075)
+material = SubResource("mat_Rose")
+
+[node name="FaceCote" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0505, 0.05, 0)
+size = Vector3(0.002, 0.075, 0.075)
+material = SubResource("mat_Vert")
+
+[node name="Lettre" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.053)
+text = "A"
+font_size = 80
+pixel_size = 0.0008
+modulate = Color(0.2, 0.25, 0.6, 1)
+outline_size = 0
+
+[node name="Lettre2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.103, 0)
+text = "B"
+font_size = 80
+pixel_size = 0.0008
+modulate = Color(0.6, 0.2, 0.35, 1)
+outline_size = 0
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("forme")

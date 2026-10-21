@@ -1,0 +1,357 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1, 0.42, 0.35, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1, 0.76, 0.12, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.10, 0.72, 0.74, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.55, 0.32, 0.88, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Ficelle"]
+resource_name = "Ficelle"
+albedo_color = Color(0.85, 0.80, 0.70, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Nuage"]
+resource_name = "Nuage"
+albedo_color = Color(1, 1, 1, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+[node name="DecoMurale" type="Node3D"]
+
+[node name="Fanions" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.85, -2.485)
+
+[node name="Fanion1" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.0, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Corail")
+
+[node name="Fanion2" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525, -0.052, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_JauneSoleil")
+
+[node name="Fanion3" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, -0.09, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Turquoise")
+
+[node name="Fanion4" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175, -0.112, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Violet")
+
+[node name="Fanion5" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.12, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Corail")
+
+[node name="Fanion6" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, -0.112, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_JauneSoleil")
+
+[node name="Fanion7" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, -0.09, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Turquoise")
+
+[node name="Fanion8" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.525, -0.052, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Violet")
+
+[node name="Fanion9" type="CSGPolygon3D" parent="Fanions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.0, 0)
+polygon = PackedVector2Array(-0.065, 0, 0.065, 0, 0, -0.14)
+depth = 0.004
+material = SubResource("mat_Corail")
+
+[node name="Ficelle1" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9578, -0.2873, 0, 0.2873, 0.9578, 0, 0, 0, 1, -0.612, -0.026, 0.002)
+size = Vector3(0.183, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle2" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9778, -0.2095, 0, 0.2095, 0.9778, 0, 0, 0, 1, -0.437, -0.071, 0.002)
+size = Vector3(0.179, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle3" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9918, -0.1275, 0, 0.1275, 0.9918, 0, 0, 0, 1, -0.262, -0.101, 0.002)
+size = Vector3(0.176, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle4" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9991, -0.0428, 0, 0.0428, 0.9991, 0, 0, 0, 1, -0.088, -0.116, 0.002)
+size = Vector3(0.175, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle5" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9991, 0.0428, 0, -0.0428, 0.9991, 0, 0, 0, 1, 0.087, -0.116, 0.002)
+size = Vector3(0.175, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle6" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9918, 0.1275, 0, -0.1275, 0.9918, 0, 0, 0, 1, 0.263, -0.101, 0.002)
+size = Vector3(0.176, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle7" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9778, 0.2095, 0, -0.2095, 0.9778, 0, 0, 0, 1, 0.437, -0.071, 0.002)
+size = Vector3(0.179, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="Ficelle8" type="CSGBox3D" parent="Fanions"]
+transform = Transform3D(0.9578, 0.2873, 0, -0.2873, 0.9578, 0, 0, 0, 1, 0.612, -0.026, 0.002)
+size = Vector3(0.183, 0.006, 0.004)
+material = SubResource("mat_Ficelle")
+
+[node name="ArcEnCiel" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.25, -2.5)
+
+[node name="Bande1" type="CSGTorus3D" parent="ArcEnCiel"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+inner_radius = 0.38
+outer_radius = 0.46
+sides = 32
+ring_sides = 6
+material = SubResource("mat_Corail")
+
+[node name="Bande2" type="CSGTorus3D" parent="ArcEnCiel"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+inner_radius = 0.3
+outer_radius = 0.38
+sides = 32
+ring_sides = 6
+material = SubResource("mat_JauneSoleil")
+
+[node name="Bande3" type="CSGTorus3D" parent="ArcEnCiel"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+inner_radius = 0.22
+outer_radius = 0.3
+sides = 32
+ring_sides = 6
+material = SubResource("mat_Turquoise")
+
+[node name="Coupe" type="CSGBox3D" parent="ArcEnCiel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+operation = 2
+size = Vector3(1.2, 0.6, 0.3)
+material = SubResource("mat_Nuage")
+
+[node name="Mur" type="CSGBox3D" parent="ArcEnCiel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.1)
+operation = 2
+size = Vector3(1.2, 0.7, 0.2)
+material = SubResource("mat_Nuage")
+
+[node name="NuageG" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, 1.27, -2.49)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuageG"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.09, 0.0, 0)
+radius = 0.07
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuageG"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.0, 0.04, 0)
+radius = 0.09
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuageG"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.1, 0.0, 0)
+radius = 0.065
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuageG"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.02, -0.03, 0)
+radius = 0.07
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="NuageD" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02, 1.27, -2.49)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuageD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.09, 0.0, 0)
+radius = 0.07
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuageD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.0, 0.04, 0)
+radius = 0.09
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuageD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.1, 0.0, 0)
+radius = 0.065
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuageD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.02, -0.03, 0)
+radius = 0.07
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="NuagePetit1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 1.85, -2.49)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuagePetit1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.063, 0.0, 0)
+radius = 0.049
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuagePetit1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.0, 0.028, 0)
+radius = 0.063
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuagePetit1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.07, 0.0, 0)
+radius = 0.045
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuagePetit1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.014, -0.021, 0)
+radius = 0.049
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="NuagePetit2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 1.9, -2.49)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuagePetit2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.072, 0.0, 0)
+radius = 0.056
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuagePetit2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.0, 0.032, 0)
+radius = 0.072
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuagePetit2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.08, 0.0, 0)
+radius = 0.052
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuagePetit2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.016, -0.024, 0)
+radius = 0.056
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="NuageMurG1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99, 1.95, 1.7)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuageMurG1"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.0, -0.081)
+radius = 0.063
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuageMurG1"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.036, 0.0)
+radius = 0.081
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuageMurG1"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.0, 0.09)
+radius = 0.059
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuageMurG1"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -0.027, 0.018)
+radius = 0.063
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="NuageMurG2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99, 2.05, 0.75)
+
+[node name="Boule1" type="CSGCylinder3D" parent="NuageMurG2"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.0, -0.063)
+radius = 0.049
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule2" type="CSGCylinder3D" parent="NuageMurG2"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.028, 0.0)
+radius = 0.063
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule3" type="CSGCylinder3D" parent="NuageMurG2"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.0, 0.07)
+radius = 0.045
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")
+
+[node name="Boule4" type="CSGCylinder3D" parent="NuageMurG2"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -0.021, 0.014)
+radius = 0.049
+height = 0.015
+sides = 16
+material = SubResource("mat_Nuage")

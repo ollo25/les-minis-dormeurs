@@ -1,54 +1,114 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
-resource_name = "BoisClair"
-albedo_color = Color(0.72, 0.56, 0.40, 1)
-roughness = 0.85
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
 
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="mat_Poignee"]
-resource_name = "Poignee"
-albedo_color = Color(0.75, 0.72, 0.65, 1)
-roughness = 0.3
-
-[sub_resource type="StandardMaterial3D" id="mat_BoisFonce"]
-resource_name = "BoisFonce"
-albedo_color = Color(0.42, 0.30, 0.20, 1)
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_BoisClair"]
+resource_name = "BoisClair"
+albedo_color = Color(0.72, 0.56, 0.40, 1)
 roughness = 0.85
-
+next_pass = ExtResource("contour")
 [node name="Armoire" type="Node3D"]
 
 [node name="Corps" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
-size = Vector3(1.0, 2.0, 0.55)
-material = SubResource("mat_BoisClair")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03, 0)
+size = Vector3(1.0, 1.94, 0.55)
+material = SubResource("mat_BlancLaque")
 use_collision = true
 
 [node name="PorteGauche" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.02, -0.285)
-size = Vector3(0.48, 1.9, 0.02)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.05, -0.285)
+size = Vector3(0.48, 1.84, 0.02)
 material = SubResource("mat_BlancLaque")
 
 [node name="PorteDroite" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.02, -0.285)
-size = Vector3(0.48, 1.9, 0.02)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.05, -0.285)
+size = Vector3(0.48, 1.84, 0.02)
 material = SubResource("mat_BlancLaque")
 
-[node name="PoigneeG" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 1.05, -0.305)
-size = Vector3(0.02, 0.2, 0.02)
-material = SubResource("mat_Poignee")
+[node name="PanneauG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.25, -0.3)
+size = Vector3(0.34, 0.9, 0.01)
+material = SubResource("mat_Turquoise")
 
-[node name="PoigneeD" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 1.05, -0.305)
-size = Vector3(0.02, 0.2, 0.02)
-material = SubResource("mat_Poignee")
+[node name="PanneauD" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.25, -0.3)
+size = Vector3(0.34, 0.9, 0.01)
+material = SubResource("mat_Turquoise")
+
+[node name="BoutonG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 1.0, -0.31)
+radius = 0.025
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
+
+[node name="BoutonD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 1.0, -0.31)
+radius = 0.025
+radial_segments = 12
+rings = 6
+material = SubResource("mat_JauneSoleil")
 
 [node name="Corniche" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02, 0)
 size = Vector3(1.04, 0.04, 0.59)
-material = SubResource("mat_BoisFonce")
+material = SubResource("mat_BoisClair")
+
+[node name="Pied1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.03, -0.22)
+size = Vector3(0.05, 0.06, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.03, -0.22)
+size = Vector3(0.05, 0.06, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.03, 0.22)
+size = Vector3(0.05, 0.06, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="Pied4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.03, 0.22)
+size = Vector3(0.05, 0.06, 0.05)
+material = SubResource("mat_BoisClair")
+
+[node name="EtoileG" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.25, -0.31)
+polygon = PackedVector2Array(0.0, 0.08, -0.0212, 0.0291, -0.0761, 0.0247, -0.0342, -0.0111, -0.047, -0.0647, -0.0, -0.036, 0.047, -0.0647, 0.0342, -0.0111, 0.0761, 0.0247, 0.0212, 0.0291)
+depth = 0.01
+material = SubResource("mat_JauneSoleil")
+
+[node name="LuneD" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.25, -0.31)
+
+[node name="Disque" type="CSGCylinder3D" parent="LuneD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+radius = 0.08
+height = 0.01
+sides = 24
+material = SubResource("mat_JauneSoleil")
+
+[node name="Creux" type="CSGCylinder3D" parent="LuneD"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.036, 0.02, 0)
+operation = 2
+radius = 0.068
+height = 0.03
+sides = 24
+material = SubResource("mat_JauneSoleil")

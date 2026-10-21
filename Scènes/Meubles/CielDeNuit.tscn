@@ -10,10 +10,10 @@ emission_energy_multiplier = 2.5
 
 [sub_resource type="StandardMaterial3D" id="mat_Lune"]
 resource_name = "Lune"
-albedo_color = Color(1, 0.97, 0.85, 1)
+albedo_color = Color(1.000, 0.894, 0.478, 1)
 roughness = 0.85
 emission_enabled = true
-emission = Color(1, 0.96, 0.82, 1)
+emission = Color(1.000, 0.894, 0.478, 1)
 emission_energy_multiplier = 2.5
 
 [sub_resource type="StandardMaterial3D" id="mat_Etoile"]

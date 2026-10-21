@@ -1,0 +1,157 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.93, 0.89, 0.80, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(0.949, 0.659, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[node name="BibliothequeBasse" type="Node3D"]
+
+[node name="Meuble" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Corps" type="CSGBox3D" parent="Meuble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+size = Vector3(0.32, 0.8, 1.0)
+material = SubResource("mat_BlancLaque")
+
+[node name="CaseHautG" type="CSGBox3D" parent="Meuble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.6, -0.25)
+size = Vector3(0.3, 0.34, 0.46)
+material = SubResource("mat_BlancLaque")
+operation = 2
+
+[node name="CaseHautD" type="CSGBox3D" parent="Meuble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.6, 0.25)
+size = Vector3(0.3, 0.34, 0.46)
+material = SubResource("mat_BlancLaque")
+operation = 2
+
+[node name="CaseBasG" type="CSGBox3D" parent="Meuble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.2, -0.25)
+size = Vector3(0.3, 0.34, 0.46)
+material = SubResource("mat_BlancLaque")
+operation = 2
+
+[node name="CaseBasD" type="CSGBox3D" parent="Meuble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.2, 0.25)
+size = Vector3(0.3, 0.34, 0.46)
+material = SubResource("mat_BlancLaque")
+operation = 2
+
+[node name="PanierBasG" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.17, -0.25)
+
+[node name="Bac" type="CSGBox3D" parent="PanierBasG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.26, 0.26, 0.4)
+material = SubResource("mat_Turquoise")
+
+[node name="Vide" type="CSGBox3D" parent="PanierBasG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+size = Vector3(0.22, 0.26, 0.36)
+material = SubResource("mat_Turquoise")
+operation = 2
+
+[node name="Poignee" type="CSGBox3D" parent="PanierBasG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.07, 0)
+size = Vector3(0.04, 0.04, 0.12)
+material = SubResource("mat_Turquoise")
+operation = 2
+
+[node name="DoublurePanierBasG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.29000000000000004, -0.25)
+size = Vector3(0.23, 0.02, 0.37)
+material = SubResource("mat_Creme")
+
+[node name="PanierBasD" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.17, 0.25)
+
+[node name="Bac" type="CSGBox3D" parent="PanierBasD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.26, 0.26, 0.4)
+material = SubResource("mat_Corail")
+
+[node name="Vide" type="CSGBox3D" parent="PanierBasD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+size = Vector3(0.22, 0.26, 0.36)
+material = SubResource("mat_Corail")
+operation = 2
+
+[node name="Poignee" type="CSGBox3D" parent="PanierBasD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.07, 0)
+size = Vector3(0.04, 0.04, 0.12)
+material = SubResource("mat_Corail")
+operation = 2
+
+[node name="DoublurePanierBasD" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.29000000000000004, 0.25)
+size = Vector3(0.23, 0.02, 0.37)
+material = SubResource("mat_Creme")
+
+[node name="PanierHautG" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.57, -0.25)
+
+[node name="Bac" type="CSGBox3D" parent="PanierHautG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.26, 0.26, 0.4)
+material = SubResource("mat_JauneSoleil")
+
+[node name="Vide" type="CSGBox3D" parent="PanierHautG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+size = Vector3(0.22, 0.26, 0.36)
+material = SubResource("mat_JauneSoleil")
+operation = 2
+
+[node name="Poignee" type="CSGBox3D" parent="PanierHautG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.07, 0)
+size = Vector3(0.04, 0.04, 0.12)
+material = SubResource("mat_JauneSoleil")
+operation = 2
+
+[node name="DoublurePanierHautG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.69, -0.25)
+size = Vector3(0.23, 0.02, 0.37)
+material = SubResource("mat_Creme")
+
+[node name="Livre1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.57, 0.18)
+size = Vector3(0.18, 0.22, 0.03)
+material = SubResource("mat_Violet")
+
+[node name="Livre2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.56, 0.22)
+size = Vector3(0.18, 0.2, 0.03)
+material = SubResource("mat_Turquoise")
+
+[node name="Livre3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.58, 0.26)
+size = Vector3(0.18, 0.24, 0.03)
+material = SubResource("mat_Corail")

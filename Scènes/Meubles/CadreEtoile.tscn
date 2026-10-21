@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_BleuNuit"]
+resource_name = "BleuNuit"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[node name="CadreEtoile" type="Node3D"]
+
+[node name="Bord" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.4, 0.5, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="Fond" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.017)
+size = Vector3(0.32, 0.42, 0.005)
+material = SubResource("mat_BleuNuit")
+
+[node name="Motif" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.025)
+polygon = PackedVector2Array(0.0, 0.1, -0.0265, 0.0364, -0.0951, 0.0309, -0.0428, -0.0139, -0.0588, -0.0809, -0.0, -0.045, 0.0588, -0.0809, 0.0428, -0.0139, 0.0951, 0.0309, 0.0265, 0.0364)
+depth = 0.005
+material = SubResource("mat_JauneSoleil")

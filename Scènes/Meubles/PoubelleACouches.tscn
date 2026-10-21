@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Sauge"]
+resource_name = "Sauge"
+albedo_color = Color(0.655, 0.941, 0.537, 1)
+roughness = 1.0
+next_pass = ExtResource("contour")
+[node name="PoubelleACouches" type="Node3D"]
+
+[node name="Corps" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+radius = 0.14
+height = 0.6
+sides = 16
+use_collision = true
+material = SubResource("mat_BlancLaque")
+
+[node name="Couvercle" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0)
+radius = 0.145
+height = 0.04
+sides = 16
+material = SubResource("mat_Sauge")

@@ -1,25 +1,42 @@
 [gd_scene format=3]
 
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
 roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="mat_MatelasLanger"]
-resource_name = "MatelasLanger"
-albedo_color = Color(0.75, 0.85, 0.80, 1)
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.93, 0.89, 0.80, 1)
 roughness = 1.0
-
-[sub_resource type="StandardMaterial3D" id="mat_Drap"]
-resource_name = "Drap"
-albedo_color = Color(0.80, 0.85, 0.92, 1)
-roughness = 0.85
-
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Violet"]
+resource_name = "Violet"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
 [sub_resource type="StandardMaterial3D" id="mat_Osier"]
 resource_name = "Osier"
-albedo_color = Color(0.70, 0.58, 0.40, 1)
+albedo_color = Color(0.74, 0.60, 0.40, 1)
 roughness = 1.0
-
+next_pass = ExtResource("contour")
 [node name="TableALanger" type="Node3D"]
 
 [node name="Structure" type="CSGCombiner3D" parent="."]
@@ -73,14 +90,68 @@ material = SubResource("mat_BlancLaque")
 [node name="MatelasALanger" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.93, 0)
 size = Vector3(0.45, 0.06, 0.8)
-material = SubResource("mat_MatelasLanger")
+material = SubResource("mat_Turquoise")
 
-[node name="PileDeLinge" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, -0.2)
-size = Vector3(0.35, 0.12, 0.3)
-material = SubResource("mat_Drap")
+[node name="Rayure1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.961, -0.32)
+size = Vector3(0.45, 0.003, 0.05)
+material = SubResource("mat_Creme")
 
-[node name="Panier" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, 0.22)
+[node name="Rayure2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.961, -0.16)
+size = Vector3(0.45, 0.003, 0.05)
+material = SubResource("mat_Creme")
+
+[node name="Rayure3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.961, 0.0)
+size = Vector3(0.45, 0.003, 0.05)
+material = SubResource("mat_Creme")
+
+[node name="Rayure4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.961, 0.16)
+size = Vector3(0.45, 0.003, 0.05)
+material = SubResource("mat_Creme")
+
+[node name="Rayure5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.961, 0.32)
+size = Vector3(0.45, 0.003, 0.05)
+material = SubResource("mat_Creme")
+
+[node name="Linge1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, -0.2)
+size = Vector3(0.3, 0.03, 0.26)
+material = SubResource("mat_Corail")
+
+[node name="Linge2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, -0.2)
+size = Vector3(0.29, 0.03, 0.26)
+material = SubResource("mat_JauneSoleil")
+
+[node name="Linge3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30000000000000004, -0.2)
+size = Vector3(0.3, 0.03, 0.26)
+material = SubResource("mat_Creme")
+
+[node name="Linge4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.335, -0.2)
+size = Vector3(0.29, 0.03, 0.26)
+material = SubResource("mat_Violet")
+
+[node name="Panier" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.22)
+
+[node name="Bac" type="CSGBox3D" parent="Panier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 size = Vector3(0.35, 0.16, 0.3)
 material = SubResource("mat_Osier")
+
+[node name="Vide" type="CSGBox3D" parent="Panier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+size = Vector3(0.31, 0.16, 0.26)
+material = SubResource("mat_Osier")
+operation = 2
+
+[node name="Couches" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0.22)
+size = Vector3(0.29, 0.1, 0.24)
+material = SubResource("mat_Creme")

@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/objet_rangeable.gd" id="script_objet"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Blanc"]
+resource_name = "Blanc"
+albedo_color = Color(0.97, 0.97, 0.97, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Lilas"]
+resource_name = "Lilas"
+albedo_color = Color(0.949, 0.659, 1.000, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="BoxShape3D" id="forme"]
+size = Vector3(0.14, 0.026, 0.18)
+
+[node name="Chaussette" type="RigidBody3D"]
+script = ExtResource("script_objet")
+nom_affiche = "Chaussette"
+destination = "Tiroir_Bas"
+bruyant = true
+
+[node name="Jambe" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012, 0)
+size = Vector3(0.06, 0.024, 0.13)
+material = SubResource("mat_Rose")
+
+[node name="Pied" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, 0.012, 0.075)
+size = Vector3(0.11, 0.024, 0.055)
+material = SubResource("mat_Rose")
+
+[node name="Bande1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, -0.03)
+size = Vector3(0.061, 0.004, 0.015)
+material = SubResource("mat_Blanc")
+
+[node name="Bande2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, -0.055)
+size = Vector3(0.061, 0.004, 0.015)
+material = SubResource("mat_Blanc")
+
+[node name="Talon" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01, 0.025, 0.075)
+size = Vector3(0.03, 0.004, 0.054)
+material = SubResource("mat_Lilas")
+
+[node name="Pointe" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.025, 0.075)
+size = Vector3(0.025, 0.004, 0.054)
+material = SubResource("mat_Lilas")
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.013, 0.03)
+shape = SubResource("forme")

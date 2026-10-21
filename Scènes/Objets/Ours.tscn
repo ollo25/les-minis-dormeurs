@@ -1,0 +1,139 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Script" path="res://Scripts/objet_rangeable.gd" id="script_objet"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Peche"]
+resource_name = "Peche"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.97, 0.93, 0.85, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Noir"]
+resource_name = "Noir"
+albedo_color = Color(0.12, 0.10, 0.14, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+
+[sub_resource type="BoxShape3D" id="forme"]
+size = Vector3(0.2, 0.3, 0.2)
+
+[node name="Ours" type="RigidBody3D"]
+script = ExtResource("script_objet")
+nom_affiche = "Ours en peluche"
+destination = "BacAJouets"
+bruyant = false
+
+[node name="Corps" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)
+radius = 0.085
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="Ventre" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0.055)
+radius = 0.05
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Creme")
+
+[node name="Tete" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21, 0.01)
+radius = 0.07
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="OreilleG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.27, 0)
+radius = 0.025
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="OreilleD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.27, 0)
+radius = 0.025
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="Museau" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195, 0.065)
+radius = 0.03
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Creme")
+
+[node name="Nez" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.205, 0.093)
+radius = 0.01
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Noir")
+
+[node name="OeilG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 0.23, 0.06)
+radius = 0.008
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Noir")
+
+[node name="OeilD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, 0.23, 0.06)
+radius = 0.008
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Noir")
+
+[node name="BrasG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.11, 0.03)
+radius = 0.03
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="BrasD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.11, 0.03)
+radius = 0.03
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="PiedG" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.02, 0.07)
+radius = 0.032
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="PiedD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.02, 0.07)
+radius = 0.032
+radial_segments = 14
+rings = 8
+material = SubResource("mat_Peche")
+
+[node name="Noeud" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.15, 0.03)
+inner_radius = 0.02
+outer_radius = 0.035
+sides = 12
+ring_sides = 6
+material = SubResource("mat_Rose")
+
+[node name="Forme" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+shape = SubResource("forme")

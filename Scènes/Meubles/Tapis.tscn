@@ -1,14 +1,198 @@
 [gd_scene format=3]
 
-[sub_resource type="StandardMaterial3D" id="mat_Tapis"]
-resource_name = "Tapis"
-albedo_color = Color(0.62, 0.48, 0.45, 1)
+[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
+resource_name = "Bleu"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Menthe"]
+resource_name = "Menthe"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Lavande"]
+resource_name = "Lavande"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Jaune"]
+resource_name = "Jaune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Peche"]
+resource_name = "Peche"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Frange"]
+resource_name = "Frange"
+albedo_color = Color(0.95, 0.92, 0.85, 1)
 roughness = 1.0
 
 [node name="Tapis" type="Node3D"]
 
-[node name="Forme" type="CSGCylinder3D" parent="."]
-radius = 1.0
-height = 0.01
-sides = 40
-material = SubResource("mat_Tapis")
+[node name="Bordure" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0)
+size = Vector3(1.9, 0.008, 1.4)
+material = SubResource("mat_Bleu")
+
+[node name="Bande" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
+size = Vector3(1.7, 0.002, 1.2)
+material = SubResource("mat_Menthe")
+
+[node name="Fond" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0105, 0)
+size = Vector3(1.54, 0.002, 1.04)
+material = SubResource("mat_Lavande")
+
+[node name="Losange1" type="CSGBox3D" parent="."]
+transform = Transform3D(0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, 0.7071, -0.5, 0.012, 0)
+size = Vector3(0.3, 0.002, 0.3)
+material = SubResource("mat_Jaune")
+
+[node name="Losange2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, 0.7071, 0, 0.012, 0)
+size = Vector3(0.3, 0.002, 0.3)
+material = SubResource("mat_Rose")
+
+[node name="Losange3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.7071, 0, 0.7071, 0, 1, 0, -0.7071, 0, 0.7071, 0.5, 0.012, 0)
+size = Vector3(0.3, 0.002, 0.3)
+material = SubResource("mat_Peche")
+
+[node name="Frange1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.6)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.5)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.4)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.3)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.2)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, -0.1)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.0)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.1)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.2)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.3)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.4)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange12" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.5)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange13" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97, 0.003, 0.6)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange14" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.6)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange15" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.5)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange16" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.4)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange17" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.3)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange18" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.2)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange19" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, -0.1)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange20" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.0)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange21" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.1)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange22" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.2)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange23" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.3)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange24" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.4)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange25" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.5)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")
+
+[node name="Frange26" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97, 0.003, 0.6)
+size = Vector3(0.06, 0.005, 0.025)
+material = SubResource("mat_Frange")

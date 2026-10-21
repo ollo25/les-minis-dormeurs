@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Turquoise"]
+resource_name = "Turquoise"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Corail"]
+resource_name = "Corail"
+albedo_color = Color(1.000, 0.722, 0.549, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_JauneSoleil"]
+resource_name = "JauneSoleil"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.8
+next_pass = ExtResource("contour")
+[node name="CadreSoleil" type="Node3D"]
+
+[node name="Bord" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(0.4, 0.5, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="Fond" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.017)
+size = Vector3(0.32, 0.42, 0.005)
+material = SubResource("mat_Turquoise")
+
+[node name="Motif" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.03, -0.022)
+radius = 0.09
+height = 0.005
+sides = 20
+material = SubResource("mat_Corail")
+
+[node name="Colline" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12, -0.022)
+size = Vector3(0.32, 0.12, 0.005)
+material = SubResource("mat_JauneSoleil")

@@ -29,6 +29,12 @@ func _on_bouton_jouer_pressed() -> void:
 	g_vars.no_arduino = false
 	get_tree().change_scene_to_file("res://Scènes/Chambre/Chambre.tscn")
 
+func _on_bouton_vr_sans_arduino_pressed() -> void:
+	# VR avec le casque, mais sans la poupée Arduino (pour tester en attendant)
+	Partie.mode_debug = false
+	g_vars.no_arduino = true
+	get_tree().change_scene_to_file("res://Scènes/Chambre/Chambre.tscn")
+
 func _on_bouton_debug_pressed() -> void:
 	Partie.mode_debug = true
 	g_vars.no_arduino = true

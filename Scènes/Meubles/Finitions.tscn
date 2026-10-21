@@ -1,0 +1,202 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+
+[sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
+resource_name = "BlancLaque"
+albedo_color = Color(0.92, 0.91, 0.88, 1)
+roughness = 0.5
+next_pass = ExtResource("contour")
+[sub_resource type="StandardMaterial3D" id="mat_Radiateur"]
+resource_name = "Radiateur"
+albedo_color = Color(0.90, 0.90, 0.88, 1)
+roughness = 0.4
+next_pass = ExtResource("contour")
+[node name="Finitions" type="Node3D"]
+
+[node name="PlintheFond" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -2.49)
+size = Vector3(6.0, 0.08, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="PlintheAvant" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 2.49)
+size = Vector3(6.0, 0.08, 0.02)
+material = SubResource("mat_BlancLaque")
+
+[node name="PlintheGauche" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99, 0.04, 0)
+size = Vector3(0.02, 0.08, 5.0)
+material = SubResource("mat_BlancLaque")
+
+[node name="Croisillon" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -2.55)
+size = Vector3(0.03, 1.1, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="Traverse" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, -2.55)
+size = Vector3(1.2, 0.03, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="Radiateur" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.44)
+
+[node name="Element1" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element2" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element3" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element4" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element5" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element6" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element7" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element8" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element9" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Element10" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.45, 0)
+size = Vector3(0.07, 0.55, 0.08)
+material = SubResource("mat_Radiateur")
+
+[node name="Tuyau" type="CSGBox3D" parent="Radiateur"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.2, 0)
+size = Vector3(0.03, 0.4, 0.03)
+material = SubResource("mat_Radiateur")
+
+[node name="Interrupteur" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.985, 1.1, 0.4)
+size = Vector3(0.01, 0.08, 0.08)
+material = SubResource("mat_BlancLaque")
+
+[node name="Prise" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.985, 0.3, -0.5)
+size = Vector3(0.01, 0.07, 0.07)
+material = SubResource("mat_BlancLaque")
+
+[node name="PlintheDroiteA" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99, 0.04, -1.01)
+size = Vector3(0.02, 0.08, 2.98)
+material = SubResource("mat_BlancLaque")
+
+[node name="PlintheDroiteB" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99, 0.04, 2.01)
+size = Vector3(0.02, 0.08, 0.98)
+material = SubResource("mat_BlancLaque")
+
+[node name="EncadrementFenetre" type="Node3D" parent="."]
+
+[node name="ChambranleGauche" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66, 1.42, -2.485)
+size = Vector3(0.12, 1.28, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="ChambranleDroit" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 1.42, -2.485)
+size = Vector3(0.12, 1.28, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="ChambranleHaut" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06, -2.485)
+size = Vector3(1.44, 0.12, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="AppuiFenetre" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, -2.44)
+size = Vector3(1.56, 0.05, 0.16)
+material = SubResource("mat_BlancLaque")
+
+[node name="SousAppui" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81, -2.485)
+size = Vector3(1.32, 0.08, 0.03)
+material = SubResource("mat_BlancLaque")
+
+[node name="EbrasementGauche" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59, 1.45, -2.55)
+size = Vector3(0.02, 1.1, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="EbrasementDroit" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59, 1.45, -2.55)
+size = Vector3(0.02, 1.1, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="EbrasementHaut" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99, -2.55)
+size = Vector3(1.2, 0.02, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="EbrasementBas" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, -2.55)
+size = Vector3(1.2, 0.02, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="DormantGauche" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56, 1.45, -2.58)
+size = Vector3(0.05, 1.06, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="DormantDroit" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56, 1.45, -2.58)
+size = Vector3(0.05, 1.06, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="DormantHaut" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.955, -2.58)
+size = Vector3(1.16, 0.05, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="DormantBas" type="CSGBox3D" parent="EncadrementFenetre"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.945, -2.58)
+size = Vector3(1.16, 0.05, 0.04)
+material = SubResource("mat_BlancLaque")
+
+[node name="EncadrementPorte" type="Node3D" parent="."]
+
+[node name="ChambranleGauche" type="CSGBox3D" parent="EncadrementPorte"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.975, 1.05, 0.52)
+size = Vector3(0.05, 2.1, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="ChambranleDroit" type="CSGBox3D" parent="EncadrementPorte"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.975, 1.05, 1.48)
+size = Vector3(0.05, 2.1, 0.1)
+material = SubResource("mat_BlancLaque")
+
+[node name="ChambranleHaut" type="CSGBox3D" parent="EncadrementPorte"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.975, 2.05, 1.0)
+size = Vector3(0.05, 0.1, 1.06)
+material = SubResource("mat_BlancLaque")
