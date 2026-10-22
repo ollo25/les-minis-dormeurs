@@ -72,11 +72,21 @@ roughness = 0.95
 [sub_resource type="SphereShape3D" id="zone_main"]
 radius = 0.1
 
+[sub_resource type="BoxShape3D" id="forme_sol"]
+size = Vector3(6, 0.4, 5)
+
 [node name="Chambre" type="Node3D" unique_id=1203298745]
 script = ExtResource("1_script")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1002692651]
 environment = SubResource("env")
+
+
+[node name="SolPhysique" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.188, 0)
+
+[node name="Forme" type="CollisionShape3D" parent="SolPhysique"]
+shape = SubResource("forme_sol")
 
 [node name="Piece" type="CSGCombiner3D" parent="." unique_id=421216716]
 use_collision = true

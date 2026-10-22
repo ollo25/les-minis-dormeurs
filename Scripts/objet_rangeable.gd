@@ -10,6 +10,7 @@ extends RigidBody3D
 const VITESSE_LANCER_MAX := 6.0             # m/s, pour éviter les lancers absurdes
 
 var parent_depart: Node   # le nœud "Objets" de la chambre, pour le remettre au bon endroit
+var position_depart: Vector3   # si jamais l'objet passe sous le sol, on le remet ici
 var est_tenu := false
 var est_range := false                       # true quand il est à sa place : on ne peut plus le prendre
 var derniere_position := Vector3.ZERO
@@ -21,9 +22,19 @@ func _ready() -> void:
 	freeze = true                 # ne tombe pas tant qu'on ne l'a pas touché
 	collision_layer = 2           # couche 2 = objets à ranger
 	collision_mask = 1 | 2        # il touche le décor (couche 1) et les autres objets
+	# Détection "continue" : un objet fin ou lancé vite ne traverse plus le sol
+	continuous_cd = true
+	# Simple et stable : l'objet ne tourne pas sur lui-même, il retombe toujours droit
+	lock_rotation = true
+	position_depart = global_position
 
 
 func _physics_process(delta: float) -> void:
+	# Filet de sécurité : s'il est passé sous le sol, on le remet à sa place de départ
+	if not est_tenu and not est_range and global_position.y < -0.3:
+		global_position = position_depart
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
 	if est_tenu:
 		# On mesure à quelle vitesse la main déplace l'objet (lissé pour éviter les à-coups)
 		var vitesse_instant := (global_position - derniere_position) / delta
