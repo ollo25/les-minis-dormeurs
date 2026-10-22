@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{6a7d305c-88fc-4008-8cd9-912d114cea36}">
+	<object class="AudioFile" id="{63809c48-54c4-47b9-a67b-2474b0ebbe81}">
 		<property name="assetPath">
-			<value>4-Coeur base 4-Coeur base.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>train__bac_a_jouet.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>29.156349206349205</value>
+			<value>3.5301587301587301</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>

@@ -45,17 +45,21 @@ const VITESSE_JAUGE := [-40.0, -25.0, -10.0, 8.0, 20.0, 40.0]
 var jauge: float = 0.0
 var partie_lancee: bool = false     # true seulement pendant une partie (pas dans le menu)
 
-## Les 4 états du bébé, selon la jauge (servent pour les sons ET les vibrations)
-const CALME := 0          # 0 à 24 %
-const AGITE := 1          # 25 à 74 %
-const TRES_AGITE := 2     # 75 à 99 %
-const REVEILLE := 3       # 100 % : défaite
+## Les états du bébé, selon la jauge (servent pour les sons ET les vibrations)
+const CALME := 0              # 0 à 24 %
+const AGITE := 1              # 25 à 49 %
+const TRES_AGITE := 2         # 50 à 74 %
+const PRESQUE_REVEILLE := 3   # 75 à 99 %
+const REVEILLE := 4           # 100 % : défaite
 
 ## Vibrations de la poupée selon l'état : petits coups, comme un bébé qui gigote.
 ## [durée d'un coup en s, temps entre deux coups en s, force de 0 à 255]
 ## (en dessous de ~80, un petit moteur vibrant peut ne pas démarrer : à tester sur la poupée)
-const VIBRATION_AGITE := [0.3, 1.0, 150]         # de temps en temps, moyen
-const VIBRATION_TRES_AGITE := [0.4, 0.4, 220]    # souvent, fort
+const VIBRATIONS := {
+	AGITE: [0.3, 1.2, 140],             # de temps en temps, moyen
+	TRES_AGITE: [0.35, 0.7, 180],       # plus souvent, plus fort
+	PRESQUE_REVEILLE: [0.4, 0.35, 230], # presque sans arrêt, très fort
+}
 const DUREE_VIBRATION_REVEIL := 2.0              # au réveil : 2 s sans arrêt...
 const FORCE_VIBRATION_REVEIL := 255              # ...à fond
 var _force_actuelle := 0
@@ -108,11 +112,13 @@ func _process(delta: float) -> void:
 		declencher_defaite("reveil")
 
 
-## L'état du bébé (CALME, AGITE, TRES_AGITE ou REVEILLE) selon la jauge.
+## L'état du bébé (CALME, AGITE, TRES_AGITE, PRESQUE_REVEILLE ou REVEILLE) selon la jauge.
 func etat_bebe() -> int:
 	if jauge >= JAUGE_MAX:
 		return REVEILLE
 	if jauge >= 75.0:
+		return PRESQUE_REVEILLE
+	if jauge >= 50.0:
 		return TRES_AGITE
 	if jauge >= 25.0:
 		return AGITE
@@ -128,12 +134,7 @@ func _gerer_vibration(delta: float) -> void:
 	if not partie_lancee or partie_finie:
 		_vibrer(0)
 		return
-	var rythme: Array = []
-	match etat_bebe():
-		AGITE:
-			rythme = VIBRATION_AGITE
-		TRES_AGITE:
-			rythme = VIBRATION_TRES_AGITE
+	var rythme: Array = VIBRATIONS.get(etat_bebe(), [])
 	if rythme.is_empty():          # bébé calme : pas de vibration
 		_chrono_vibration = 0.0
 		_vibrer(0)
@@ -157,7 +158,7 @@ func _vibrer(force: int) -> void:
 func _afficher_jauge() -> void:
 	var pleines := roundi(jauge / 10.0)
 	var barre := "█".repeat(pleines) + "░".repeat(10 - pleines)
-	var noms := ["calme", "agité", "très agité", "réveillé"]
+	var noms := ["calme", "agité", "très agité", "presque réveillé", "réveillé"]
 	print("[Bébé] %s %3d %%  %s   (mouvement : %d, gyro : %d)" % [barre, roundi(jauge), noms[etat_bebe()], niveau_mouvement, intensite_brute])
 
 

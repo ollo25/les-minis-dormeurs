@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{02a28a23-1221-4315-922d-28b46fd30c91}">
+		<property name="assetPath">
+			<value>cube 3-freesound_community-lego-bricks-hitting-each-other-85332.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3019727891156467</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>
+		</relationship>
+	</object>
+</objects>

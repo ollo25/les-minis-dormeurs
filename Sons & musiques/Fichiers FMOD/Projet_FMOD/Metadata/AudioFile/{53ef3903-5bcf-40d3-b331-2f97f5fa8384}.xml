@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{53ef3903-5bcf-40d3-b331-2f97f5fa8384}">
+		<property name="assetPath">
+			<value>defaitze 3-calango_fx_official-game-over-401236.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3019727891156467</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>
+		</relationship>
+	</object>
+</objects>

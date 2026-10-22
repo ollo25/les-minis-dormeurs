@@ -31,3 +31,6 @@ CLAUDE.md
 ConversationTrack.md
 docs/logs/*.bak
 __pycache__/
+
+# Jeu exporté (.exe) : trop gros pour Git, on le partage à part
+/Build/

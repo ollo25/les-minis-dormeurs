@@ -38,15 +38,14 @@ var point_main_debug: Marker3D      # la "main" en debug : là où on vise (sert
 var corps_vr: CharacterBody3D       # "corps" du joueur en VR, pour ne pas traverser les meubles au joystick
 var bebe: Node3D                    # le bébé (porté dans les bras, puis couché dans le berceau à la fin)
 # États du bébé dans l'event FMOD "Etat" (valeurs du paramètre "Etat")
-const BEBE_CALME := 0          # agitation 0-24 %
-const BEBE_AGITE := 1          # agitation 25-50 %
-const BEBE_TRES_AGITE := 2     # agitation 75-99 %
-const BEBE_PLEURE := 3         # réveillé
+const BEBE_CALME := 0               # agitation 0-24 %
+const BEBE_AGITE := 1               # agitation 25-49 %
+const BEBE_TRES_AGITE := 2          # agitation 50-74 %
+const BEBE_PRESQUE_REVEILLE := 3    # agitation 75-99 %
 var etat_bebe := -1
 # Volume de l'ambiance du bébé pour chaque état (1 = volume d'origine de la banque).
-# Les sons calmes et les couinements sont très faibles dans les fichiers : on les monte ici.
-# Les gros pleurs (très agité, réveillé) sont déjà forts : on les laisse à 1.
-const VOLUME_ETAT := [4.0, 4.0, 1.0, 1.0]
+# Les deux premiers états sont faibles dans les fichiers : on les monte un peu ici.
+const VOLUME_ETAT := [3.0, 2.0, 1.0, 1.0]
 
 var bras_vr: Node3D                 # point qui suit ton corps en VR (sous le casque, tourné comme toi)
 var ecran_noir: MeshInstance3D      # carré noir collé devant les yeux, pour les fondus (marche aussi en VR)
@@ -56,7 +55,8 @@ func _ready() -> void:
 	Partie.nouvelle_partie()
 	Partie.victoire.connect(_lancer_victoire)
 	Partie.defaite.connect(_lancer_defaite)
-	Partie.objet_ramasse_signal.connect(_jouer_son_objet)
+	Partie.objet_ramasse_signal.connect(_jouer_voix_objet)
+	Partie.objet_range_signal.connect(_jouer_son_rangement)
 	_changer_etat_bebe(BEBE_CALME)
 	$AmbianceBebe.play()
 	bebe = get_node_or_null("Bebe")
@@ -319,13 +319,13 @@ var _fin_affichee := false   # true quand le texte de fin est affiché (on peut 
 
 ## Victoire : fondu au noir → le bébé dort dans son berceau, dans la nuit → dézoom → "Victoire !".
 func _lancer_victoire() -> void:
-	_changer_etat_bebe(BEBE_CALME)
+	_musique_de_fin($SonVictoire)
 	_sequence_fin("Victoire !", "Le bébé dort paisiblement", Color(1.0, 0.894, 0.478), true)
 
 
 ## Défaite : même mise en scène, mais la lumière est allumée en grand (le bébé est réveillé).
 func _lancer_defaite(raison: String) -> void:
-	_changer_etat_bebe(BEBE_PLEURE)
+	_musique_de_fin($SonDefaite)
 	var total := get_tree().get_nodes_in_group("objets_rangeables").size()
 	var detail := "%d / %d objets rangés" % [Partie.objets_ranges, total]
 	if raison == "temps":
@@ -493,8 +493,7 @@ func _changer_etat_bebe(etat: int) -> void:
 	$AmbianceBebe.volume = VOLUME_ETAT[etat]
 
 
-## Le son du bébé suit l'état de la jauge invisible (calme / agité / très agité).
-## (Les pleurs, c'est à la défaite, quand la jauge est pleine.)
+## Le son du bébé suit l'état de la jauge invisible (4 états, du plus calme au plus agité).
 func _son_selon_jauge() -> void:
 	match Partie.etat_bebe():
 		Partie.CALME:
@@ -503,10 +502,26 @@ func _son_selon_jauge() -> void:
 			_changer_etat_bebe(BEBE_AGITE)
 		Partie.TRES_AGITE:
 			_changer_etat_bebe(BEBE_TRES_AGITE)
+		Partie.PRESQUE_REVEILLE:
+			_changer_etat_bebe(BEBE_PRESQUE_REVEILLE)
 
 
-## Quand on ramasse un objet : joue son son (nœud du même nom dans SonsObjets).
-func _jouer_son_objet(objet: Node) -> void:
+## Fin de partie : on coupe l'ambiance du bébé et on lance la musique de victoire ou de défaite.
+func _musique_de_fin(son: Node) -> void:
+	$AmbianceBebe.stop()
+	son.play()
+
+
+## Quand on ramasse un objet : la voix chuchote où le ranger (nœud du même nom dans VoixObjets).
+## C'est la SEULE façon pour le joueur de savoir où va l'objet.
+func _jouer_voix_objet(objet: Node) -> void:
+	var voix := get_node_or_null("VoixObjets/" + objet.name)
+	if voix != null:
+		voix.play()
+
+
+## Quand un objet est bien rangé : on entend le bruit de l'objet (nœud du même nom dans SonsObjets).
+func _jouer_son_rangement(objet: Node) -> void:
 	var son := get_node_or_null("SonsObjets/" + objet.name)
 	if son != null:
 		son.play()
