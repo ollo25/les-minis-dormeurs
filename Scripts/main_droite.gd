@@ -15,7 +15,10 @@ func _ready() -> void:
 
 func _on_bouton_appuye(nom: String) -> void:
 	if nom == "trigger_click":
-		prendre()
+		if Partie.partie_finie:
+			get_tree().change_scene_to_file("res://Scènes/Accueil/Accueil.tscn")   # fin : gâchette = menu
+		else:
+			prendre()
 	elif nom == "by_button":
 		calibrer_sol()
 
@@ -26,7 +29,7 @@ func _on_bouton_relache(nom: String) -> void:
 
 
 func prendre() -> void:
-	if objet_tenu != null:
+	if objet_tenu != null or Partie.partie_finie:
 		return
 	# On prend le premier objet rangeable qui touche la sphère de la main
 	for corps in zone_saisie.get_overlapping_bodies():

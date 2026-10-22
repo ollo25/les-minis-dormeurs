@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Graphismes/Modeles/Main.glb" id="main"]
+
+[node name="Visuel" type="Node3D"]
+transform = Transform3D(-0.157, 0, 0, 0, 0, -0.157, 0, -0.157, 0, 0, 0, 0)
+
+[node name="Modele" parent="." instance=ExtResource("main")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.835, 1.92, 0.08)
+
+[node name="Plane005_0" parent="Modele/Sketchfab_model/root/GLTF_SceneRootNode"]
+visible = false
+
+[node name="Plane005_002_4" parent="Modele/Sketchfab_model/root/GLTF_SceneRootNode"]
+visible = false
+
+[node name="Plane005_003_5" parent="Modele/Sketchfab_model/root/GLTF_SceneRootNode"]
+visible = false
+
+[editable path="Modele"]

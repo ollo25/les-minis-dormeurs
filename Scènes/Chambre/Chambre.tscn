@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" path="res://Scènes/Objets/Train.tscn" id="o_Train"]
 [ext_resource type="Script" uid="uid://dx5vwaindppfc" path="res://Scripts/main_droite.gd" id="script_main"]
 
+[ext_resource type="PackedScene" path="res://Scènes/Joueur/MainDroiteVisuel.tscn" id="main_visuel"]
 [sub_resource type="Environment" id="env"]
 background_mode = 1
 background_color = Color(0.01, 0.012, 0.03, 1)
@@ -233,7 +234,7 @@ transform = Transform3D(0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, 0.9397, 0.15, 0.02
 transform = Transform3D(0.8192, 0, 0.5736, 0, 1, 0, -0.5736, 0, 0.8192, 1.25, 0, -0.45)
 
 [node name="Hochet" parent="Objets" unique_id=69291974 instance=ExtResource("o_Hochet")]
-transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -2.3, 0, -2.25)
+transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -1.75, 0, -1.95)
 
 [node name="BoiteAMusique" parent="Objets" unique_id=1412391584 instance=ExtResource("o_BoiteAMusique")]
 transform = Transform3D(-0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, -0.9397, 0.15, 0, 1.75)
@@ -288,8 +289,7 @@ tracker = &"right_hand"
 pose = &"grip"
 script = ExtResource("script_main")
 
-[node name="Visuel" type="CSGSphere3D" parent="XROrigin3D/MainDroite" unique_id=617564317]
-radius = 0.04
+[node name="Visuel" parent="XROrigin3D/MainDroite" instance=ExtResource("main_visuel")]
 
 [node name="ZoneSaisie" type="Area3D" parent="XROrigin3D/MainDroite" unique_id=778432420]
 collision_layer = 0

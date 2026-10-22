@@ -17,6 +17,9 @@ var noeud_main: Node3D = null
 
 var objets_ranges: int = 0
 
+## true quand la partie est terminée (victoire ou défaite) : on ne peut plus jouer.
+var partie_finie: bool = false
+
 ## Noms lisibles des destinations (uniquement pour la console de debug :
 ## le joueur, lui, n'a AUCUNE info écrite, tout passe par le son).
 const NOMS_DESTINATIONS := {
@@ -47,6 +50,7 @@ func objet_range(objet) -> void:
 	objet_range_signal.emit(objet)
 	if objets_ranges >= total:
 		print("[Partie] VICTOIRE : tout est rangé !")
+		partie_finie = true
 		victoire.emit()
 
 
@@ -60,3 +64,4 @@ func position_main() -> Vector3:
 ## Remet le compteur à zéro au début d'une partie.
 func nouvelle_partie() -> void:
 	objets_ranges = 0
+	partie_finie = false
