@@ -92,3 +92,7 @@ surelevation = 0.13
 
 [node name="Forme" type="CollisionShape3D" parent="./Zone_BacAJouets"]
 shape = SubResource("forme_zone")
+
+[node name="Son" type="FmodEventEmitter3D" parent="Zone_BacAJouets"]
+event_name = "event:/BaJ"
+event_guid = "{e0f9fdbd-5be5-40f0-a920-f1cc84c68df3}"

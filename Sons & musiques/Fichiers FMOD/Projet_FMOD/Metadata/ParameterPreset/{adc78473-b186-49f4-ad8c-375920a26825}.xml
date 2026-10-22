@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{adc78473-b186-49f4-ad8c-375920a26825}">
+		<property name="name">
+			<value>Tiroir</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7dbf4f6a-61dd-4a8d-a4db-2a6d943a4901}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{19a7657d-fcb4-46f8-b45b-5d1838149798}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{19a7657d-fcb4-46f8-b45b-5d1838149798}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Value A</value>
+			<value>Value B</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

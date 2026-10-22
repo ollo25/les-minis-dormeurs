@@ -204,3 +204,7 @@ destination = "Tiroir_Bas"
 
 [node name="Forme" type="CollisionShape3D" parent="Tiroir_Bas/Zone_Tiroir_Bas"]
 shape = SubResource("forme_zone")
+
+[node name="SonTiroir" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Tiroir"
+event_guid = "{f451bec8-219a-4dc2-8720-c9401c2c3333}"

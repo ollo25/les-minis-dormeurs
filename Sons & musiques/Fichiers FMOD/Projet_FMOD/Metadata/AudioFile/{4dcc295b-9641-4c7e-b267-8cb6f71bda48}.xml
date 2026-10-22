@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{4dcc295b-9641-4c7e-b267-8cb6f71bda48}">
+		<property name="assetPath">
+			<value>3-Livre 3-Livre.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7210430839002269</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>
+		</relationship>
+	</object>
+</objects>

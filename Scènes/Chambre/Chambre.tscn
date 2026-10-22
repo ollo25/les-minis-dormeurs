@@ -44,6 +44,8 @@
 [ext_resource type="Script" uid="uid://dx5vwaindppfc" path="res://Scripts/main_droite.gd" id="script_main"]
 
 [ext_resource type="PackedScene" path="res://Scènes/Joueur/MainDroiteVisuel.tscn" id="main_visuel"]
+[ext_resource type="PackedScene" path="res://Scènes/Joueur/JaugeBebe.tscn" id="jauge_bebe"]
+
 [sub_resource type="Environment" id="env"]
 background_mode = 1
 background_color = Color(0.01, 0.012, 0.03, 1)
@@ -78,6 +80,13 @@ size = Vector3(6, 0.4, 5)
 
 [node name="Chambre" type="Node3D" unique_id=1203298745]
 script = ExtResource("1_script")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank", "res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.strings.bank"]
+
+[node name="AmbianceBebe" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Etat"
+event_guid = "{9599b23f-d799-4fe1-8b41-b47ec6c46e2c}"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1002692651]
 environment = SubResource("env")
@@ -278,6 +287,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1654729852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
+[node name="JaugeBebe" parent="XROrigin3D/XRCamera3D" instance=ExtResource("jauge_bebe")]
+
 [node name="MainGauche" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.1, -0.3)
 tracker = &"left_hand"
@@ -300,3 +311,37 @@ shape = SubResource("zone_main")
 
 [node name="Bebe" parent="." unique_id=533552746 instance=ExtResource("bebe_porte")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032600164, 0.72643316, -0.8690424)
+
+[node name="SonsObjets" type="Node" parent="."]
+
+[node name="Ours" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Ours"
+event_guid = "{9a99f7ac-8b1b-4c61-aec6-112ddb39e8d0}"
+
+[node name="Biberon" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Biberon"
+event_guid = "{2d06a6c9-d9a2-4402-af41-5527fa03a302}"
+
+[node name="Livre" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Livre"
+event_guid = "{2a77643e-3a9a-42f3-90e8-d82939ae3c14}"
+
+[node name="Chaussette" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Chaussette"
+event_guid = "{574e1cc3-8b9e-4a94-a52d-2119aa62cbfd}"
+
+[node name="Hochet" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Hochet"
+event_guid = "{bc993d19-d8a9-49cc-a1dd-ec41b7533f68}"
+
+[node name="BoiteAMusique" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/BaM"
+event_guid = "{28cf3339-fef5-4e63-a29e-74504a1e6c56}"
+
+[node name="Train" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Train"
+event_guid = "{1641fcb6-e2ac-4d50-a2d6-b67a4d0c1500}"
+
+[node name="Plaid" type="FmodEventEmitter2D" parent="SonsObjets"]
+event_name = "event:/Jouet/Plaid"
+event_guid = "{b2e2c3b7-b910-4c6e-bc7d-bd64e552456b}"

@@ -2,12 +2,13 @@ extends Node3D
 ## Scène de jeu : la chambre du bébé.
 ## - Mode normal : active la VR (OpenXR) si le casque est détecté.
 ##   Joystick de la manette droite = se déplacer (dans la direction où on regarde).
-##   Bouton B = recaler le sol (manette posée par terre).
-##   Bouton A (seulement en "debug VR", sans Arduino) = triche : tout ranger d'un coup.
+##   En "debug VR" (sans Arduino), boutons de test sur la manette droite :
+##   A = victoire (tout ranger), B = défaite "bébé réveillé", clic du joystick = défaite "temps écoulé".
 ## - Mode debug (ou pas de casque) : on se déplace au clavier/souris.
 ##   ZQSD / flèches = se déplacer, souris = regarder, Échap = libérer la souris,
 ##   clic gauche maintenu = attraper l'objet visé, C = s'accroupir, F1 = retour à l'écran d'accueil.
 ##   V = (triche de test) tout ranger d'un coup pour voir la victoire.
+##   R = (test) défaite "bébé réveillé" ; T = (test) défaite "temps écoulé".
 
 const VITESSE := 1.6            # m/s, vitesse de marche
 const SENSIBILITE := 0.0025     # rotation souris
@@ -36,6 +37,13 @@ var objet_tenu_debug: ObjetRangeable = null
 var point_main_debug: Marker3D      # la "main" en debug : là où on vise (sert à ouvrir les tiroirs)
 var corps_vr: CharacterBody3D       # "corps" du joueur en VR, pour ne pas traverser les meubles au joystick
 var bebe: Node3D                    # le bébé (porté dans les bras, puis couché dans le berceau à la fin)
+# États du bébé dans l'event FMOD "Etat" (valeurs du paramètre "Etat")
+const BEBE_CALME := 0          # agitation 0-24 %
+const BEBE_AGITE := 1          # agitation 25-50 %
+const BEBE_TRES_AGITE := 2     # agitation 75-99 %
+const BEBE_PLEURE := 3         # réveillé
+var etat_bebe := -1
+
 var bras_vr: Node3D                 # point qui suit ton corps en VR (sous le casque, tourné comme toi)
 var ecran_noir: MeshInstance3D      # carré noir collé devant les yeux, pour les fondus (marche aussi en VR)
 
@@ -43,6 +51,10 @@ var ecran_noir: MeshInstance3D      # carré noir collé devant les yeux, pour l
 func _ready() -> void:
 	Partie.nouvelle_partie()
 	Partie.victoire.connect(_lancer_victoire)
+	Partie.defaite.connect(_lancer_defaite)
+	Partie.objet_ramasse_signal.connect(_jouer_son_objet)
+	_changer_etat_bebe(BEBE_CALME)
+	$AmbianceBebe.play()
 	bebe = get_node_or_null("Bebe")
 	_mettre_bebe_en_pose()
 	var xr := XRServer.find_interface("OpenXR")
@@ -76,6 +88,8 @@ func _activer_mode_clavier() -> void:
 	camera_debug.position = Vector3(0, HAUTEUR_YEUX, 0)
 	origine.add_child(camera_debug)
 	camera_debug.make_current()
+	# La jauge du bébé suit la caméra de debug (en VR, elle est sur la caméra du casque)
+	$XROrigin3D/XRCamera3D/JaugeBebe.reparent(camera_debug, false)
 	# Corps physique : une capsule de 1,6 m qui ne traverse plus les meubles ni les murs
 	corps_debug = CharacterBody3D.new()
 	corps_debug.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING   # pas de gravité, on glisse
@@ -151,12 +165,28 @@ func _unhandled_input(event: InputEvent) -> void:
 				camera_debug.position.y = HAUTEUR_YEUX
 		elif event.keycode == KEY_V:
 			_tout_ranger_triche()
+		elif event.keycode == KEY_R:
+			Partie.declencher_defaite("reveil")
+		elif event.keycode == KEY_T:
+			Partie.declencher_defaite("temps")
 		elif event.keycode == KEY_F1:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			get_tree().change_scene_to_file("res://Scènes/Accueil/Accueil.tscn")
 
 
-func _process(_delta: float) -> void:
+## Quand on quitte la chambre (retour au menu), la jauge s'arrête.
+func _exit_tree() -> void:
+	Partie.partie_lancee = false
+
+
+func _process(delta: float) -> void:
+	# Compte à rebours de la partie (affiché sur le réveil de la table de nuit)
+	if not Partie.partie_finie:
+		Partie.temps_restant = maxf(Partie.temps_restant - delta, 0.0)
+		if Partie.temps_restant <= 0.0:
+			Partie.declencher_defaite("temps")
+		else:
+			_son_selon_jauge()
 	# En VR, le "bras" qui porte le bébé suit la position de la tête,
 	# mais seulement sa rotation gauche/droite (regarder en bas ne fait pas bouger le bébé)
 	if bras_vr != null and bebe != null and bebe.get_parent() == bras_vr:
@@ -283,8 +313,26 @@ func _attacher_bebe(support: Node3D, decalage: Vector3, rotation_deg: Vector3, c
 var _fin_affichee := false   # true quand le texte de fin est affiché (on peut revenir au menu)
 
 
-## Petite séquence : fondu au noir → le bébé dort dans son berceau → on recule doucement → "Victoire".
+## Victoire : fondu au noir → le bébé dort dans son berceau, dans la nuit → dézoom → "Victoire !".
 func _lancer_victoire() -> void:
+	_changer_etat_bebe(BEBE_CALME)
+	_sequence_fin("Victoire !", "Le bébé dort paisiblement", Color(1.0, 0.894, 0.478), true)
+
+
+## Défaite : même mise en scène, mais la lumière est allumée en grand (le bébé est réveillé).
+func _lancer_defaite(raison: String) -> void:
+	_changer_etat_bebe(BEBE_PLEURE)
+	var total := get_tree().get_nodes_in_group("objets_rangeables").size()
+	var detail := "%d / %d objets rangés" % [Partie.objets_ranges, total]
+	if raison == "temps":
+		_sequence_fin("Le temps est écoulé…", "Le bébé s'est réveillé · " + detail, Color(1.0, 0.56, 0.69), false)
+	else:
+		_sequence_fin("Le bébé s'est réveillé !", "Tu l'as trop secoué · " + detail, Color(1.0, 0.56, 0.69), false)
+
+
+## Mise en scène de fin, commune à la victoire et à la défaite.
+## nuit = true : chambre plongée dans le noir ; false : la lumière du plafond s'allume en grand.
+func _sequence_fin(texte_titre: String, texte_sous_titre: String, couleur: Color, nuit: bool) -> void:
 	if mode_clavier:
 		lacher_debug()
 	else:
@@ -301,11 +349,15 @@ func _lancer_victoire() -> void:
 	bebe.rotation_degrees = Vector3(0, 90, 0)
 	bebe.scale = Vector3.ONE * TAILLE_BEBE
 	var centre := berceau.global_position + Vector3(0, 0.55, 0)
-	_ambiance_nuit_profonde(centre)
+	if nuit:
+		_ambiance_nuit_profonde(centre)
+	else:
+		_allumer_la_lumiere()
 
-	# Le texte "Victoire !" flotte au-dessus du berceau
-	var titre := _creer_texte("Victoire !", 200, centre + Vector3(0, 0.75, 0))
-	var sous_titre := _creer_texte("Le bébé dort paisiblement", 70, centre + Vector3(0, 0.55, 0))
+	# Les textes flottent au-dessus du berceau
+	var titre := _creer_texte(texte_titre, 200, centre + Vector3(0, 0.75, 0))
+	titre.modulate = couleur
+	var sous_titre := _creer_texte(texte_sous_titre, 70, centre + Vector3(0, 0.55, 0))
 	titre.modulate.a = 0.0
 	sous_titre.modulate.a = 0.0
 
@@ -332,6 +384,20 @@ func _lancer_victoire() -> void:
 	var aide := "Appuie sur une touche pour revenir au menu" if mode_clavier else "Gâchette pour revenir au menu"
 	_creer_texte(aide, 40, centre + Vector3(0, 0.4, 0))
 	_fin_affichee = true
+
+
+## Défaite : quelqu'un allume le plafonnier, la chambre est éclairée en grand, lumière crue.
+func _allumer_la_lumiere() -> void:
+	var env: Environment = $WorldEnvironment.environment
+	env.ambient_light_energy = 1.0
+	env.ambient_light_color = Color(1.0, 0.98, 0.92)
+	var plafonnier := OmniLight3D.new()
+	plafonnier.light_color = Color(1.0, 0.96, 0.88)
+	plafonnier.light_energy = 2.5
+	plafonnier.omni_range = 6.0
+	plafonnier.shadow_enabled = true
+	add_child(plafonnier)
+	plafonnier.global_position = Vector3(0, 2.2, 0)
 
 
 ## Fin : on plonge la chambre dans la nuit (lumière ambiante très basse, bleutée)
@@ -387,11 +453,18 @@ func _creer_texte(texte: String, taille: int, ou: Vector3) -> Label3D:
 	return label
 
 
-## En "debug VR" (lancé sans Arduino) : le bouton A range tout d'un coup.
+## En "debug VR" (lancé sans Arduino), boutons de test de la manette droite :
+## A = tout ranger (victoire), B = défaite "bébé réveillé", clic du joystick = défaite "temps écoulé".
 func _on_bouton_vr(nom: String) -> void:
-	if nom == "ax_button" and g_vars.no_arduino and not Partie.partie_finie:
+	if not g_vars.no_arduino or Partie.partie_finie:
+		return
+	if nom == "ax_button":
 		print("[Chambre] Triche VR : tout est rangé")
 		_tout_ranger_triche()
+	elif nom == "by_button":
+		Partie.declencher_defaite("reveil")
+	elif nom == "primary_click":
+		Partie.declencher_defaite("temps")
 
 
 ## Triche de test (touche V en debug clavier, bouton A en debug VR) : range tout d'un coup.
@@ -403,3 +476,32 @@ func _tout_ranger_triche() -> void:
 		if not objet.est_range and zones.has(objet.destination):
 			objet.global_position = zones[objet.destination].global_position
 			objet.ranger(zones[objet.destination])
+
+
+# ---------- Sons ----------
+
+## Change l'état du bébé dans FMOD (FMOD fait la transition tout seul).
+func _changer_etat_bebe(etat: int) -> void:
+	if etat == etat_bebe:
+		return
+	etat_bebe = etat
+	$AmbianceBebe.set_parameter("Etat", etat)
+
+
+## Le son du bébé suit la jauge d'agitation (0 à 5) :
+## moins de 25 % = calme, moins de 75 % = agité, au-delà = très agité.
+## (Les pleurs, c'est à la défaite, quand la jauge est pleine.)
+func _son_selon_jauge() -> void:
+	if Partie.jauge < 1.25:
+		_changer_etat_bebe(BEBE_CALME)
+	elif Partie.jauge < 3.75:
+		_changer_etat_bebe(BEBE_AGITE)
+	else:
+		_changer_etat_bebe(BEBE_TRES_AGITE)
+
+
+## Quand on ramasse un objet : joue son son (nœud du même nom dans SonsObjets).
+func _jouer_son_objet(objet: Node) -> void:
+	var son := get_node_or_null("SonsObjets/" + objet.name)
+	if son != null:
+		son.play()

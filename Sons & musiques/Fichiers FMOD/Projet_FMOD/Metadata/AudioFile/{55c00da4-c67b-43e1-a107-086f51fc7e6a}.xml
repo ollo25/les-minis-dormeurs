@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{55c00da4-c67b-43e1-a107-086f51fc7e6a}">
+		<property name="assetPath">
+			<value>3-Boite a musique 3-Boite a musique.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.8594104308390023</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>
+		</relationship>
+	</object>
+</objects>

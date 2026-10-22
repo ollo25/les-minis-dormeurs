@@ -30,6 +30,8 @@ func placer(objet: ObjetRangeable) -> void:
 	if places.is_empty():
 		_preparer_places()
 	objet.reparent(self, false)   # il suit le meuble (le tiroir qui se referme, par exemple)
+	if has_node("Son"):            # son de dépôt (si la zone en a un, ex. le bac à jouets)
+		$Son.play()
 	objet.plier()                  # ex. le plaid se replie à plat
 	var dims: Array = objet.dimensions_rangees()   # [taille, centre]
 	var taille: Vector3 = dims[0]

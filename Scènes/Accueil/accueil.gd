@@ -6,6 +6,7 @@ extends Control
 @onready var bouton_jouer = %BoutonJouer
 
 func _ready() -> void:
+	$MusiqueMenu.play()
 	ArduinoManager.arduino_connected.connect(_on_arduino_connected)
 	ArduinoManager.arduino_disconnected.connect(_on_arduino_disconnected)
 

@@ -3,6 +3,7 @@
 [ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
 [ext_resource type="Script" path="res://Scripts/zone_rangement.gd" id="script_zone"]
 
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/Reveil.tscn" id="reveil"]
 [sub_resource type="StandardMaterial3D" id="mat_BlancLaque"]
 resource_name = "BlancLaque"
 albedo_color = Color(0.92, 0.91, 0.88, 1)
@@ -110,3 +111,6 @@ destination = "TableDeNuit"
 
 [node name="Forme" type="CollisionShape3D" parent="./Zone_TableDeNuit"]
 shape = SubResource("forme_zone")
+
+[node name="Reveil" parent="." instance=ExtResource("reveil")]
+transform = Transform3D(0.966, 0, 0.259, 0, 1, 0, -0.259, 0, 0.966, -0.12, 0.58, 0.04)

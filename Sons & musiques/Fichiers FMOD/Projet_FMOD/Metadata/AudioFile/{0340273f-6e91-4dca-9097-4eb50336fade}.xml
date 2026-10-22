@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0340273f-6e91-4dca-9097-4eb50336fade}">
+		<property name="assetPath">
+			<value>3-Hochet 3-Hochet.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5807482993197279</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6cbc747b-e2e3-4165-80c4-f51a76b3cf25}</destination>
+		</relationship>
+	</object>
+</objects>

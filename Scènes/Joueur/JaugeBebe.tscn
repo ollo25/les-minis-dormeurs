@@ -1,0 +1,94 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/jauge_bebe.gd" id="1_jauge"]
+
+[sub_resource type="QuadMesh" id="forme_fond"]
+size = Vector2(0.14, 0.06)
+
+[sub_resource type="QuadMesh" id="forme_case"]
+size = Vector2(0.022, 0.026)
+
+[sub_resource type="StandardMaterial3D" id="mat_fond"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 10
+albedo_color = Color(0.12, 0.1, 0.25, 0.55)
+
+[sub_resource type="StandardMaterial3D" id="mat_case1"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 11
+albedo_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="mat_case2"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 11
+albedo_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="mat_case3"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 11
+albedo_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="mat_case4"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 11
+albedo_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="mat_case5"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+render_priority = 11
+albedo_color = Color(1, 1, 1, 0.15)
+
+[node name="JaugeBebe" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.17, -0.45)
+script = ExtResource("1_jauge")
+
+[node name="Fond" type="MeshInstance3D" parent="."]
+mesh = SubResource("forme_fond")
+material_override = SubResource("mat_fond")
+
+[node name="Titre" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017, 0.001)
+pixel_size = 0.0003
+no_depth_test = true
+render_priority = 12
+modulate = Color(1, 1, 1, 0.85)
+text = "mouvement"
+font_size = 40
+outline_size = 0
+
+[node name="Case1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052, -0.008, 0.001)
+mesh = SubResource("forme_case")
+material_override = SubResource("mat_case1")
+
+[node name="Case2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026, -0.008, 0.001)
+mesh = SubResource("forme_case")
+material_override = SubResource("mat_case2")
+
+[node name="Case3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000, -0.008, 0.001)
+mesh = SubResource("forme_case")
+material_override = SubResource("mat_case3")
+
+[node name="Case4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026, -0.008, 0.001)
+mesh = SubResource("forme_case")
+material_override = SubResource("mat_case4")
+
+[node name="Case5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052, -0.008, 0.001)
+mesh = SubResource("forme_case")
+material_override = SubResource("mat_case5")

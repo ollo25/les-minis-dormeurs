@@ -11,6 +11,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_accueil")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.bank", "res://Sons & musiques/Fichiers FMOD/FmodBank/Desktop/Master.strings.bank"]
+
+[node name="MusiqueMenu" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Menu"
+event_guid = "{928c201f-f9b8-4684-bda6-90fbbea1ca6f}"
+
 [node name="Fond" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
