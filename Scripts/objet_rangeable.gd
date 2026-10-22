@@ -71,6 +71,28 @@ func ranger(zone: Node3D) -> void:
 	linear_velocity = Vector3.ZERO
 	collision_layer = 0          # on ne peut plus l'attraper, il ne gêne plus
 	$Forme.set_deferred("disabled", true)
-	# Il suit le meuble (ex. le tiroir qui se referme avec l'objet dedans)
-	reparent.call_deferred(zone.get_parent())
+	# Il est posé proprement à sa place fixe dans la zone (et suit le meuble, ex. le tiroir)
+	if zone.has_method("placer"):
+		zone.placer.call_deferred(self)
+	else:
+		reparent.call_deferred(zone.get_parent())
 	Partie.objet_range(self)
+
+
+## Taille et centre de l'objet une fois rangé (le plaid replié est plus petit).
+func dimensions_rangees() -> Array:
+	var plie := get_node_or_null("Plie") as CSGBox3D
+	if plie != null:
+		return [plie.size, plie.position]
+	return [$Forme.shape.size, $Forme.position]
+
+
+## Si l'objet a une version "repliée" (nœud Plie), on n'affiche plus qu'elle.
+func plier() -> void:
+	var plie := get_node_or_null("Plie") as Node3D
+	if plie == null:
+		return
+	for enfant in get_children():
+		if enfant is GeometryInstance3D:
+			enfant.visible = false
+	plie.visible = true

@@ -147,7 +147,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -2.25)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, -1.1)
 
 [node name="BacAJouets" parent="Meubles" unique_id=1307334868 instance=ExtResource("m_BacAJouets")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 0, 2.2)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -2.6, 0, 2.2)
 
 [node name="Fauteuil" parent="Meubles" unique_id=1270796248 instance=ExtResource("m_Fauteuil")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0, 2.05)

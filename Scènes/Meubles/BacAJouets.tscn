@@ -88,6 +88,7 @@ material = SubResource("mat_BoisClair")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 script = ExtResource("script_zone")
 destination = "BacAJouets"
+surelevation = 0.13
 
 [node name="Forme" type="CollisionShape3D" parent="./Zone_BacAJouets"]
 shape = SubResource("forme_zone")

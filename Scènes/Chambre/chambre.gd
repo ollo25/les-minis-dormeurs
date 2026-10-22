@@ -3,6 +3,7 @@ extends Node3D
 ## - Mode normal : active la VR (OpenXR) si le casque est détecté.
 ##   Joystick de la manette droite = se déplacer (dans la direction où on regarde).
 ##   Bouton B = recaler le sol (manette posée par terre).
+##   Bouton A (seulement en "debug VR", sans Arduino) = triche : tout ranger d'un coup.
 ## - Mode debug (ou pas de casque) : on se déplace au clavier/souris.
 ##   ZQSD / flèches = se déplacer, souris = regarder, Échap = libérer la souris,
 ##   clic gauche maintenu = attraper l'objet visé, C = s'accroupir, F1 = retour à l'écran d'accueil.
@@ -19,7 +20,7 @@ const ROTATION_BEBE := Vector3(15, 90, 45)  # en degrés (mode debug) : tête ve
 # En VR : le bébé est contre ta poitrine et suit ton CORPS (la hauteur du casque, pas la manette).
 # Il est couché en travers, tête à gauche (au creux du bras gauche), tourné vers toi.
 const ROTATION_BEBE_VR := Vector3(0, 90, 35)        # 90 = en travers ; 35 = blotti, visage tourné vers toi
-const DECALAGE_BEBE_VR := Vector3(-0.1, -0.45, -0.15)   # depuis tes yeux : x = gauche/droite, y = sous les yeux, z = devant toi
+const DECALAGE_BEBE_VR := Vector3(-0.24, -0.45, -0.05)   # depuis tes yeux : x = gauche/droite, y = sous les yeux, z = devant toi
 const CENTRE_BEBE := Vector3(0, 0.02, -0.33)      # milieu du corps du bébé dans sa scène (ses pieds sont à 0)
 
 @onready var origine: XROrigin3D = $XROrigin3D
@@ -53,6 +54,7 @@ func _ready() -> void:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		corps_vr = _creer_corps()
 		Partie.noeud_main = main_droite
+		main_droite.button_pressed.connect(_on_bouton_vr)
 		# Le bébé est porté par la main gauche (là où sera la poupée Arduino)
 		# Le bébé suit le casque (si tu te baisses, il descend avec toi), pas la manette
 		bras_vr = Node3D.new()
@@ -299,6 +301,7 @@ func _lancer_victoire() -> void:
 	bebe.rotation_degrees = Vector3(0, 90, 0)
 	bebe.scale = Vector3.ONE * TAILLE_BEBE
 	var centre := berceau.global_position + Vector3(0, 0.55, 0)
+	_ambiance_nuit_profonde(centre)
 
 	# Le texte "Victoire !" flotte au-dessus du berceau
 	var titre := _creer_texte("Victoire !", 200, centre + Vector3(0, 0.75, 0))
@@ -329,6 +332,21 @@ func _lancer_victoire() -> void:
 	var aide := "Appuie sur une touche pour revenir au menu" if mode_clavier else "Gâchette pour revenir au menu"
 	_creer_texte(aide, 40, centre + Vector3(0, 0.4, 0))
 	_fin_affichee = true
+
+
+## Fin : on plonge la chambre dans la nuit (lumière ambiante très basse, bleutée)
+## et une petite lumière douce, comme une veilleuse, éclaire le bébé qui dort.
+func _ambiance_nuit_profonde(centre: Vector3) -> void:
+	var env: Environment = $WorldEnvironment.environment
+	env.ambient_light_energy = 0.06
+	env.ambient_light_color = Color(0.45, 0.5, 0.85)
+	var douce := SpotLight3D.new()
+	douce.light_color = Color(1.0, 0.75, 0.5)
+	douce.light_energy = 1.2
+	douce.spot_range = 3.0
+	douce.spot_angle = 28.0
+	add_child(douce)
+	douce.look_at_from_position(centre + Vector3(0.3, 1.6, 0.4), centre)
 
 
 ## Fondu : le carré noir devant les yeux passe à l'opacité voulue (0 = transparent, 1 = noir).
@@ -369,7 +387,14 @@ func _creer_texte(texte: String, taille: int, ou: Vector3) -> Label3D:
 	return label
 
 
-## Triche de test (touche V en debug) : range tout d'un coup.
+## En "debug VR" (lancé sans Arduino) : le bouton A range tout d'un coup.
+func _on_bouton_vr(nom: String) -> void:
+	if nom == "ax_button" and g_vars.no_arduino and not Partie.partie_finie:
+		print("[Chambre] Triche VR : tout est rangé")
+		_tout_ranger_triche()
+
+
+## Triche de test (touche V en debug clavier, bouton A en debug VR) : range tout d'un coup.
 func _tout_ranger_triche() -> void:
 	var zones := {}
 	for zone in find_children("Zone_*", "Area3D", true, false):

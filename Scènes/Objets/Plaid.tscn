@@ -57,3 +57,24 @@ material = SubResource("mat_Jaune")
 [node name="Forme" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("forme")
+
+[node name="Plie" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+visible = false
+size = Vector3(0.3, 0.05, 0.46)
+material = SubResource("mat_Menthe")
+
+[node name="RayurePlie1" type="CSGBox3D" parent="Plie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, -0.14)
+size = Vector3(0.302, 0.003, 0.04)
+material = SubResource("mat_Jaune")
+
+[node name="RayurePlie2" type="CSGBox3D" parent="Plie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, 0)
+size = Vector3(0.302, 0.003, 0.04)
+material = SubResource("mat_Jaune")
+
+[node name="RayurePlie3" type="CSGBox3D" parent="Plie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, 0.14)
+size = Vector3(0.302, 0.003, 0.04)
+material = SubResource("mat_Jaune")
