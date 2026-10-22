@@ -13,10 +13,13 @@ const HAUTEUR_YEUX := 1.6       # hauteur de la caméra en mode debug
 const HAUTEUR_ACCROUPI := 0.6   # hauteur quand on est accroupi (touche C)
 const VITESSE_VR := 1.0         # m/s, déplacement au joystick en VR
 const ZONE_MORTE := 0.2         # on ignore les toutes petites poussées du joystick
+const TAILLE_BEBE := 0.6        # le modèle est grand : on le réduit à la taille d'un nouveau-né (~55 cm)
+const ROTATION_BEBE := Vector3(15, 90, 45)  # en degrés : tête vers la gauche, couché au creux du bras
 
 @onready var origine: XROrigin3D = $XROrigin3D
 @onready var camera: XRCamera3D = $XROrigin3D/XRCamera3D
 @onready var main_droite: XRController3D = $XROrigin3D/MainDroite
+@onready var main_gauche: XRController3D = $XROrigin3D/MainGauche   # elle tient le bébé
 
 var mode_clavier := false
 var camera_debug: Camera3D   # caméra normale utilisée seulement en mode debug
@@ -29,6 +32,7 @@ var corps_vr: CharacterBody3D       # "corps" du joueur en VR, pour ne pas trave
 
 func _ready() -> void:
 	Partie.nouvelle_partie()
+	_mettre_bebe_en_pose()
 	var xr := XRServer.find_interface("OpenXR")
 	var casque_ok := xr != null and xr.is_initialized()
 
@@ -38,6 +42,8 @@ func _ready() -> void:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		corps_vr = _creer_corps()
 		Partie.noeud_main = main_droite
+		# Le bébé est porté par la main gauche (là où sera la poupée Arduino)
+		_attacher_bebe(main_gauche, Vector3(0.05, -0.08, 0.05))
 	else:
 		if not Partie.mode_debug:
 			push_warning("[Chambre] Casque non détecté : passage en mode clavier")
@@ -76,6 +82,8 @@ func _activer_mode_clavier() -> void:
 	point_main_debug = Marker3D.new()
 	camera_debug.add_child(point_main_debug)
 	Partie.noeud_main = point_main_debug
+	# En debug, le bébé est porté en bas à gauche de l'écran (au creux du bras)
+	_attacher_bebe(camera_debug, Vector3(0.1, -0.33, -0.5))
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Bandeau "MODE DEBUG" en haut à gauche
 	var calque := CanvasLayer.new()
@@ -202,3 +210,25 @@ func lacher_debug() -> void:
 	if objet_tenu_debug != null:
 		objet_tenu_debug.etre_lache()
 		objet_tenu_debug = null
+
+
+## Le bébé (scène Bebe/BebePorte : modèle + couverture + bonnet) a une pose enregistrée
+## dans l'animation "Game_engineAction".
+## On la joue une fois au démarrage : le bébé garde la position de la dernière image.
+func _mettre_bebe_en_pose() -> void:
+	if not has_node("Bebe"):
+		return
+	var anim_bebe := $Bebe.find_child("AnimationPlayer") as AnimationPlayer
+	if anim_bebe != null and anim_bebe.has_animation("Game_engineAction"):
+		anim_bebe.play("Game_engineAction")
+
+
+## Accroche le bébé à une main (ou à la caméra en debug) : il suit tous ses mouvements.
+func _attacher_bebe(support: Node3D, decalage: Vector3) -> void:
+	if not has_node("Bebe"):
+		return
+	var bebe := $Bebe as Node3D
+	bebe.reparent(support, false)   # false = on oublie sa position dans la pièce
+	bebe.position = decalage
+	bebe.rotation_degrees = ROTATION_BEBE
+	bebe.scale = Vector3.ONE * TAILLE_BEBE

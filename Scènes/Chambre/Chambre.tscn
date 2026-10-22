@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nkis20psfp08"]
 
 [ext_resource type="Script" uid="uid://bsybgctvv3odb" path="res://Scènes/Chambre/chambre.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://Scènes/Bebe/BebePorte.tscn" id="bebe_porte"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Armoire.tscn" id="m_Armoire"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/BacAJouets.tscn" id="m_BacAJouets"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Berceau.tscn" id="m_Berceau"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/EtoilesPlafond.tscn" id="m_EtoilesPlafond"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Fauteuil.tscn" id="m_Fauteuil"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Finitions.tscn" id="m_Finitions"]
+[ext_resource type="PackedScene" path="res://Scènes/Meubles/ListeCourses.tscn" id="m_ListeCourses"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Miroir.tscn" id="m_Miroir"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/PanierALinge.tscn" id="m_PanierALinge"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Plafonnier.tscn" id="m_Plafonnier"]
@@ -29,19 +31,18 @@
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/TableDeNuit.tscn" id="m_TableDeNuit"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/Tapis.tscn" id="m_Tapis"]
 [ext_resource type="PackedScene" path="res://Scènes/Meubles/TapisDEveil.tscn" id="m_TapisDEveil"]
-
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Ours.tscn" id="o_Ours"]
 [ext_resource type="PackedScene" path="res://Scènes/Objets/Biberon.tscn" id="o_Biberon"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Livre.tscn" id="o_Livre"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Chaussette.tscn" id="o_Chaussette"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Hochet.tscn" id="o_Hochet"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Poupee.tscn" id="o_Poupee"]
 [ext_resource type="PackedScene" path="res://Scènes/Objets/BoiteAMusique.tscn" id="o_BoiteAMusique"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Train.tscn" id="o_Train"]
-[ext_resource type="PackedScene" path="res://Scènes/Objets/Plaid.tscn" id="o_Plaid"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Chaussette.tscn" id="o_Chaussette"]
 [ext_resource type="PackedScene" path="res://Scènes/Objets/Cube.tscn" id="o_Cube"]
-[ext_resource type="Script" path="res://Scripts/main_droite.gd" id="script_main"]
-[ext_resource type="PackedScene" path="res://Scènes/Meubles/ListeCourses.tscn" id="m_ListeCourses"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Hochet.tscn" id="o_Hochet"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Livre.tscn" id="o_Livre"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Ours.tscn" id="o_Ours"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Plaid.tscn" id="o_Plaid"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Poupee.tscn" id="o_Poupee"]
+[ext_resource type="PackedScene" path="res://Scènes/Objets/Train.tscn" id="o_Train"]
+[ext_resource type="Script" uid="uid://dx5vwaindppfc" path="res://Scripts/main_droite.gd" id="script_main"]
+
 [sub_resource type="Environment" id="env"]
 background_mode = 1
 background_color = Color(0.01, 0.012, 0.03, 1)
@@ -198,40 +199,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 2.2)
 [node name="PoubelleACouches" parent="Meubles" unique_id=630281141 instance=ExtResource("m_PoubelleACouches")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.7)
 
-
-[node name="ListeCourses" parent="Meubles" instance=ExtResource("m_ListeCourses")]
+[node name="ListeCourses" parent="Meubles" unique_id=1733928143 instance=ExtResource("m_ListeCourses")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.985, 1.45, 0.12)
 
-[node name="Objets" type="Node3D" parent="."]
+[node name="Objets" type="Node3D" parent="." unique_id=727942292]
 
-[node name="Ours" parent="Objets" instance=ExtResource("o_Ours")]
+[node name="Ours" parent="Objets" unique_id=1384116631 instance=ExtResource("o_Ours")]
 transform = Transform3D(0.9659, 0, -0.2588, 0, 1, 0, 0.2588, 0, 0.9659, -2.2, 0.5, -2.18)
 
-[node name="Biberon" parent="Objets" instance=ExtResource("o_Biberon")]
+[node name="Biberon" parent="Objets" unique_id=1133224555 instance=ExtResource("o_Biberon")]
 transform = Transform3D(0.866, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866, -1.55, 0.5, -2.05)
 
-[node name="Plaid" parent="Objets" instance=ExtResource("o_Plaid")]
-transform = Transform3D(1.0, 0, -0.0, 0, 1, 0, 0.0, 0, 1.0, -1.7, 0.9, -1.85)
+[node name="Plaid" parent="Objets" unique_id=322750641 instance=ExtResource("o_Plaid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0.9, -1.85)
 
-[node name="Poupee" parent="Objets" instance=ExtResource("o_Poupee")]
-transform = Transform3D(-1.0, 0, -0.0, 0, 1, 0, 0.0, 0, -1.0, 1.55, 0.38, 1.98)
+[node name="Poupee" parent="Objets" unique_id=2119389257 instance=ExtResource("o_Poupee")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.55, 0.38, 1.98)
 
-[node name="Livre" parent="Objets" instance=ExtResource("o_Livre")]
+[node name="Livre" parent="Objets" unique_id=269864974 instance=ExtResource("o_Livre")]
 transform = Transform3D(0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, 0.9397, 0.15, 0.025, -0.55)
 
-[node name="Chaussette" parent="Objets" instance=ExtResource("o_Chaussette")]
+[node name="Chaussette" parent="Objets" unique_id=885902622 instance=ExtResource("o_Chaussette")]
 transform = Transform3D(0.8192, 0, 0.5736, 0, 1, 0, -0.5736, 0, 0.8192, 1.25, 0, -0.45)
 
-[node name="Hochet" parent="Objets" instance=ExtResource("o_Hochet")]
+[node name="Hochet" parent="Objets" unique_id=69291974 instance=ExtResource("o_Hochet")]
 transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -2.3, 0, -2.25)
 
-[node name="BoiteAMusique" parent="Objets" instance=ExtResource("o_BoiteAMusique")]
+[node name="BoiteAMusique" parent="Objets" unique_id=1412391584 instance=ExtResource("o_BoiteAMusique")]
 transform = Transform3D(-0.9397, 0, -0.342, 0, 1, 0, 0.342, 0, -0.9397, 0.15, 0, 1.75)
 
-[node name="Train" parent="Objets" instance=ExtResource("o_Train")]
+[node name="Train" parent="Objets" unique_id=1901438160 instance=ExtResource("o_Train")]
 transform = Transform3D(0.9063, 0, 0.4226, 0, 1, 0, -0.4226, 0, 0.9063, -0.9, 0.025, 0.95)
 
-[node name="Cube" parent="Objets" instance=ExtResource("o_Cube")]
+[node name="Cube" parent="Objets" unique_id=888313255 instance=ExtResource("o_Cube")]
 transform = Transform3D(0.766, 0, -0.6428, 0, 1, 0, 0.6428, 0, 0.766, 0.35, 0.025, 0.45)
 
 [node name="Dehors" type="Node3D" parent="." unique_id=887627265]
@@ -267,18 +267,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1654729852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
+[node name="MainGauche" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.1, -0.3)
+tracker = &"left_hand"
+pose = &"grip"
+
 [node name="MainDroite" type="XRController3D" parent="XROrigin3D" unique_id=130729505]
-script = ExtResource("script_main")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.1, -0.3)
 tracker = &"right_hand"
 pose = &"grip"
+script = ExtResource("script_main")
 
 [node name="Visuel" type="CSGSphere3D" parent="XROrigin3D/MainDroite" unique_id=617564317]
 radius = 0.04
 
-[node name="ZoneSaisie" type="Area3D" parent="XROrigin3D/MainDroite"]
+[node name="ZoneSaisie" type="Area3D" parent="XROrigin3D/MainDroite" unique_id=778432420]
 collision_layer = 0
 collision_mask = 2
 
-[node name="Forme" type="CollisionShape3D" parent="XROrigin3D/MainDroite/ZoneSaisie"]
+[node name="Forme" type="CollisionShape3D" parent="XROrigin3D/MainDroite/ZoneSaisie" unique_id=93001250]
 shape = SubResource("zone_main")
+
+[node name="Bebe" parent="." unique_id=533552746 instance=ExtResource("bebe_porte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032600164, 0.72643316, -0.8690424)

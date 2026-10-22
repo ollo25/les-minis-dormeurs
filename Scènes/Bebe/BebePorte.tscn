@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://Graphismes/Modeles/Bebe.glb" id="modele"]
+[ext_resource type="Material" path="res://Graphismes/Materiaux/Contour.tres" id="contour"]
+[ext_resource type="Mesh" path="res://Scènes/Bebe/Couverture.obj" id="couverture"]
+[ext_resource type="Texture2D" path="res://Scènes/Bebe/Couverture.png" id="tex_couverture"]
+[ext_resource type="Texture2D" path="res://Graphismes/Modeles/textures/oeil.png" id="tex_oeil"]
+
+[sub_resource type="StandardMaterial3D" id="mat_Yeux"]
+resource_name = "Yeux"
+albedo_texture = ExtResource("tex_oeil")
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="mat_Couverture"]
+resource_name = "Couverture"
+cull_mode = 2
+albedo_texture = ExtResource("tex_couverture")
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_Lavande"]
+resource_name = "Lavande"
+albedo_color = Color(0.769, 0.639, 1.000, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Jaune"]
+resource_name = "Jaune"
+albedo_color = Color(1.000, 0.894, 0.478, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Creme"]
+resource_name = "Creme"
+albedo_color = Color(0.97, 0.93, 0.85, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Bleu"]
+resource_name = "Bleu"
+albedo_color = Color(0.498, 0.722, 1.000, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Rose"]
+resource_name = "Rose"
+albedo_color = Color(1.000, 0.561, 0.694, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Peau"]
+resource_name = "Peau"
+albedo_color = Color(1.0, 0.84, 0.74, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Menthe"]
+resource_name = "Menthe"
+albedo_color = Color(0.498, 0.918, 0.776, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[sub_resource type="StandardMaterial3D" id="mat_Lilas"]
+resource_name = "Lilas"
+albedo_color = Color(0.949, 0.659, 1.000, 1)
+roughness = 0.9
+next_pass = ExtResource("contour")
+
+[node name="BebePorte" type="Node3D"]
+
+[node name="Modele" parent="." instance=ExtResource("modele")]
+
+[node name="Couverture" type="MeshInstance3D" parent="."]
+mesh = ExtResource("couverture")
+material_override = SubResource("mat_Couverture")
+
+[node name="Bonnet" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -0.785)
+
+[node name="Calotte" type="CSGSphere3D" parent="Bonnet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+radius = 0.094
+radial_segments = 20
+rings = 10
+material = SubResource("mat_Menthe")
+
+[node name="CoupeVisage" type="CSGBox3D" parent="Bonnet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0.075)
+operation = 2
+size = Vector3(0.3, 0.12, 0.14)
+material = SubResource("mat_Menthe")
+
+[node name="Pompon" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, -0.885)
+radius = 0.032
+radial_segments = 10
+rings = 6
+material = SubResource("mat_Jaune")
+
+[node name="high-polyMesh" parent="Modele/Game_engine/Skeleton3D"]
+surface_material_override/0 = SubResource("mat_Yeux")
+
+[editable path="Modele"]
