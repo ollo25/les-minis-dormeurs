@@ -220,7 +220,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0, 2.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.7)
 
 [node name="ListeCourses" parent="Meubles" unique_id=1733928143 instance=ExtResource("m_ListeCourses")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.985, 1.45, 0.12)
+transform = Transform3D(-7.868051e-08, 0, -1.8, 0, 1.8, 0, 1.8, 0, -7.868051e-08, 2.985, 1.45, 0.0)
 
 [node name="Objets" type="Node3D" parent="." unique_id=727942292]
 

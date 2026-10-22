@@ -1,5 +1,5 @@
 extends Node3D
-## Réveil posé sur la table de nuit : affiche le temps restant (compte à rebours de 3 min).
+## Réveil posé sur la table de nuit : affiche le temps restant (compte à rebours de la partie).
 
 @onready var ecran: Label3D = $Ecran
 

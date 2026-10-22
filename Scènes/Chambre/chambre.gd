@@ -43,6 +43,10 @@ const BEBE_AGITE := 1          # agitation 25-50 %
 const BEBE_TRES_AGITE := 2     # agitation 75-99 %
 const BEBE_PLEURE := 3         # réveillé
 var etat_bebe := -1
+# Volume de l'ambiance du bébé pour chaque état (1 = volume d'origine de la banque).
+# Les sons calmes et les couinements sont très faibles dans les fichiers : on les monte ici.
+# Les gros pleurs (très agité, réveillé) sont déjà forts : on les laisse à 1.
+const VOLUME_ETAT := [4.0, 4.0, 1.0, 1.0]
 
 var bras_vr: Node3D                 # point qui suit ton corps en VR (sous le casque, tourné comme toi)
 var ecran_noir: MeshInstance3D      # carré noir collé devant les yeux, pour les fondus (marche aussi en VR)
@@ -486,18 +490,19 @@ func _changer_etat_bebe(etat: int) -> void:
 		return
 	etat_bebe = etat
 	$AmbianceBebe.set_parameter("Etat", etat)
+	$AmbianceBebe.volume = VOLUME_ETAT[etat]
 
 
-## Le son du bébé suit la jauge d'agitation (0 à 5) :
-## moins de 25 % = calme, moins de 75 % = agité, au-delà = très agité.
+## Le son du bébé suit l'état de la jauge invisible (calme / agité / très agité).
 ## (Les pleurs, c'est à la défaite, quand la jauge est pleine.)
 func _son_selon_jauge() -> void:
-	if Partie.jauge < 1.25:
-		_changer_etat_bebe(BEBE_CALME)
-	elif Partie.jauge < 3.75:
-		_changer_etat_bebe(BEBE_AGITE)
-	else:
-		_changer_etat_bebe(BEBE_TRES_AGITE)
+	match Partie.etat_bebe():
+		Partie.CALME:
+			_changer_etat_bebe(BEBE_CALME)
+		Partie.AGITE:
+			_changer_etat_bebe(BEBE_AGITE)
+		Partie.TRES_AGITE:
+			_changer_etat_bebe(BEBE_TRES_AGITE)
 
 
 ## Quand on ramasse un objet : joue son son (nœud du même nom dans SonsObjets).

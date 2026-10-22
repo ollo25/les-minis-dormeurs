@@ -243,6 +243,10 @@ func send_blink(times: int) -> void:
 func send_vibe(on: bool) -> void:
 	_send("vibe:" + ("1" if on else "0"))
 
+## (Ajout équipe bébé) Vibreur avec une force de 0 (arrêt) à 255 (à fond) : envoie "vibe:<force>".
+func send_vibe_force(force: int) -> void:
+	_send("vibe:" + str(clampi(force, 0, 255)))
+
 func send_ping() -> void:
 	_send("ping:" + str(Time.get_ticks_msec()))
 

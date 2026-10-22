@@ -62,12 +62,14 @@ bool lireBMI(int &ax, int &ay, int &az, int &gx, int &gy, int &gz) {
 // ==================== CALCUL DU NIVEAU ====================
 
 // Seuils de sensibilite : plus les nombres sont grands, moins c'est sensible.
-// (Historique : 40/100/250/500/1500 puis 60/150/375/750/2000, jugees trop sensibles.)
-const long SEUIL_1 = 100;
-const long SEUIL_2 = 250;
-const long SEUIL_3 = 600;
-const long SEUIL_4 = 1200;
-const long SEUIL_5 = 3000;
+// (Historique : 40/100/250/500/1500 et 60/150/375/750/2000 trop sensibles,
+//  100/250/600/1200/3000 pas assez : impossible d'atteindre 5.)
+// Les petits mouvements restent ignores, mais le 5 est plus facile a atteindre.
+const long SEUIL_1 = 80;
+const long SEUIL_2 = 200;
+const long SEUIL_3 = 450;
+const long SEUIL_4 = 900;
+const long SEUIL_5 = 1800;
 
 int calculerNiveauMouvement(long intensiteGyro) {
 
@@ -265,28 +267,25 @@ unsigned long dernierEnvoi = 0;
 long intensiteMax = 0;    // plus fort mouvement depuis le dernier envoi
 int piezoMax = 0;         // plus fort choc depuis le dernier envoi (pour le debug)
 
-// true quand Godot demande de faire vibrer le bebe (commande "vibe:1", arret avec "vibe:0")
-bool vibreurActif = false;
+// Force du vibreur demandee par Godot : de 0 (arret) a 255 (a fond).
+// Godot envoie par exemple "vibe:100" (faible), "vibe:255" (a fond), "vibe:0" (arret).
+int forceVibration = 0;
 
 
 void loop() {
 
   // ----- Commandes envoyees par Godot -----
-  // "vibe:1" = le bebe vibre, "vibe:0" = il arrete
+  // "vibe:<force>" : le bebe vibre avec cette force (0 = arret, 255 = a fond)
 
   if (Serial.available() > 0) {
 
     String cmd = Serial.readStringUntil('\n');
     cmd.trim();
 
-    if (cmd == "vibe:1") {
-      vibreurActif = true;
-      digitalWrite(MOTOR_PIN, HIGH);
-    }
-
-    if (cmd == "vibe:0") {
-      vibreurActif = false;
-      digitalWrite(MOTOR_PIN, LOW);
+    if (cmd.startsWith("vibe:")) {
+      forceVibration = constrain(cmd.substring(5).toInt(), 0, 255);
+      // analogWrite = puissance variable (la broche 9 le permet sur un Uno)
+      analogWrite(MOTOR_PIN, forceVibration);
     }
   }
 
@@ -385,12 +384,8 @@ void loop() {
 
     digitalWrite(BUZZER_PIN, HIGH);
 
-    // On remet le moteur comme Godot l'a demande (allume s'il doit vibrer)
-    if (vibreurActif) {
-      digitalWrite(MOTOR_PIN, HIGH);
-    } else {
-      digitalWrite(MOTOR_PIN, LOW);
-    }
+    // On remet le moteur a la force demandee par Godot (0 = arrete)
+    analogWrite(MOTOR_PIN, forceVibration);
   }
 
 
