@@ -55,6 +55,19 @@ func _hors_de_la_chambre() -> bool:
 	return p.y < -0.3 or absf(p.x) > LIMITE_X or absf(p.z) > LIMITE_Z
 
 
+## L'objet est-il dans (ou juste au bord d') une zone de rangement : tiroir, bac, table de nuit ?
+func _dans_une_zone_de_rangement() -> bool:
+	for zone in get_tree().root.find_children("*", "ZoneRangement", true, false):
+		var forme: CollisionShape3D = zone.get_node_or_null("Forme")
+		if forme == null or not (forme.shape is BoxShape3D):
+			continue
+		var p: Vector3 = forme.global_transform.affine_inverse() * global_position
+		var demi: Vector3 = forme.shape.size / 2.0 + Vector3(0.1, 0.15, 0.1)   # un peu de marge
+		if absf(p.x) <= demi.x and absf(p.y) <= demi.y and absf(p.z) <= demi.z:
+			return true
+	return false
+
+
 ## L'objet touche-t-il un meuble ou un mur (couche 1) ?
 func _touche_le_decor() -> bool:
 	var requete := PhysicsShapeQueryParameters3D.new()
@@ -83,7 +96,8 @@ func etre_lache() -> void:
 	reparent(parent_depart)
 	# Lâché à l'intérieur d'un meuble ou d'un mur ? On le ressort là où il était encore libre
 	# (sinon il restait coincé dedans, invisible, ou passait à travers).
-	if _touche_le_decor():
+	# (sauf s'il est dans une zone de rangement : dans un tiroir ou le bac, c'est normal qu'il touche les parois)
+	if _touche_le_decor() and not _dans_une_zone_de_rangement():
 		global_position = derniere_position_libre
 	$Forme.disabled = false
 	freeze = false

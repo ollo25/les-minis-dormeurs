@@ -45,6 +45,10 @@ const VITESSE_JAUGE := [-40.0, -25.0, -10.0, 8.0, 20.0, 40.0]
 var jauge: float = 0.0
 var partie_lancee: bool = false     # true seulement pendant une partie (pas dans le menu)
 
+## true pendant l'écran de tuto du début : le chrono et la jauge attendent.
+var tuto_en_cours: bool = false
+signal tuto_ferme
+
 ## Les états du bébé, selon la jauge (servent pour les sons ET les vibrations)
 const CALME := 0              # 0 à 24 %
 const AGITE := 1              # 25 à 49 %
@@ -99,7 +103,7 @@ func _on_message_arduino(cle: String, valeur: String) -> void:
 ## Jauge pleine = le bébé se réveille = défaite.
 func _process(delta: float) -> void:
 	_gerer_vibration(delta)
-	if not partie_lancee or partie_finie:
+	if not partie_lancee or partie_finie or tuto_en_cours:
 		return
 	jauge += VITESSE_JAUGE[niveau_mouvement] * delta
 	jauge = clampf(jauge, 0.0, JAUGE_MAX)
@@ -198,6 +202,14 @@ func nouvelle_partie() -> void:
 	niveau_mouvement = 0
 	_temps_affichage = 0.0
 	partie_lancee = true
+	tuto_en_cours = true
+
+
+## Le joueur a lu le tuto : la partie commence vraiment (chrono + jauge).
+func fermer_tuto() -> void:
+	if tuto_en_cours:
+		tuto_en_cours = false
+		tuto_ferme.emit()
 
 
 ## Déclenche la défaite. raison = "reveil" (jauge pleine : le bébé s'est réveillé) ou "temps" (temps écoulé).

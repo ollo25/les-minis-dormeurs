@@ -45,7 +45,10 @@ func _main_devant(t: Node3D, main: Vector3, marge: float) -> bool:
 	var repere := global_transform * Transform3D(Basis(), position_fermee[t])
 	var p := repere.affine_inverse() * main     # position de la main vue depuis le tiroir fermé
 	var dans_la_largeur := absf(p.z) < 0.48 + marge          # la façade fait 90 cm de large
-	var a_la_hauteur := absf(p.y) < 0.135 + marge            # chaque tiroir fait 24 cm de haut
+	# chaque tiroir fait 24 cm de haut ; une fois ouvert, on accepte la main plus haut
+	# (au-dessus du tiroir, pour y déposer un objet) sans qu'il se referme
+	var haut_max := 0.135 + (0.3 if marge > 0.0 else 0.0)
+	var a_la_hauteur := p.y > -(0.135 + marge) and p.y < haut_max
 	var devant := p.x > -PORTEE - marge and p.x < 0.1         # devant la façade (côté -X)
 	return dans_la_largeur and a_la_hauteur and devant
 

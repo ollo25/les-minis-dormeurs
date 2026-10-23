@@ -81,6 +81,7 @@ func _ready() -> void:
 			push_warning("[Chambre] Casque non détecté : passage en mode clavier")
 		print("[Chambre] Mode debug clavier/souris")
 		_activer_mode_clavier()
+	_afficher_tuto()
 
 
 func _activer_mode_clavier() -> void:
@@ -141,6 +142,12 @@ func _activer_mode_clavier() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not mode_clavier:
 		return
+	# Tuto du début : une touche ou un clic pour commencer
+	if Partie.tuto_en_cours:
+		if (event is InputEventKey or event is InputEventMouseButton) and event.pressed:
+			Partie.fermer_tuto()
+			get_viewport().set_input_as_handled()
+		return
 	# Partie finie : un clic ou une touche ramène au menu
 	if Partie.partie_finie:
 		if (event is InputEventKey or event is InputEventMouseButton) and event.pressed and _fin_affichee:
@@ -185,7 +192,8 @@ func _exit_tree() -> void:
 
 func _process(delta: float) -> void:
 	# Compte à rebours de la partie (affiché sur le réveil de la table de nuit)
-	if not Partie.partie_finie:
+	# (il attend que le joueur ait fermé le tuto)
+	if not Partie.partie_finie and not Partie.tuto_en_cours:
 		Partie.temps_restant = maxf(Partie.temps_restant - delta, 0.0)
 		if Partie.temps_restant <= 0.0:
 			Partie.declencher_defaite("temps")
@@ -460,7 +468,7 @@ func _creer_texte(texte: String, taille: int, ou: Vector3) -> Label3D:
 ## En "debug VR" (lancé sans Arduino), boutons de test de la manette droite :
 ## A = tout ranger (victoire), B = défaite "bébé réveillé", clic du joystick = défaite "temps écoulé".
 func _on_bouton_vr(nom: String) -> void:
-	if not g_vars.no_arduino or Partie.partie_finie:
+	if not g_vars.no_arduino or Partie.partie_finie or Partie.tuto_en_cours:
 		return
 	if nom == "ax_button":
 		print("[Chambre] Triche VR : tout est rangé")
@@ -525,3 +533,50 @@ func _jouer_son_rangement(objet: Node) -> void:
 	var son := get_node_or_null("SonsObjets/" + objet.name)
 	if son != null:
 		son.play()
+
+
+# ---------- Tuto du début ----------
+
+var panneau_tuto: Node3D
+
+## Panneau d'explications collé devant les yeux au lancement. Le chrono et la jauge
+## attendent que le joueur appuie sur la gâchette (ou une touche en mode clavier).
+func _afficher_tuto() -> void:
+	var cam: Node3D = camera_debug if mode_clavier else camera
+	panneau_tuto = Node3D.new()
+	cam.add_child(panneau_tuto)
+	panneau_tuto.position = Vector3(0, 0, -1.2)
+	# Fond sombre
+	var fond := MeshInstance3D.new()
+	var forme := QuadMesh.new()
+	forme.size = Vector2(1.55, 0.72)
+	fond.mesh = forme
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.no_depth_test = true
+	mat.render_priority = 20
+	mat.albedo_color = Color(0.12, 0.1, 0.25, 0.85)
+	fond.material_override = mat
+	panneau_tuto.add_child(fond)
+	# Texte
+	var texte := Label3D.new()
+	if mode_clavier:
+		texte.text = "Ne réveille pas le bébé !\n\nZQSD : se déplacer   ·   Souris : regarder\nClic gauche maintenu : prendre un objet, relâcher pour le poser\n\nQuand tu prends un objet, écoute bien :\nune voix te chuchote où le ranger.\nRange les 10 objets avant la fin du temps.\n\nBouge doucement : si tu secoues le bébé, il se réveille.\n\nAppuie sur une touche pour commencer"
+	else:
+		texte.text = "Ne réveille pas le bébé !\n\nJoystick droit : se déplacer dans la pièce\nGâchette : prendre un objet (garde-la appuyée), relâche pour le poser\n\nQuand tu prends un objet, écoute bien :\nune voix te chuchote où le ranger.\nRange les 10 objets avant la fin du temps.\n\nBouge doucement : si tu secoues le bébé, il se réveille.\n\nAppuie sur la gâchette pour commencer"
+	texte.font_size = 64
+	texte.pixel_size = 0.0007
+	texte.no_depth_test = true
+	texte.render_priority = 21
+	texte.outline_size = 0
+	texte.modulate = Color(1.0, 0.894, 0.478)       # jaune de la palette
+	texte.position = Vector3(0, 0, 0.01)
+	panneau_tuto.add_child(texte)
+	Partie.tuto_ferme.connect(_fermer_tuto)
+
+
+func _fermer_tuto() -> void:
+	if panneau_tuto != null:
+		panneau_tuto.queue_free()
+		panneau_tuto = null

@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func _on_bouton_appuye(nom: String) -> void:
 	if nom == "trigger_click":
+		if Partie.tuto_en_cours:
+			Partie.fermer_tuto()                    # début : gâchette = commencer
+			return
 		if Partie.partie_finie:
 			get_tree().change_scene_to_file("res://Scènes/Accueil/Accueil.tscn")   # fin : gâchette = menu
 		else:

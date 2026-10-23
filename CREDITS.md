@@ -9,5 +9,3 @@
   Parmi eux : « victory chime » (scratchonix), « game over » (calango_fx_official), « lego bricks hitting each other » (freesound_community).
 - **Musique** (berceuse) : musique libre de droit issue du jeu *Cozy Fears*, retravaillée par l'équipe.
 - **Voix** (chuchotements qui indiquent où ranger les objets) : enregistrées par l'équipe.
-
-
