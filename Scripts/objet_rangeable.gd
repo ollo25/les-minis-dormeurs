@@ -15,6 +15,11 @@ var est_tenu := false
 var est_range := false                       # true quand il est à sa place : on ne peut plus le prendre
 var derniere_position := Vector3.ZERO
 var vitesse_main := Vector3.ZERO            # vitesse mesurée pendant qu'on le tient
+var derniere_position_libre := Vector3.ZERO  # dernier endroit (pendant qu'on le tient) où il ne touchait aucun meuble
+
+# La chambre fait 6 m x 5 m : un objet en dehors de ces limites est passé à travers un mur
+const LIMITE_X := 2.95
+const LIMITE_Z := 2.45
 
 
 func _ready() -> void:
@@ -30,8 +35,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Filet de sécurité : s'il est passé sous le sol, on le remet à sa place de départ
-	if not est_tenu and not est_range and global_position.y < -0.3:
+	# Filet de sécurité : s'il est passé sous le sol ou à travers un mur, on le remet à sa place de départ
+	if not est_tenu and not est_range and _hors_de_la_chambre():
 		global_position = position_depart
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
@@ -40,6 +45,23 @@ func _physics_process(delta: float) -> void:
 		var vitesse_instant := (global_position - derniere_position) / delta
 		vitesse_main = vitesse_main.lerp(vitesse_instant, 0.5)
 		derniere_position = global_position
+		# On retient le dernier endroit où il ne rentrait dans aucun meuble
+		if not _touche_le_decor():
+			derniere_position_libre = global_position
+
+
+func _hors_de_la_chambre() -> bool:
+	var p := global_position
+	return p.y < -0.3 or absf(p.x) > LIMITE_X or absf(p.z) > LIMITE_Z
+
+
+## L'objet touche-t-il un meuble ou un mur (couche 1) ?
+func _touche_le_decor() -> bool:
+	var requete := PhysicsShapeQueryParameters3D.new()
+	requete.shape = $Forme.shape
+	requete.transform = $Forme.global_transform
+	requete.collision_mask = 1
+	return not get_world_3d().direct_space_state.intersect_shape(requete, 1).is_empty()
 
 
 ## Appelé quand une main (ou la caméra en debug) attrape l'objet.
@@ -50,6 +72,7 @@ func etre_pris(main: Node3D) -> void:
 	reparent(main)                # il suit la main (en gardant sa position actuelle)
 	est_tenu = true
 	derniere_position = global_position
+	derniere_position_libre = global_position
 	vitesse_main = Vector3.ZERO
 	Partie.objet_ramasse(self)
 
@@ -58,6 +81,10 @@ func etre_pris(main: Node3D) -> void:
 func etre_lache() -> void:
 	est_tenu = false
 	reparent(parent_depart)
+	# Lâché à l'intérieur d'un meuble ou d'un mur ? On le ressort là où il était encore libre
+	# (sinon il restait coincé dedans, invisible, ou passait à travers).
+	if _touche_le_decor():
+		global_position = derniere_position_libre
 	$Forme.disabled = false
 	freeze = false
 	linear_velocity = vitesse_main.limit_length(VITESSE_LANCER_MAX)

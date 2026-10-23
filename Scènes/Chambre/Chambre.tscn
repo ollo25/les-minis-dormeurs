@@ -363,49 +363,49 @@ event_guid = "{98db7bec-2dc6-432a-980b-4178400a3744}"
 [node name="Ours" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Ours"
 event_guid = "{31bef505-2d4d-47b6-84cc-b21a9e047f2b}"
-volume = 8.5
+volume = 12.8
 
 [node name="Biberon" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Biberon"
 event_guid = "{3550be40-ead1-42ba-9be8-7abdfcae6149}"
-volume = 10.0
+volume = 15.0
 
 [node name="Hochet" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Hochet"
 event_guid = "{40a04b45-debf-4efe-9cc1-2e9a7d27cbe3}"
-volume = 4.3
+volume = 6.4
 
 [node name="Train" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Train"
 event_guid = "{5b0c077d-e636-4267-b418-76d0c712cecf}"
-volume = 10.0
+volume = 15.0
 
 [node name="Chaussette" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Chausette"
 event_guid = "{8ed4a46e-9835-483e-a8dd-0d17d01bb48a}"
-volume = 6.3
+volume = 9.4
 
 [node name="Poupee" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Poupé"
 event_guid = "{b46e9540-3a79-4722-87de-a4d4299ece98}"
-volume = 8.0
+volume = 12.0
 
 [node name="Cube" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Cube"
 event_guid = "{c21e196d-7702-420b-b50c-eb9522ab5d73}"
-volume = 6.3
+volume = 9.4
 
 [node name="BoiteAMusique" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Bam"
 event_guid = "{d4c7f739-4d6b-4c06-bc27-788822b16bf0}"
-volume = 6.9
+volume = 10.4
 
 [node name="Plaid" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Plaid"
 event_guid = "{dc5062d4-c32e-4c83-b820-bdf88fd2c5c2}"
-volume = 4.2
+volume = 6.3
 
 [node name="Livre" type="FmodEventEmitter2D" parent="VoixObjets"]
 event_name = "event:/Voix/Livre"
 event_guid = "{f23ce275-273b-4723-927e-7cf574f33de6}"
-volume = 4.0
+volume = 6.0

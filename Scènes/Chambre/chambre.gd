@@ -45,7 +45,7 @@ const BEBE_PRESQUE_REVEILLE := 3    # agitation 75-99 %
 var etat_bebe := -1
 # Volume de l'ambiance du bébé pour chaque état (1 = volume d'origine de la banque).
 # Les deux premiers états sont faibles dans les fichiers : on les monte un peu ici.
-const VOLUME_ETAT := [3.0, 2.0, 1.0, 1.0]
+const VOLUME_ETAT := [1.5, 1.0, 0.5, 0.5]   # (avant : 3 / 2 / 1 / 1, le fond couvrait les voix)
 
 var bras_vr: Node3D                 # point qui suit ton corps en VR (sous le casque, tourné comme toi)
 var ecran_noir: MeshInstance3D      # carré noir collé devant les yeux, pour les fondus (marche aussi en VR)

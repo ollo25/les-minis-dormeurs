@@ -10,5 +10,4 @@
 - **Musique** (berceuse) : musique libre de droit issue du jeu *Cozy Fears*, retravaillée par l'équipe.
 - **Voix** (chuchotements qui indiquent où ranger les objets) : enregistrées par l'équipe.
 
-## Réalisé avec l'aide d'une IA
-- Décor de la chambre (meubles en formes simples), objets à ranger, couverture du bébé.
+
